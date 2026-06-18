@@ -1,0 +1,22 @@
+{
+  "title": "The determinant as the source of the cubic term: normal-form reduction in a matrix gradient flow",
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "description": "Center-manifold / Lyapunov-Schmidt reduction of a 4x4 matrix gradient flow; the determinant generates the cubic term of the local normal form through its cofactor matrix. Classifies the fold, pitchfork, cusp and Bogdanov-Takens organizing centers, with a conjecture for non-gradient Shilnikov chaos. Includes reproducible verification scripts (one per numerical statement).",
+  "creators": [
+    {"name": "Molina, Henry", "affiliation": "Independent Researcher"}
+  ],
+  "keywords": [
+    "matrix gradient flow",
+    "center-manifold reduction",
+    "normal forms",
+    "cofactor matrix",
+    "cusp",
+    "Bogdanov-Takens",
+    "Shilnikov chaos",
+    "bifurcation theory"
+  ],
+  "license": "CC-BY-4.0",
+  "language": "eng",
+  "version": "1.0"
+}
