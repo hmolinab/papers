@@ -4,7 +4,7 @@
   "publication_type": "preprint",
   "description": "Center-manifold / Lyapunov-Schmidt reduction of a 4x4 matrix gradient flow; the determinant generates the cubic term of the local normal form through its cofactor matrix. Classifies the fold, pitchfork, cusp and Bogdanov-Takens organizing centers, with a conjecture for non-gradient Shilnikov chaos. Includes reproducible verification scripts (one per numerical statement).",
   "creators": [
-    {"name": "Molina, Henry", "affiliation": "Independent Researcher"}
+    {"name": "Molina, Henry", "affiliation": "Independent Researcher", "orcid": "0009-0005-4405-1648"}
   ],
   "keywords": [
     "matrix gradient flow",
