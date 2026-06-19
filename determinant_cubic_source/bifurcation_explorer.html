@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bifurcation Explorer — Gamma Space Framework</title>
+<meta name="description" content="Interactive companion to the paper 'The determinant as the source of the cubic term'. Explore how the reduced soft mode runs through fold, pitchfork, cusp and the oscillatory (Bogdanov–Takens) regime. Gamma Space Framework · Henry Molina.">
+<style>
+  :root{--bg:#0e1116;--panel:#171c24;--ink:#e8edf2;--mut:#9aa7b4;--blu:#3d7fd6;--red:#d6483d;--gold:#e3a526;--grid:#2a323d;}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 -apple-system,Segoe UI,Roboto,sans-serif}
+  header{padding:18px 22px;border-bottom:1px solid var(--grid);display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+  h1{margin:0;font-size:19px;font-weight:650}
+  .sub{color:var(--mut);font-size:13px;margin-top:4px}
+  .lang{display:flex;gap:6px;flex-shrink:0}
+  .lang button{background:var(--panel);color:var(--mut);border:1px solid var(--grid);border-radius:6px;padding:4px 10px;cursor:pointer;font-size:12px;font-weight:600}
+  .lang button.on{color:#0e1116;background:var(--blu);border-color:var(--blu)}
+  .wrap{display:grid;grid-template-columns:300px 1fr;gap:0;min-height:calc(100vh - 70px)}
+  .controls{padding:20px 22px;border-right:1px solid var(--grid)}
+  .panels{padding:18px 22px;display:grid;grid-template-columns:1fr 1fr;gap:18px;align-content:start}
+  .card{background:var(--panel);border:1px solid var(--grid);border-radius:10px;padding:12px}
+  .card h3{margin:0 0 8px;font-size:13px;font-weight:600;color:var(--mut);text-transform:uppercase;letter-spacing:.4px}
+  canvas{width:100%;height:auto;display:block;border-radius:6px}
+  label{display:block;margin:16px 0 4px;font-size:13px;color:var(--mut)}
+  .val{color:var(--ink);font-variant-numeric:tabular-nums}
+  input[type=range]{width:100%;accent-color:var(--blu)}
+  .regime{font-size:17px;font-weight:650;margin-top:6px}
+  .pill{display:inline-block;padding:2px 10px;border-radius:999px;font-size:12px;font-weight:600;margin-top:8px}
+  .note{font-size:12.5px;color:var(--mut);margin-top:14px;border-top:1px solid var(--grid);padding-top:12px}
+  .eq{font-family:ui-monospace,Menlo,monospace;color:var(--gold)}
+  button.reset{margin-top:14px;background:var(--panel);color:var(--ink);border:1px solid var(--grid);border-radius:7px;padding:7px 12px;cursor:pointer}
+  button.reset:hover{border-color:var(--blu)}
+  a{color:var(--blu)}
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>Bifurcation Explorer</h1>
+    <div class="sub" id="t-sub"></div>
+  </div>
+  <div class="lang">
+    <button id="lang-en" class="on" onclick="setLang('en')">EN</button>
+    <button id="lang-es" onclick="setLang('es')">ES</button>
+  </div>
+</header>
+<div class="wrap">
+  <div class="controls">
+    <div class="regime" id="regimeName">—</div>
+    <span class="pill" id="regimePill"></span>
+
+    <label id="t-a2"></label>
+    <input type="range" id="a2" min="-2.5" max="1.5" step="0.01" value="-1.2">
+    <label id="t-a1"></label>
+    <input type="range" id="a1" min="-1.2" max="1.2" step="0.005" value="0">
+    <label id="t-g"></label>
+    <input type="range" id="g" min="-0.6" max="2.5" step="0.01" value="0.6">
+
+    <button class="reset" id="reset"></button>
+    <div class="note" id="t-note"></div>
+  </div>
+
+  <div class="panels">
+    <div class="card"><h3 id="t-pP"></h3><canvas id="cP" width="520" height="300"></canvas></div>
+    <div class="card"><h3 id="t-pC"></h3><canvas id="cC" width="520" height="300"></canvas></div>
+    <div class="card" style="grid-column:1 / -1"><h3 id="t-pT"></h3><canvas id="cT" width="1080" height="220"></canvas></div>
+  </div>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+const BLU="#3d7fd6",RED="#d6483d",GOLD="#e3a526",GRID="#2a323d",MUT="#9aa7b4",INK="#e8edf2";
+
+const L={
+ en:{
+  sub:'Gamma Space Framework · reduction Γ→ξ to normal forms · <span class="eq">det&nbsp;Γ</span> generates the cubic term',
+  a2:'Control <span class="eq">a₂</span> (∝ μ−μ_c, the soft-mode eigenvalue)',
+  a1:'Imperfection <span class="eq">a₁</span> (∝ source / external field)',
+  g:'Damping <span class="eq">γ</span>',
+  reset:'↺ Reset trajectory',
+  pP:'Reduced potential Φ(ξ)', pC:'Cusp diagram (a₁, a₂)', pT:'Trajectory ξ(t) — relaxes / oscillates with γ',
+  note:'Reduced normal form on the soft mode ξ:<div class="eq" style="margin:6px 0">ξ̈ + γ·ξ̇ + (a₁ + a₂·ξ + ξ³) = 0</div>'+
+       'The roots of <span class="eq">a₁+a₂ξ+ξ³=0</span> are the equilibria. The cubic <span class="eq">ξ³</span> comes from the determinant of Γ; the line <span class="eq">a₂=0</span> is the pitchfork threshold (AM–GM).<br><br>'+
+       'Fold (1↔3 eq.), cusp (a₁=a₂=0), Bogdanov–Takens (γ→0). Chaos lives in the non-gradient reactive sector (Conjecture 1 of the paper) and is not shown here.<br><br>'+
+       'Paper: <a href="https://github.com/hmolinab/papers/tree/main/determinant_cubic_source" target="_blank" rel="noopener">GitHub</a> · <a href="https://zenodo.org/records/20752208" target="_blank" rel="noopener">DOI 10.5281/zenodo.20752208</a>',
+  r_bi:'Bistable (3 equilibria)', r_cusp:'Cusp point', r_fold:'Fold (saddle-node)', r_mono:'Monostable (1 equilibrium)',
+  r_active:' · active regime (γ<0)', r_under:' · underdamped (oscillates)',
+  p_bt:'BT / active', p_3:'3↔1 near the fold', p_relax:'relaxes to the well'
+ },
+ es:{
+  sub:'Gamma Space Framework · reducción Γ→ξ a formas normales · el <span class="eq">det&nbsp;Γ</span> genera el término cúbico',
+  a2:'Control <span class="eq">a₂</span> (∝ μ−μ_c, el autovalor del modo blando)',
+  a1:'Imperfección <span class="eq">a₁</span> (∝ fuente / campo externo)',
+  g:'Amortiguamiento <span class="eq">γ</span>',
+  reset:'↺ Reiniciar trayectoria',
+  pP:'Potencial reducido Φ(ξ)', pC:'Diagrama de cúspide (a₁, a₂)', pT:'Trayectoria ξ(t) — relaja / oscila según γ',
+  note:'Forma normal reducida sobre el modo blando ξ:<div class="eq" style="margin:6px 0">ξ̈ + γ·ξ̇ + (a₁ + a₂·ξ + ξ³) = 0</div>'+
+       'Las raíces de <span class="eq">a₁+a₂ξ+ξ³=0</span> son los equilibrios. El cúbico <span class="eq">ξ³</span> proviene del determinante de Γ; la línea <span class="eq">a₂=0</span> es el umbral de tridente (AM–GM).<br><br>'+
+       'Pliegue (1↔3 eq.), cúspide (a₁=a₂=0), Bogdanov–Takens (γ→0). El caos vive en el sector reactivo no-gradiente (Conjetura 1 del paper) y no se representa aquí.<br><br>'+
+       'Paper: <a href="https://github.com/hmolinab/papers/tree/main/determinant_cubic_source" target="_blank" rel="noopener">GitHub</a> · <a href="https://zenodo.org/records/20752208" target="_blank" rel="noopener">DOI 10.5281/zenodo.20752208</a>',
+  r_bi:'Biestable (3 equilibrios)', r_cusp:'Punto cúspide', r_fold:'Pliegue (saddle-node)', r_mono:'Monoestable (1 equilibrio)',
+  r_active:' · régimen activo (γ<0)', r_under:' · subamortiguado (oscila)',
+  p_bt:'BT / activo', p_3:'3↔1 cerca del pliegue', p_relax:'relaja al pozo'
+ }
+};
+let lang='en';
+function setLang(l){
+  lang=l; const d=L[l];
+  $('lang-en').classList.toggle('on',l==='en'); $('lang-es').classList.toggle('on',l==='es');
+  document.documentElement.lang=l;
+  $('t-sub').innerHTML=d.sub; $('t-a2').innerHTML=d.a2; $('t-a1').innerHTML=d.a1; $('t-g').innerHTML=d.g;
+  $('reset').textContent=d.reset; $('t-pP').textContent=d.pP; $('t-pC').textContent=d.pC; $('t-pT').textContent=d.pT;
+  $('t-note').innerHTML=d.note;
+  draw();
+}
+
+function roots(a2,a1){
+  const p=a2,q=a1, disc=(q*q)/4+(p*p*p)/27;
+  if(disc>1e-12 || p>=-1e-9){
+    const u=Math.cbrt(-q/2+Math.sqrt(Math.max(0,disc))), v=Math.cbrt(-q/2-Math.sqrt(Math.max(0,disc)));
+    return [u+v];
+  } else {
+    const r=Math.sqrt(-p*p*p/27), phi=Math.acos(Math.max(-1,Math.min(1,-q/2/r))), m=2*Math.sqrt(-p/3);
+    return [0,1,2].map(k=>m*Math.cos((phi+2*Math.PI*k)/3));
+  }
+}
+const Phi=(x,a2,a1)=>x*x*x*x/4+a2*x*x/2+a1*x;
+const dPhi=(x,a2,a1)=>x*x*x+a2*x+a1;
+const ddPhi=(x,a2)=>3*x*x+a2;
+let traj={x:0.5,v:0}, hist=[];
+
+function draw(){
+  const a2=+$("a2").value,a1=+$("a1").value,g=+$("g").value,d=L[lang];
+  const eq=roots(a2,a1);
+  let name,col;
+  if(eq.length===3){name=d.r_bi;col=BLU;}
+  else if(Math.abs(a2)<0.06&&Math.abs(a1)<0.04){name=d.r_cusp;col=GOLD;}
+  else if(a2<0&&Math.abs(4*a2*a2*a2+27*a1*a1)<0.25){name=d.r_fold;col=GOLD;}
+  else{name=d.r_mono;col=MUT;}
+  if(g<0)name+=d.r_active;
+  else if(g<2*Math.sqrt(Math.max(0.001,ddPhi(eq[0],a2))))name+=d.r_under;
+  $("regimeName").textContent=name;
+  const pill=$("regimePill");
+  pill.textContent=g<0?d.p_bt:(eq.length===3?d.p_3:d.p_relax);
+  pill.style.background=col;pill.style.color="#0e1116";
+  drawPotential(a2,a1,eq); drawCusp(a2,a1);
+}
+function axes(ctx,w,h,x0,x1,y0,y1){
+  ctx.clearRect(0,0,w,h);
+  const X=x=>(x-x0)/(x1-x0)*(w-40)+30,Y=y=>h-20-(y-y0)/(y1-y0)*(h-40);
+  ctx.strokeStyle=GRID;ctx.lineWidth=1;
+  ctx.beginPath();ctx.moveTo(X(x0),Y(0));ctx.lineTo(X(x1),Y(0));ctx.stroke();
+  ctx.beginPath();ctx.moveTo(X(0),Y(y0));ctx.lineTo(X(0),Y(y1));ctx.stroke();
+  return {X,Y};
+}
+function drawPotential(a2,a1,eq){
+  const c=$("cP"),ctx=c.getContext("2d"),w=c.width,h=c.height,x0=-2.4,x1=2.4;let lo=1e9,hi=-1e9;
+  for(let x=x0;x<=x1;x+=0.02){const y=Phi(x,a2,a1);lo=Math.min(lo,y);hi=Math.max(hi,y);}
+  const pad=(hi-lo)*0.12||1,A=axes(ctx,w,h,x0,x1,lo-pad,hi+pad);
+  ctx.strokeStyle=INK;ctx.lineWidth=2;ctx.beginPath();
+  for(let x=x0;x<=x1;x+=0.02){const px=A.X(x),py=A.Y(Phi(x,a2,a1));x===x0?ctx.moveTo(px,py):ctx.lineTo(px,py);}
+  ctx.stroke();
+  eq.forEach(x=>{ctx.fillStyle=ddPhi(x,a2)>0?BLU:RED;ctx.beginPath();ctx.arc(A.X(x),A.Y(Phi(x,a2,a1)),6,0,7);ctx.fill();});
+  ctx.fillStyle=MUT;ctx.font="12px sans-serif";ctx.fillText("ξ",w-22,A.Y(0)-6);
+}
+function drawCusp(a2,a1){
+  const c=$("cC"),ctx=c.getContext("2d"),w=c.width,h=c.height,A=axes(ctx,w,h,-1.2,1.2,-2.5,1.5);
+  ctx.strokeStyle=GOLD;ctx.lineWidth=2;ctx.beginPath();let first=true;
+  for(let v=0;v>=-2.5;v-=0.01){const b=Math.sqrt(-4*v*v*v/27);const px=A.X(b),py=A.Y(v);first?(ctx.moveTo(px,py),first=false):ctx.lineTo(px,py);}
+  for(let v=-2.5;v<=0;v+=0.01){ctx.lineTo(A.X(-Math.sqrt(-4*v*v*v/27)),A.Y(v));}
+  ctx.stroke();ctx.fillStyle="rgba(61,127,214,.10)";ctx.fill();
+  ctx.fillStyle=MUT;ctx.font="12px sans-serif";
+  ctx.fillText("3 eq.",A.X(0)-14,A.Y(-2.0));ctx.fillText("1 eq.",A.X(0.85),A.Y(-0.4));
+  ctx.fillText("a₁",w-22,A.Y(0)-6);ctx.fillText("a₂",A.X(0)+6,16);
+  ctx.fillStyle=RED;ctx.beginPath();ctx.arc(A.X(a1),A.Y(a2),6,0,7);ctx.fill();
+}
+function step(){
+  const a2=+$("a2").value,a1=+$("a1").value,g=+$("g").value,dt=0.02;
+  for(let k=0;k<4;k++){const acc=-g*traj.v-dPhi(traj.x,a2,a1);traj.v+=acc*dt;traj.x+=traj.v*dt;
+    if(Math.abs(traj.x)>6){traj.x=Math.sign(traj.x)*6;traj.v*=-0.5;}}
+  hist.push(traj.x);if(hist.length>540)hist.shift();drawTraj();requestAnimationFrame(step);
+}
+function drawTraj(){
+  const c=$("cT"),ctx=c.getContext("2d"),w=c.width,h=c.height;ctx.clearRect(0,0,w,h);
+  ctx.strokeStyle=GRID;ctx.beginPath();ctx.moveTo(0,h/2);ctx.lineTo(w,h/2);ctx.stroke();
+  ctx.strokeStyle=BLU;ctx.lineWidth=1.6;ctx.beginPath();const Y=x=>h/2-x/3*(h/2-14);
+  hist.forEach((x,i)=>{const px=i/540*w;i===0?ctx.moveTo(px,Y(x)):ctx.lineTo(px,Y(x));});ctx.stroke();
+  ctx.fillStyle=MUT;ctx.font="12px sans-serif";ctx.fillText("ξ(t)",8,16);
+}
+["a2","a1","g"].forEach(id=>$(id).addEventListener("input",draw));
+$("reset").addEventListener("click",()=>{traj={x:0.5,v:0};hist=[];});
+setLang('en'); step();
+</script>
+</body>
+</html>

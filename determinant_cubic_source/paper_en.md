@@ -284,7 +284,7 @@ distinguishes fold from pitchfork; the damping \(\gamma\) supplies the second Bo
 parameter upon passing to second order; and the non-gradient part supplies the rotation that opens the
 door to chaos. The determinant enters as the invariant that generates the cubic, not as a stability
 indicator: linear stability is fixed by the spectrum of the symmetric Hessian, while \(\det\Gamma\)
-encodes orientation and rank.
+encodes orientation and rank. (Scope note: we do not claim this Lagrangian is *universal* or privileged; it is one **general** potential within a broad class for which the determinant generates the cubic — Remark 2.1. The word "universal" is used here only in the technical sense of the *universal unfolding* of normal forms.)
 
 Three lines remain open. First, the rigorous reduction of the second-order flow in \(16+16\)
 dimensions to the reactive jerk equation; the non-gradient model in §6 is illustrative, not an exact

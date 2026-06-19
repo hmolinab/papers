@@ -286,7 +286,7 @@ pliegue de tridente; el amortiguamiento \(\gamma\) aporta el segundo parámetro 
 pasar a segundo orden; y la parte no-gradiente aporta la rotación que abre la puerta al caos. El
 determinante interviene como el invariante que genera el cúbico, no como un indicador de estabilidad:
 la estabilidad lineal la fija el espectro del Hessiano simétrico, mientras que \(\det\Gamma\) codifica
-orientación y rango.
+orientación y rango. (Nota de alcance: no se afirma que este Lagrangiano sea *universal* ni privilegiado; es un potencial **general**, uno de una clase amplia para la que el determinante genera el cúbico —Obs. 2.1—. La palabra «universal» se usa aquí solo en el sentido técnico de *despliegue universal* de las formas normales.)
 
 Quedan abiertas tres líneas. Primero, la reducción rigurosa del flujo de segundo orden en \(16+16\)
 dimensiones a la ecuación de jerk reactiva; el modelo del sector no-gradiente en §6 es ilustrativo y
