@@ -67,7 +67,11 @@ P(\Gamma;\mu,J)=\|\Gamma\|^2+\mu\det\Gamma+\beta\|\Gamma\|^4+b_6\|\Gamma\|^6-\la
 \qquad \beta\ge0,\ b_6\ge0,
 $$
 where \(\mu\in\mathbb R\) is the control parameter and \(J\in M_4(\mathbb R)\) an external field. The
-sextic \(b_6\) only bounds the branches globally and plays no role in the local statements. The
+sextic \(b_6\) plays no role in the local statements; its purpose is global. Although \(\beta\ge0\)
+already bounds \(P\) at lowest order, the **slaving correction** to the reduced quartic (Theorem 1.4)
+can drive the effective coefficient \(a_4^{\mathrm{eff}}\) **negative** (a subcritical pitchfork),
+along which the center-manifold reduction would escape to infinity; the sextic \(b_6>0\) is what
+**globally stabilizes those subcritical branches** once slaving flips the quartic sign. The
 field-free potential (\(J=0\)) depends only on \(\|\Gamma\|^2\) and \(\det\Gamma\), both invariant
 under the bilateral orthogonal action \(\Gamma\mapsto U\Gamma V^\top\) with \(U,V\in O(4)\) (the same
 action as the singular-value decomposition, which reappears in §4). This large isotropy makes its
@@ -189,12 +193,15 @@ pitchfork. \(\square\)
 
 ## 5. Codimension-2 organizing centers
 
-**Theorem 2 (cusp, \(A_3\)).** *The point \(a_2=a_3=0\) with \(a_4^{\mathrm{eff}}\neq0\) is a cusp, the
-universal unfolding of the pitchfork (Thom 1975; Golubitsky–Schaeffer 1985). In this system \(a_3\)
-changes sign, because the determinant and norm contributions compete, so the point exists; adding
-\(a_2=0\) fixes it. A two-parameter family \((\mu,s)\) —control and field amplitude— unfolds it
-versally, with \(\partial(a_1,a_2)/\partial(\mu,s)\) nonsingular. The three-equilibrium window has
-width \(\propto(-a_2)^{3/2}\)* (Figure 2).
+**Theorem 2 (cusp, \(A_3\)).** *A point with \(a_2=a_3=0\) and \(a_4^{\mathrm{eff}}\neq0\) is a cusp,
+the universal unfolding of the pitchfork (Thom 1975; Golubitsky–Schaeffer 1985). Its existence here is
+not merely "\(a_3\) changes sign": \(a_3(\mu,s)\) is continuous and, because the determinant and norm
+contributions compete, changes sign on the parameter sheet, so by the intermediate value theorem it
+vanishes on a curve; the second knob \(s\) sets \(a_2=0\) at a point of that curve; there
+\(a_4^{\mathrm{eff}}\neq0\) is checked, and transversality holds since
+\(\partial(a_1,a_2)/\partial(\mu,s)\) is nonsingular — hence a genuine versal \(A_3\). All four
+conditions are certified numerically (§7), where the three-equilibrium window is measured to scale as
+\(\propto(-a_2)^{3/2}\)* (Figure 2).
 
 ![**Figure 2.** The cusp \(A_3\) in the unfolding plane \((a_1,a_2)\). Inside the semicubical wedge
 \(4a_2^3+27a_1^2\le0\) there are three equilibria; outside, one. The inset shows the \(3/2\)
@@ -203,8 +210,10 @@ law.](figs_en/fig2_cusp.png)
 **Lemma 1 (no Hopf in the (metric-)gradient flow).** *The Jacobian of \(\dot\Gamma=-\nabla P\) at an
 equilibrium is \(-H_*\), with \(H_*=D^2P\) symmetric; its spectrum is real, so no complex pair can
 cross the imaginary axis and no Hopf bifurcation occurs. This persists for the metric-gradient flow
-\(\dot\Gamma=-G^{-1}\nabla P\) with any \(G\succ0\) symmetric: the linearization \(-G^{-1}H_*\) is
-similar to the symmetric \(-G^{-1/2}H_*G^{-1/2}\), hence real. Consequently, while \(G\) is positive
+\(\dot\Gamma=-G^{-1}\nabla P\) with any \(G\succ0\) symmetric — **even a state-dependent Riemannian
+metric \(G(\Gamma)\)**, since at the equilibrium \(\nabla P=0\) the metric-derivative term drops out
+and the linearization is exactly \(-G(\Gamma_*)^{-1}H_*\), similar to the symmetric
+\(-G(\Gamma_*)^{-1/2}H_*G(\Gamma_*)^{-1/2}\), hence real. Consequently, while \(G\) is positive
 definite the soft mode admits only steady bifurcations; an oscillatory (Hopf) instability requires
 breaking the gradient form — either \(G\) losing positive definiteness or a genuinely non-gradient
 reactive term, supplied here by the antisymmetric sector \(\Gamma_a\).*
@@ -220,6 +229,13 @@ The reduction is \(\ddot\xi+\gamma(\xi)\dot\xi+(a_1+c\,\xi^2)=0\) with \(c=\tfra
 state-dependent damping \(\gamma(\xi)=\gamma_0+\gamma_1\xi\), the saddle-node (the fold), Hopf
 (\(\gamma_0=-\gamma_1\xi_*\)) and homoclinic curves emanate from the BT point (Bogdanov 1975;
 Takens 1974).*
+
+*Status of Theorem 3.* This is a **reduction-and-normal-form argument** establishing the Jordan-block
+mechanism and the planar BT reduced equation, not yet a full BT verification: the two Kuznetsov
+non-degeneracy conditions (the quadratic coefficients \(a_{20},b_{11}\neq0\) of the planar normal form
+and the regularity of the parameter map) are exhibited by the reduced equation but not independently
+certified for the \(16{+}16\)-dim flow. We therefore state it at the level of the reduced soft-mode
+equation; the full non-degenerate BT in the ambient flow is left open.
 
 The saddle-node branch of Bogdanov–Takens coincides with the fold of Theorem 1, so both codimension-2
 centers are degeneracies of the same soft mode. The BT point marks the boundary between the overdamped
@@ -251,11 +267,16 @@ an energy input (\(\gamma_{\mathrm{eff}}\le0\) in some region) paired with the a
 reactive sector \(\Gamma_a\), which breaks the symmetry of the Hessian and introduces the rotation
 (\(\operatorname{Im}\lambda\neq0\)). That antisymmetric, non-gradient part also supplies the third
 dimension that Poincaré–Bendixson requires. Coupling it with active damping, the cubic nonlinearity
-induced by the determinant produces a jerk equation with a saddle-focus equilibrium; integrating it,
-one observes an attractor with positive Lyapunov exponent (\(\lambda\approx0.055\)) and a limit cycle
-that ends in a homoclinic with logarithmically divergent period (Figure 4). The reduction of the
-second-order flow in \(16+16\) dimensions to this jerk equation is not proved here; the evidence is
-numerical, and we state it as a conjecture.
+induced by the determinant produces a **jerk equation with a saddle-focus equilibrium**. The
+explicit toy model integrated for Figure 4 is the quadratic (Sprott-type) jerk
+$$\dddot\xi+a\,\ddot\xi-\dot\xi^{\,2}+\xi=0,\qquad a=2.017,$$
+equivalently the first-order system \(\dot x=y,\ \dot y=z,\ \dot z=-a\,z+y^2-x\); the quadratic term
+\(\dot\xi^{\,2}\) is the reduced image of the determinant's cofactor nonlinearity. Integrating it
+(RK4) one observes a chaotic attractor with positive Lyapunov exponent (\(\lambda\approx0.055\),
+matching the Sprott value) and a limit cycle that ends in a homoclinic with logarithmically divergent
+period (Figure 4). The reduction of the second-order flow in \(16+16\) dimensions to this specific
+jerk equation is not proved here; the toy model is exhibited as the equation behind Figure 4, and the
+\(16{+}16\to\) jerk reduction is stated as a conjecture.
 
 **Conjecture 1.** *In the inertial extension coupled with the antisymmetric part of the field, the
 cubic nonlinearity induced by the determinant suffices to produce a homoclinic connection to a
@@ -304,7 +325,15 @@ distinguishes fold from pitchfork; the damping \(\gamma\) supplies the second Bo
 parameter upon passing to second order; and the non-gradient part supplies the rotation that opens the
 door to chaos. The determinant enters as the invariant that generates the cubic, not as a stability
 indicator: linear stability is fixed by the spectrum of the symmetric Hessian, while \(\det\Gamma\)
-encodes orientation and rank. (Scope note: we do not claim this Lagrangian is *universal* or privileged; it is one **general** potential within a broad class for which the determinant generates the cubic — Remark 2.1. The word "universal" is used here only in the technical sense of the *universal unfolding* of normal forms.)
+encodes orientation and rank. (Scope note: we do not claim this Lagrangian is *universal* or privileged; it is one **general** potential within a broad class for which the determinant generates the cubic — Remark 2.1. The word "universal" is used here only in the technical sense of the *universal unfolding* of normal forms. The determinant generates the cubic **within this class of potentials**, not as a claim about arbitrary matrix flows.)
+
+These results sit at **distinct levels**, and we do not present them as a single theorem: the fold, pitchfork and cusp (Theorems 1–2) are established normal-form results for the gradient flow; the Bogdanov–Takens (Theorem 3) is a reduction-level argument requiring the inertial lift; and the chaos (Conjecture 1) is numerical. The narrative chain fold → cusp → BT → chaos is an organizing thread across codimension and order, not one object.
+
+**Measurable critical exponent.** Beyond topology, the determinant fixes a *measurable* number: the three-equilibrium window of the cusp scales as \((-a_2)^{3/2}\), the universal \(3/2\) law of the \(A_3\) catastrophe. Critical exponents are frame-independent and laboratory-accessible, so this turns the determinant's role from a topological statement into an empirical handle.
+
+**Where these flows appear.** Real-valued matrix gradient flows of this type arise across applied physics: the Landau–de Gennes \(Q\)-tensor flow of nematic liquid crystals, continuum strain/deformation tensors, and the small-scale loss landscapes of neural networks are all gradient flows on symmetric (or general) matrices where a determinant- or invariant-driven nonlinearity governs the soft mode — natural settings to test the fold/cusp dichotomy.
+
+**A thermodynamic reading of Lemma 1.** The no-Hopf lemma is, beneath the geometry, a thermodynamic statement: strict dissipation is *topologically obstructed* from producing sustained oscillation or limit cycles. It is the topological correlate of why systems at thermodynamic equilibrium cannot host self-sustained complex dynamics — rhythm requires the reactive, non-gradient sector.
 
 Three lines remain open. First, the rigorous reduction of the second-order flow in \(16+16\)
 dimensions to the reactive jerk equation; the non-gradient model in §6 is illustrative, not an exact

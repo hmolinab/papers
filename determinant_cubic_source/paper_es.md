@@ -68,8 +68,12 @@ P(\Gamma;\mu,J)=\|\Gamma\|^2+\mu\det\Gamma+\beta\|\Gamma\|^4+b_6\|\Gamma\|^6-\la
 \qquad \beta\ge0,\ b_6\ge0,
 $$
 donde \(\mu\in\mathbb R\) es el parámetro de control y \(J\in M_4(\mathbb R)\) un campo externo. El
-sextico \(b_6\) solo sirve para acotar las ramas globalmente y no interviene en los enunciados
-locales. El potencial sin campo (\(J=0\)) depende únicamente de \(\|\Gamma\|^2\) y \(\det\Gamma\),
+sextico \(b_6\) no interviene en los enunciados locales; su papel es global. Aunque \(\beta\ge0\) ya
+acota \(P\) a orden más bajo, la **corrección de esclavizamiento** del cuártico reducido (Teorema 1.4)
+puede volver el coeficiente efectivo \(a_4^{\mathrm{eff}}\) **negativo** (tridente subcrítico), a lo
+largo del cual la reducción a la variedad central escaparía a infinito; el séxtico \(b_6>0\) es lo que
+**estabiliza globalmente esas ramas subcríticas** cuando el esclavizamiento voltea el signo del
+cuártico. El potencial sin campo (\(J=0\)) depende únicamente de \(\|\Gamma\|^2\) y \(\det\Gamma\),
 ambos invariantes bajo la acción ortogonal bilateral \(\Gamma\mapsto U\Gamma V^\top\) con
 \(U,V\in O(4)\) (la misma de la descomposición en valores singulares que reaparece en §4). Esta alta
 isotropía hace que sus degeneraciones aparezcan en familias y no de forma aislada. Un campo \(J\)
@@ -191,12 +195,15 @@ trivial es el cuártico y se obtiene el tridente. \(\square\)
 
 ## 5. Centros organizadores de codimensión 2
 
-**Teorema 2 (cúspide, \(A_3\)).** *El punto \(a_2=a_3=0\) con \(a_4^{\mathrm{eff}}\neq0\) es una
-cúspide, el despliegue universal del tridente (Thom 1975; Golubitsky–Schaeffer 1985). En este sistema \(a_3\) cambia de signo, porque las
-contribuciones del determinante y de la norma compiten, de modo que el punto existe; añadir \(a_2=0\)
-lo fija. Una familia de dos parámetros \((\mu,s)\) —control y amplitud del campo— lo despliega
-versalmente, con \(\partial(a_1,a_2)/\partial(\mu,s)\) no singular. La ventana de tres equilibrios
-tiene anchura \(\propto(-a_2)^{3/2}\)* (Figura 2).
+**Teorema 2 (cúspide, \(A_3\)).** *Un punto con \(a_2=a_3=0\) y \(a_4^{\mathrm{eff}}\neq0\) es una
+cúspide, el despliegue universal del tridente (Thom 1975; Golubitsky–Schaeffer 1985). Su existencia
+aquí no es un mero «\(a_3\) cambia de signo»: \(a_3(\mu,s)\) es continuo y, como las contribuciones
+del determinante y de la norma compiten, cambia de signo en la hoja de parámetros, así que por el
+teorema del valor intermedio se anula sobre una curva; el segundo mando \(s\) fija \(a_2=0\) en un
+punto de esa curva; allí se verifica \(a_4^{\mathrm{eff}}\neq0\) y la transversalidad
+(\(\partial(a_1,a_2)/\partial(\mu,s)\) no singular) — luego una \(A_3\) versal genuina. Las cuatro
+condiciones se certifican numéricamente (§7), donde la ventana de tres equilibrios se mide con anchura
+\(\propto(-a_2)^{3/2}\)* (Figura 2).
 
 ![**Figura 2.** La cúspide \(A_3\) en el plano de despliegue \((a_1,a_2)\). Dentro de la cuña
 semicúbica \(4a_2^3+27a_1^2\le0\) hay tres equilibrios; fuera, uno. El recuadro muestra la ley
@@ -205,8 +212,11 @@ semicúbica \(4a_2^3+27a_1^2\le0\) hay tres equilibrios; fuera, uno. El recuadro
 **Lema 1 (sin Hopf en el flujo (metric-)gradiente).** *El Jacobiano de \(\dot\Gamma=-\nabla P\) en un
 equilibrio es \(-H_*\), con \(H_*=D^2P\) simétrico; su espectro es real, así que ningún par complejo
 puede cruzar el eje imaginario y no ocurre bifurcación de Hopf. Esto persiste para el flujo
-metric-gradiente \(\dot\Gamma=-G^{-1}\nabla P\) con cualquier \(G\succ0\) simétrico: la linealización
-\(-G^{-1}H_*\) es semejante a la simétrica \(-G^{-1/2}H_*G^{-1/2}\), luego real. En consecuencia,
+metric-gradiente \(\dot\Gamma=-G^{-1}\nabla P\) con cualquier \(G\succ0\) simétrico —**incluso una
+métrica Riemanniana dependiente del estado \(G(\Gamma)\)**, pues en el equilibrio \(\nabla P=0\) el
+término con la derivada de la métrica se anula y la linealización es exactamente
+\(-G(\Gamma_*)^{-1}H_*\), semejante a la simétrica \(-G(\Gamma_*)^{-1/2}H_*G(\Gamma_*)^{-1/2}\), luego
+real. En consecuencia,
 mientras \(G\) es definida positiva el modo blando solo admite bifurcaciones estacionarias; una
 inestabilidad oscilatoria (Hopf) exige romper la forma gradiente —ya sea \(G\) perdiendo su
 positividad, o un término reactivo genuinamente no-gradiente, aquí el sector antisimétrico
@@ -222,6 +232,13 @@ autovalores \(\{0,-\gamma\}\), que en \(\gamma=0\) colapsan a un doble cero con 
 amortiguamiento dependiente del estado \(\gamma(\xi)=\gamma_0+\gamma_1\xi\), del punto BT emanan las
 curvas de saddle-node (el pliegue), de Hopf (\(\gamma_0=-\gamma_1\xi_*\)) y de homoclínica
 (Bogdanov 1975; Takens 1974).*
+
+*Estatus del Teorema 3.* Es un **argumento de reducción y forma normal** que establece el mecanismo
+del bloque de Jordan y la ecuación BT reducida planar, **no aún** una verificación BT completa: las dos
+condiciones de no degeneración de Kuznetsov (los coeficientes cuadráticos \(a_{20},b_{11}\neq0\) de la
+forma normal planar y la regularidad del mapa de parámetros) las exhibe la ecuación reducida pero no
+se certifican de forma independiente para el flujo \(16{+}16\)-dim. Por eso lo enunciamos al nivel de
+la ecuación reducida del modo blando; el BT no degenerado completo en el flujo ambiente queda abierto.
 
 La rama de saddle-node de Bogdanov–Takens coincide con el pliegue del Teorema 1, de manera que ambos
 centros de codimensión 2 son degeneraciones del mismo modo blando. El punto BT marca la frontera entre
@@ -254,11 +271,16 @@ del sector reactivo \(\Gamma_a\), que rompe la simetría del Hessiano e introduc
 (\(\operatorname{Im}\lambda\neq0\)). Esa parte antisimétrica, no-gradiente, aporta además la tercera
 dimensión que Poincaré–Bendixson exige. Acoplándola con un amortiguamiento activo, la no-linealidad
 cúbica inducida por el
-determinante produce una ecuación de jerk con un equilibrio de tipo saddle-focus; integrándola se
-observa un atractor con exponente de Lyapunov positivo (\(\lambda\approx0.055\)) y un ciclo límite que
-termina en una homoclínica de periodo logarítmicamente divergente (Figura 4). La reducción del flujo de
-segundo orden en \(16+16\) dimensiones a esta ecuación de jerk no se demuestra aquí; la evidencia es
-numérica, y la enunciamos como conjetura.
+determinante produce una **ecuación de jerk con un equilibrio de tipo saddle-focus**. El modelo de
+juguete explícito que se integró para la Figura 4 es el jerk cuadrático (tipo Sprott)
+$$\dddot\xi+a\,\ddot\xi-\dot\xi^{\,2}+\xi=0,\qquad a=2.017,$$
+equivalente al sistema de primer orden \(\dot x=y,\ \dot y=z,\ \dot z=-a\,z+y^2-x\); el término
+cuadrático \(\dot\xi^{\,2}\) es la imagen reducida de la no-linealidad del cofactor del determinante.
+Integrándola (RK4) se observa un atractor caótico con exponente de Lyapunov positivo
+(\(\lambda\approx0.055\), coincidente con el valor de Sprott) y un ciclo límite que termina en una
+homoclínica de periodo logarítmicamente divergente (Figura 4). La reducción del flujo de segundo orden
+en \(16+16\) dimensiones a esta ecuación de jerk específica no se demuestra aquí; el modelo de juguete
+se exhibe como la ecuación tras la Figura 4, y la reducción \(16{+}16\to\) jerk se enuncia como conjetura.
 
 **Conjetura 1.** *En la extensión inercial acoplada con la parte antisimétrica del campo, la
 no-linealidad cúbica inducida por el determinante basta para producir una conexión homoclínica a un
@@ -307,7 +329,15 @@ pliegue de tridente; el amortiguamiento \(\gamma\) aporta el segundo parámetro 
 pasar a segundo orden; y la parte no-gradiente aporta la rotación que abre la puerta al caos. El
 determinante interviene como el invariante que genera el cúbico, no como un indicador de estabilidad:
 la estabilidad lineal la fija el espectro del Hessiano simétrico, mientras que \(\det\Gamma\) codifica
-orientación y rango. (Nota de alcance: no se afirma que este Lagrangiano sea *universal* ni privilegiado; es un potencial **general**, uno de una clase amplia para la que el determinante genera el cúbico —Obs. 2.1—. La palabra «universal» se usa aquí solo en el sentido técnico de *despliegue universal* de las formas normales.)
+orientación y rango. (Nota de alcance: no se afirma que este Lagrangiano sea *universal* ni privilegiado; es un potencial **general**, uno de una clase amplia para la que el determinante genera el cúbico —Obs. 2.1—. La palabra «universal» se usa aquí solo en el sentido técnico de *despliegue universal* de las formas normales. El determinante genera el cúbico **dentro de esta clase de potenciales**, no como afirmación sobre flujos matriciales arbitrarios.)
+
+Estos resultados están en **niveles distintos**, y no se presentan como un solo teorema: el pliegue, el tridente y la cúspide (Teoremas 1–2) son resultados de forma normal del flujo gradiente; el Bogdanov–Takens (Teorema 3) es un argumento a nivel de la reducción que exige el levantamiento inercial; y el caos (Conjetura 1) es numérico. La cadena pliegue → cúspide → BT → caos es un hilo organizador a través de la codimensión y el orden, no un único objeto.
+
+**Exponente crítico medible.** Más allá de la topología, el determinante fija un número *medible*: la ventana de tres equilibrios de la cúspide escala como \((-a_2)^{3/2}\), la ley \(3/2\) universal de la catástrofe \(A_3\). Los exponentes críticos son independientes del marco y accesibles en laboratorio, así que esto convierte el papel del determinante de un enunciado topológico en una **herramienta empírica**.
+
+**Dónde aparecen estos flujos.** Los flujos gradiente matriciales reales de este tipo surgen en física aplicada: el flujo del \(Q\)-tensor de Landau–de Gennes en cristales líquidos nemáticos, los tensores de deformación/strain continuos, y los paisajes de pérdida de pequeñas redes neuronales son todos flujos gradiente sobre matrices (simétricas o generales) donde una no-linealidad guiada por un determinante o invariante gobierna el modo blando — escenarios naturales para poner a prueba la dicotomía pliegue/cúspide.
+
+**Lectura termodinámica del Lema 1.** El lema sin Hopf es, bajo la geometría, un enunciado termodinámico: la disipación estricta está *topológicamente obstruida* de producir oscilación sostenida o ciclos límite. Es el correlato topológico de por qué los sistemas en equilibrio termodinámico no pueden albergar dinámica compleja autosostenida — el ritmo exige el sector reactivo, no-gradiente.
 
 Quedan abiertas tres líneas. Primero, la reducción rigurosa del flujo de segundo orden en \(16+16\)
 dimensiones a la ecuación de jerk reactiva; el modelo del sector no-gradiente en §6 es ilustrativo y
