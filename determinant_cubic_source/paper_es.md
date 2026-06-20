@@ -23,7 +23,10 @@ matriz de cofactores, la única no-linealidad anisótropa del campo; es su únic
 blando es ortogonal a \(\Gamma_*\). Clasificamos los centros organizadores accesibles: pliegue y
 tridente en codimensión 1, la cúspide en el sector gradiente y Bogdanov–Takens en codimensión 2,
 cuya existencia está topológicamente obstruida en el límite gradiente y exige levantar el sistema al
-flujo inercial de segundo orden. La homoclínica cierra el retrato de Bogdanov–Takens, y la parte no-gradiente del campo,
+flujo inercial de segundo orden. Un lema de no-Hopf precisa la dicotomía y la hace invariante
+metric-gradiente: mientras gobierna el sector simétrico (disipativo) solo hay bifurcaciones
+estacionarias, y todo régimen oscilatorio está condicionado por el sector reactivo antisimétrico.
+La homoclínica cierra el retrato de Bogdanov–Takens, y la parte no-gradiente del campo,
 responsable de la rotación, sostiene numéricamente un régimen de caos de tipo Shilnikov. Los
 resultados analíticos se complementan con simulaciones que verifican los escalamientos críticos: la
 ley de Kramers, una continuación pseudo-arclength a través del pliegue, la ley \(3/2\) de la cúspide
@@ -199,8 +202,18 @@ tiene anchura \(\propto(-a_2)^{3/2}\)* (Figura 2).
 semicúbica \(4a_2^3+27a_1^2\le0\) hay tres equilibrios; fuera, uno. El recuadro muestra la ley
 \(3/2\).](figs/fig2_cuspide.png)
 
-**Teorema 3 (Bogdanov–Takens).** *En el flujo gradiente esta bifurcación está obstruida: el Jacobiano
-\(-H_*\) es simétrico, luego diagonalizable, y un autovalor doble cero tendría multiplicidad
+**Lema 1 (sin Hopf en el flujo (metric-)gradiente).** *El Jacobiano de \(\dot\Gamma=-\nabla P\) en un
+equilibrio es \(-H_*\), con \(H_*=D^2P\) simétrico; su espectro es real, así que ningún par complejo
+puede cruzar el eje imaginario y no ocurre bifurcación de Hopf. Esto persiste para el flujo
+metric-gradiente \(\dot\Gamma=-G^{-1}\nabla P\) con cualquier \(G\succ0\) simétrico: la linealización
+\(-G^{-1}H_*\) es semejante a la simétrica \(-G^{-1/2}H_*G^{-1/2}\), luego real. En consecuencia,
+mientras \(G\) es definida positiva el modo blando solo admite bifurcaciones estacionarias; una
+inestabilidad oscilatoria (Hopf) exige romper la forma gradiente —ya sea \(G\) perdiendo su
+positividad, o un término reactivo genuinamente no-gradiente, aquí el sector antisimétrico
+\(\Gamma_a\).*
+
+**Teorema 3 (Bogdanov–Takens).** *En el flujo gradiente esta bifurcación está obstruida (Lema 1): el
+Jacobiano \(-H_*\) es simétrico, luego diagonalizable, y un autovalor doble cero tendría multiplicidad
 geométrica 2 en lugar de un bloque de Jordan. Liberar el bloque de Jordan exige un campo no-gradiente;
 dentro de la fenomenología disipativa que estudiamos, esto se consigue levantando el sistema a la
 ecuación de segundo orden. Allí la linealización
@@ -213,6 +226,14 @@ curvas de saddle-node (el pliegue), de Hopf (\(\gamma_0=-\gamma_1\xi_*\)) y de h
 La rama de saddle-node de Bogdanov–Takens coincide con el pliegue del Teorema 1, de manera que ambos
 centros de codimensión 2 son degeneraciones del mismo modo blando. El punto BT marca la frontera entre
 el régimen sobreamortiguado —gradiente, con pliegue y cúspide— y el oscilatorio (Figura 3).
+
+**Observación (clasificación espectral).** *El Lema 1 organiza el catálogo por el espectro de la
+degeneración. Un autovalor real simple que cruza cero da una bifurcación **estacionaria** —pliegue,
+tridente o cúspide, con el cúbico originado por el determinante (Teoremas 1–2). Un régimen
+**oscilatorio** —Hopf, Bogdanov–Takens, Shilnikov— exige un par complejo cruzando el eje, lo cual por
+el Lema 1 es imposible mientras gobierna en solitario el sector simétrico (disipativo) y reclama el
+sector no-gradiente \(\Gamma_a\) (§6). El tipo de bifurcación se lee, pues, del espectro crítico: real
+\(\Rightarrow\) estacionaria; complejo \(\Rightarrow\) oscilatoria, con \(\Gamma_a\) como compuerta.*
 
 ![**Figura 3.** Despliegue de Bogdanov–Takens en \((\mu-\mu_f,\gamma_0)\): del punto BT emanan la
 curva de saddle-node (el pliegue), la de Hopf y la homoclínica; el ciclo límite vive entre la de Hopf

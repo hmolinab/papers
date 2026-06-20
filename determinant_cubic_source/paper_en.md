@@ -22,7 +22,10 @@ determinant through its cofactor matrix, the only anisotropic nonlinearity of th
 sole source of the cubic when the soft mode is orthogonal to \(\Gamma_*\). We classify the accessible
 organizing centers: fold and pitchfork in codimension 1, the cusp in the gradient sector, and
 Bogdanov–Takens in codimension 2, whose existence is topologically obstructed in the gradient limit
-and requires lifting the system to the second-order (inertial) flow. The homoclinic orbit closes the
+and requires lifting the system to the second-order (inertial) flow. A no-Hopf lemma makes the
+dichotomy precise and metric-gradient invariant: while the symmetric (dissipative) sector governs,
+only steady bifurcations occur, and every oscillatory regime is gated by the antisymmetric reactive
+sector. The homoclinic orbit closes the
 Bogdanov–Takens portrait, and the non-gradient part of the field, which carries the rotation,
 numerically sustains a Shilnikov-type chaotic regime. The analytical results are accompanied by
 simulations that verify the critical scalings: the Kramers law, a pseudo-arclength continuation
@@ -197,8 +200,17 @@ width \(\propto(-a_2)^{3/2}\)* (Figure 2).
 \(4a_2^3+27a_1^2\le0\) there are three equilibria; outside, one. The inset shows the \(3/2\)
 law.](figs_en/fig2_cusp.png)
 
-**Theorem 3 (Bogdanov–Takens).** *In the gradient flow this bifurcation is obstructed: the Jacobian
-\(-H_*\) is symmetric, hence diagonalizable, and a double zero eigenvalue would have geometric
+**Lemma 1 (no Hopf in the (metric-)gradient flow).** *The Jacobian of \(\dot\Gamma=-\nabla P\) at an
+equilibrium is \(-H_*\), with \(H_*=D^2P\) symmetric; its spectrum is real, so no complex pair can
+cross the imaginary axis and no Hopf bifurcation occurs. This persists for the metric-gradient flow
+\(\dot\Gamma=-G^{-1}\nabla P\) with any \(G\succ0\) symmetric: the linearization \(-G^{-1}H_*\) is
+similar to the symmetric \(-G^{-1/2}H_*G^{-1/2}\), hence real. Consequently, while \(G\) is positive
+definite the soft mode admits only steady bifurcations; an oscillatory (Hopf) instability requires
+breaking the gradient form — either \(G\) losing positive definiteness or a genuinely non-gradient
+reactive term, supplied here by the antisymmetric sector \(\Gamma_a\).*
+
+**Theorem 3 (Bogdanov–Takens).** *In the gradient flow this bifurcation is obstructed (Lemma 1): the
+Jacobian \(-H_*\) is symmetric, hence diagonalizable, and a double zero eigenvalue would have geometric
 multiplicity 2 rather than a Jordan block. Releasing the Jordan block requires a non-gradient field;
 within the dissipative phenomenology we study, this is achieved by lifting the system to the
 second-order equation. There the linearization
@@ -212,6 +224,14 @@ Takens 1974).*
 The saddle-node branch of Bogdanov–Takens coincides with the fold of Theorem 1, so both codimension-2
 centers are degeneracies of the same soft mode. The BT point marks the boundary between the overdamped
 regime —gradient, with fold and cusp— and the oscillatory one (Figure 3).
+
+**Remark (spectral classification).** *Lemma 1 organizes the catalogue by the spectrum of the
+degeneration. A simple real eigenvalue crossing zero gives a **steady** bifurcation —fold, pitchfork,
+or cusp, with the cubic sourced by the determinant (Theorems 1–2). An **oscillatory** regime —Hopf,
+Bogdanov–Takens, Shilnikov— requires a complex pair crossing the axis, which by Lemma 1 is impossible
+while the symmetric (dissipative) sector governs alone and demands the non-gradient sector
+\(\Gamma_a\) (§6). The type of bifurcation is thus read off the critical spectrum: real \(\Rightarrow\)
+steady; complex \(\Rightarrow\) oscillatory, gated by \(\Gamma_a\).*
 
 ![**Figure 3.** Bogdanov–Takens unfolding in \((\mu-\mu_f,\gamma_0)\): the saddle-node (the fold),
 Hopf and homoclinic curves emanate from BT; the limit cycle lives between the Hopf and homoclinic
