@@ -220,22 +220,26 @@ reactive term, supplied here by the antisymmetric sector \(\Gamma_a\).*
 
 **Theorem 3 (Bogdanov–Takens).** *In the gradient flow this bifurcation is obstructed (Lemma 1): the
 Jacobian \(-H_*\) is symmetric, hence diagonalizable, and a double zero eigenvalue would have geometric
-multiplicity 2 rather than a Jordan block. Releasing the Jordan block requires a non-gradient field;
-within the dissipative phenomenology we study, this is achieved by lifting the system to the
-second-order equation. There the linearization
+multiplicity 2 rather than a Jordan block. Releasing the Jordan block requires enlarging the phase
+space beyond first-order gradient dynamics; within the dissipative phenomenology we study, this is
+achieved by lifting the system to the second-order (inertial) equation, whose companion
+linearization is non-normal even though the underlying field remains mechanical. There the
+linearization
 \(\big(\begin{smallmatrix}0&I\\-H_*&-\gamma I\end{smallmatrix}\big)\) has, on the soft mode,
 eigenvalues \(\{0,-\gamma\}\), which at \(\gamma=0\) collapse to a double zero with a Jordan block.
 The reduction is \(\ddot\xi+\gamma(\xi)\dot\xi+(a_1+c\,\xi^2)=0\) with \(c=\tfrac12 a_3\); with
 state-dependent damping \(\gamma(\xi)=\gamma_0+\gamma_1\xi\), the saddle-node (the fold), Hopf
-(\(\gamma_0=-\gamma_1\xi_*\)) and homoclinic curves emanate from the BT point (Bogdanov 1975;
-Takens 1974).*
+(\(\gamma_0=-\gamma_1\xi_*\)) and homoclinic curves emanate, in the reduced equation, from the BT
+point (Bogdanov 1975; Takens 1974).*
 
 *Status of Theorem 3.* This is a **reduction-and-normal-form argument** establishing the Jordan-block
 mechanism and the planar BT reduced equation, not yet a full BT verification: the two Kuznetsov
 non-degeneracy conditions (the quadratic coefficients \(a_{20},b_{11}\neq0\) of the planar normal form
-and the regularity of the parameter map) are exhibited by the reduced equation but not independently
-certified for the \(16{+}16\)-dim flow. We therefore state it at the level of the reduced soft-mode
-equation; the full non-degenerate BT in the ambient flow is left open.
+and the regularity of the parameter map) are exhibited by the reduced equation, and while
+center-manifold theory guarantees their persistence in the full flow once the reduction is exact, the
+explicit algebraic computation of the 32-dim coefficients remains analytically prohibitive — hence
+our focus on the reduced planar equation. The full non-degenerate BT in the ambient flow is left open
+at the level of an explicit coefficient certificate.
 
 The saddle-node branch of Bogdanov–Takens coincides with the fold of Theorem 1, so both codimension-2
 centers are degeneracies of the same soft mode. The BT point marks the boundary between the overdamped
@@ -269,9 +273,11 @@ reactive sector \(\Gamma_a\), which breaks the symmetry of the Hessian and intro
 dimension that Poincaré–Bendixson requires. Coupling it with active damping, the cubic nonlinearity
 induced by the determinant produces a **jerk equation with a saddle-focus equilibrium**. The
 explicit toy model integrated for Figure 4 is the quadratic (Sprott-type) jerk
-$$\dddot\xi+a\,\ddot\xi-\dot\xi^{\,2}+\xi=0,\qquad a=2.017,$$
+$$\dddot\xi+a\,\ddot\xi-(\dot\xi)^2+\xi=0,\qquad a=2.017,$$
 equivalently the first-order system \(\dot x=y,\ \dot y=z,\ \dot z=-a\,z+y^2-x\); the quadratic term
-\(\dot\xi^{\,2}\) is the reduced image of the determinant's cofactor nonlinearity. Integrating it
+\((\dot\xi)^2\) can be read as the reduced image of the determinant's cofactor nonlinearity
+(physically, a nonlinear velocity-squared drag that brakes the escape and lets the attractor fold
+onto itself). Integrating it
 (RK4) one observes a chaotic attractor with positive Lyapunov exponent (\(\lambda\approx0.055\),
 matching the Sprott value) and a limit cycle that ends in a homoclinic with logarithmically divergent
 period (Figure 4). The reduction of the second-order flow in \(16+16\) dimensions to this specific
@@ -331,7 +337,7 @@ These results sit at **distinct levels**, and we do not present them as a single
 
 **Measurable critical exponent.** Beyond topology, the determinant fixes a *measurable* number: the three-equilibrium window of the cusp scales as \((-a_2)^{3/2}\), the universal \(3/2\) law of the \(A_3\) catastrophe. Critical exponents are frame-independent and laboratory-accessible, so this turns the determinant's role from a topological statement into an empirical handle.
 
-**Where these flows appear.** Real-valued matrix gradient flows of this type arise across applied physics: the Landau–de Gennes \(Q\)-tensor flow of nematic liquid crystals, continuum strain/deformation tensors, and the small-scale loss landscapes of neural networks are all gradient flows on symmetric (or general) matrices where a determinant- or invariant-driven nonlinearity governs the soft mode — natural settings to test the fold/cusp dichotomy.
+**Where these flows appear.** Real-valued matrix gradient flows of this type arise across applied physics: the Landau–de Gennes \(Q\)-tensor flow of nematic liquid crystals, continuum strain/deformation tensors, and the small-scale loss landscapes of neural networks are all gradient flows on symmetric (or general) matrices where a determinant- or invariant-driven nonlinearity governs the soft mode — natural settings to test the fold/cusp dichotomy. In adversarial training (GANs) the gradient symmetry is broken natively by the min-max structure, exciting precisely the oscillatory modes gated by \(\Gamma_a\) in Lemma 1 — a discrete instance of the transition from steady to rotational dynamics.
 
 **A thermodynamic reading of Lemma 1.** The no-Hopf lemma is, beneath the geometry, a thermodynamic statement: strict dissipation is *topologically obstructed* from producing sustained oscillation or limit cycles. It is the topological correlate of why systems at thermodynamic equilibrium cannot host self-sustained complex dynamics — rhythm requires the reactive, non-gradient sector.
 

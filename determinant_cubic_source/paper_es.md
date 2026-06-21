@@ -224,21 +224,25 @@ positividad, o un término reactivo genuinamente no-gradiente, aquí el sector a
 
 **Teorema 3 (Bogdanov–Takens).** *En el flujo gradiente esta bifurcación está obstruida (Lema 1): el
 Jacobiano \(-H_*\) es simétrico, luego diagonalizable, y un autovalor doble cero tendría multiplicidad
-geométrica 2 en lugar de un bloque de Jordan. Liberar el bloque de Jordan exige un campo no-gradiente;
-dentro de la fenomenología disipativa que estudiamos, esto se consigue levantando el sistema a la
-ecuación de segundo orden. Allí la linealización
+geométrica 2 en lugar de un bloque de Jordan. Liberar el bloque de Jordan exige agrandar el espacio
+de fases más allá de la dinámica gradiente de primer orden; dentro de la fenomenología disipativa que
+estudiamos, esto se consigue levantando el sistema a la ecuación de segundo orden (inercial), cuya
+linealización compañera es no-normal aunque el campo subyacente siga siendo mecánico. Allí la
+linealización
 \(\big(\begin{smallmatrix}0&I\\-H_*&-\gamma I\end{smallmatrix}\big)\) tiene, en el modo blando,
 autovalores \(\{0,-\gamma\}\), que en \(\gamma=0\) colapsan a un doble cero con bloque de Jordan. La reducción es \(\ddot\xi+\gamma(\xi)\dot\xi+(a_1+c\,\xi^2)=0\) con \(c=\tfrac12 a_3\); con un
-amortiguamiento dependiente del estado \(\gamma(\xi)=\gamma_0+\gamma_1\xi\), del punto BT emanan las
-curvas de saddle-node (el pliegue), de Hopf (\(\gamma_0=-\gamma_1\xi_*\)) y de homoclínica
-(Bogdanov 1975; Takens 1974).*
+amortiguamiento dependiente del estado \(\gamma(\xi)=\gamma_0+\gamma_1\xi\), del punto BT emanan, en
+la ecuación reducida, las curvas de saddle-node (el pliegue), de Hopf (\(\gamma_0=-\gamma_1\xi_*\)) y
+de homoclínica (Bogdanov 1975; Takens 1974).*
 
 *Estatus del Teorema 3.* Es un **argumento de reducción y forma normal** que establece el mecanismo
 del bloque de Jordan y la ecuación BT reducida planar, **no aún** una verificación BT completa: las dos
 condiciones de no degeneración de Kuznetsov (los coeficientes cuadráticos \(a_{20},b_{11}\neq0\) de la
-forma normal planar y la regularidad del mapa de parámetros) las exhibe la ecuación reducida pero no
-se certifican de forma independiente para el flujo \(16{+}16\)-dim. Por eso lo enunciamos al nivel de
-la ecuación reducida del modo blando; el BT no degenerado completo en el flujo ambiente queda abierto.
+forma normal planar y la regularidad del mapa de parámetros) las exhibe la ecuación reducida y, si
+bien la teoría de variedad central garantiza su persistencia en el flujo completo una vez la reducción
+es exacta, el cómputo algebraico explícito de los coeficientes en 32 dimensiones resulta
+analíticamente prohibitivo —de ahí nuestro foco en la ecuación reducida planar. El BT no degenerado
+completo en el flujo ambiente queda abierto al nivel de un certificado explícito de coeficientes.
 
 La rama de saddle-node de Bogdanov–Takens coincide con el pliegue del Teorema 1, de manera que ambos
 centros de codimensión 2 son degeneraciones del mismo modo blando. El punto BT marca la frontera entre
@@ -273,9 +277,11 @@ dimensión que Poincaré–Bendixson exige. Acoplándola con un amortiguamiento 
 cúbica inducida por el
 determinante produce una **ecuación de jerk con un equilibrio de tipo saddle-focus**. El modelo de
 juguete explícito que se integró para la Figura 4 es el jerk cuadrático (tipo Sprott)
-$$\dddot\xi+a\,\ddot\xi-\dot\xi^{\,2}+\xi=0,\qquad a=2.017,$$
+$$\dddot\xi+a\,\ddot\xi-(\dot\xi)^2+\xi=0,\qquad a=2.017,$$
 equivalente al sistema de primer orden \(\dot x=y,\ \dot y=z,\ \dot z=-a\,z+y^2-x\); el término
-cuadrático \(\dot\xi^{\,2}\) es la imagen reducida de la no-linealidad del cofactor del determinante.
+cuadrático \((\dot\xi)^2\) puede leerse como la imagen reducida de la no-linealidad del cofactor del
+determinante (físicamente, un arrastre no lineal proporcional al cuadrado de la velocidad que frena el
+escape y permite que el atractor se pliegue sobre sí mismo).
 Integrándola (RK4) se observa un atractor caótico con exponente de Lyapunov positivo
 (\(\lambda\approx0.055\), coincidente con el valor de Sprott) y un ciclo límite que termina en una
 homoclínica de periodo logarítmicamente divergente (Figura 4). La reducción del flujo de segundo orden
@@ -335,7 +341,7 @@ Estos resultados están en **niveles distintos**, y no se presentan como un solo
 
 **Exponente crítico medible.** Más allá de la topología, el determinante fija un número *medible*: la ventana de tres equilibrios de la cúspide escala como \((-a_2)^{3/2}\), la ley \(3/2\) universal de la catástrofe \(A_3\). Los exponentes críticos son independientes del marco y accesibles en laboratorio, así que esto convierte el papel del determinante de un enunciado topológico en una **herramienta empírica**.
 
-**Dónde aparecen estos flujos.** Los flujos gradiente matriciales reales de este tipo surgen en física aplicada: el flujo del \(Q\)-tensor de Landau–de Gennes en cristales líquidos nemáticos, los tensores de deformación/strain continuos, y los paisajes de pérdida de pequeñas redes neuronales son todos flujos gradiente sobre matrices (simétricas o generales) donde una no-linealidad guiada por un determinante o invariante gobierna el modo blando — escenarios naturales para poner a prueba la dicotomía pliegue/cúspide.
+**Dónde aparecen estos flujos.** Los flujos gradiente matriciales reales de este tipo surgen en física aplicada: el flujo del \(Q\)-tensor de Landau–de Gennes en cristales líquidos nemáticos, los tensores de deformación/strain continuos, y los paisajes de pérdida de pequeñas redes neuronales son todos flujos gradiente sobre matrices (simétricas o generales) donde una no-linealidad guiada por un determinante o invariante gobierna el modo blando — escenarios naturales para poner a prueba la dicotomía pliegue/cúspide. En el entrenamiento adversarial (GANs) la simetría gradiente se rompe de forma nativa por la estructura min-max, excitando precisamente los modos oscilatorios que el Lema 1 atribuye a \(\Gamma_a\) — una instancia discreta de la transición de dinámica estacionaria a rotacional.
 
 **Lectura termodinámica del Lema 1.** El lema sin Hopf es, bajo la geometría, un enunciado termodinámico: la disipación estricta está *topológicamente obstruida* de producir oscilación sostenida o ciclos límite. Es el correlato topológico de por qué los sistemas en equilibrio termodinámico no pueden albergar dinámica compleja autosostenida — el ritmo exige el sector reactivo, no-gradiente.
 
