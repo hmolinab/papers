@@ -3,7 +3,7 @@
 Henry Molina
 Investigador independiente, Bogotá, Colombia
 hmolinab@unal.edu.co
-DOI: 10.5281/zenodo.20752208 (v2)
+DOI: 10.5281/zenodo.20752208 (v3)
 
 Manuscrito autónomo en el lenguaje de los sistemas dinámicos; no requiere ningún marco externo. Versión en
 español; la de envío en inglés está en `paper_en.md`. Los scripts de verificación reproducibles, uno por
