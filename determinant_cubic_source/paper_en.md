@@ -1,3 +1,7 @@
+<!-- NOTA: versión v1 (inglés). La revisión v2 (reencuadre equivariante que cierra la objeción de novedad,
+Lema 1 al frente, aplicación al Q-tensor, material BT/caos separado al documento compañero) está en
+`paper_es.md`. Esta versión inglesa está PENDIENTE de sincronizar a v2 antes de enviar a revista. -->
+
 # The determinant as the source of the cubic term: normal-form reduction in a matrix gradient flow
 
 **Henry Molina**
