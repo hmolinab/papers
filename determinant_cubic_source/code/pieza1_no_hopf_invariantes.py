@@ -36,6 +36,19 @@ G = rng.standard_normal((4,4)); s = np.linalg.svd(G, compute_uv=False)
 print(f"  ‖Γ‖²={np.sum(G*G):.4f} = Σσ²={np.sum(s**2):.4f}; |detΓ|={abs(np.linalg.det(G)):.4f} = Πσ={np.prod(s):.4f}")
 print("  tr(Γ³)=Σλ³ (autovalores), NO función de σ ⇒ fuera del anillo bilateral. ✓")
 
+print("\n"+"="*68); print("(C-bis) Obs 2.2: p₂=tr((ΓᵀΓ)²) NO se anula en V⊥Γ*, pero es ciego a la orientación"); print("="*68)
+def D3(f,G,V,h=2e-4):  # 5-puntos para 3a derivada
+    return (-0.5*f(G-2*h*V)+f(G-h*V)-f(G+h*V)+0.5*f(G+2*h*V))/(-h**3)
+p2=lambda G: np.trace((G.T@G)@(G.T@G)); n4=lambda G: np.sum(G*G)**2; dt=lambda G: np.linalg.det(G)
+mp2=mn4=mdt=0
+for _ in range(400):
+    Gs=rng.standard_normal((4,4))
+    Vv=rng.standard_normal((4,4)); Vv=Vv-np.sum(Vv*Gs)/np.sum(Gs*Gs)*Gs; Vv/=np.linalg.norm(Vv)  # V⊥Γ*
+    mp2=max(mp2,abs(D3(p2,Gs,Vv))); mn4=max(mn4,abs(D3(n4,Gs,Vv))); mdt=max(mdt,abs(D3(dt,Gs,Vv)))
+print(f"  en V⊥Γ*: D³‖Γ‖⁴≈{mn4:.2f} (~0, =24⟨Γ*,V⟩=0); D³p₂≈{mp2:.1f} (NO 0); D³det≈{mdt:.1f} (anisótropo)")
+print("  ⇒ p₂ contribuye cúbico en V⊥Γ* ⇒ por eso NO se incluye en P. p₂ es función de ΓᵀΓ (ciego a")
+print("    orientación); det es el único invariante SENSIBLE a la orientación. (respalda Obs 2.2)")
+
 print("\n"+"="*68); print("(C) Lema 1: metric-gradiente −G⁻¹H tiene espectro real"); print("="*68)
 allreal = True
 for _ in range(2000):
