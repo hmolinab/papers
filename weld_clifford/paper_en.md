@@ -5,9 +5,7 @@ Independent researcher, Bogotá, Colombia
 henrymolina@gmail.com
 
 Self-contained manuscript; requires no external framework beyond standard linear algebra and Clifford algebra
-conventions. The formal working notes and calculation references are in
-`brainstorming/unification/release/fundamentos_gamma_teorema.md`. Numerical verifications referenced in §7 are
-in `code/` (this directory).
+conventions. Numerical verifications referenced in §7 are in `code/` (companion to this file).
 
 ---
 
@@ -52,11 +50,13 @@ source of the cubic term in the soft-mode reduction of the matrix gradient flow.
 
 **Relation to the geometric algebra literature.** The spacetime algebra program (Hestenes 1966, 1986;
 Doran and Lasenby 2003) is the closest antecedent. That program takes Minkowski spacetime as given and
-develops physics in terms of $\mathrm{Cl}_{1,3}$ or $\mathrm{Cl}_{3,0}$ (the two conventions differ in
-signature). The present work inverts the logic: rather than "given Minkowski space, use $\mathrm{Cl}_{3,1}$",
-we derive "from the structure of a dynamical unit, $\mathrm{Cl}_{3,1}$ is the forced algebraic representation."
-The derivation does not compete with the spacetime algebra program; it provides a structural grounding for
-why that program works.
+develops physics in terms of $\mathrm{Cl}_{1,3}$ (one time, three space — Hestenes' convention). The
+signature choice is not merely a convention: $\mathrm{Cl}_{1,3} \cong M_2(\mathbb{H})$ (quaternionic),
+whereas $\mathrm{Cl}_{3,1} \cong M_4(\mathbb{R})$ (real). These are non-isomorphic as real algebras. The
+present derivation forces $\mathrm{Cl}_{3,1}$ — not $\mathrm{Cl}_{1,3}$ — because we require $\Gamma$ to be
+a real matrix (dissipation and gradient flows are real processes); this distinguishes the two conventions at
+the algebraic level. The derivation does not compete with the spacetime algebra program; it identifies which
+real algebra is forced by the structure of any evolving dynamical unit, and explains why that program works.
 
 **Plan.** §2 states the two axioms. §3 derives the four lemmas. §4 states and proves the main theorem. §5
 establishes the three closing propositions. §6 illustrates with two physical limits (Newton and Maxwell). §7
@@ -108,18 +108,24 @@ symmetric/antisymmetric split of that product is a theorem of geometric algebra,
 *Proof.* A2 requires $\mathcal{F} = \mathbf{I} \times \mathbf{R}$ to be a **vector cross product** on
 $\mathbb{R}^d$: a bilinear, antisymmetric map $\mathbb{R}^d \times \mathbb{R}^d \to \mathbb{R}^d$
 satisfying the norm identity $|\mathbf{u} \times \mathbf{v}|^2 = |\mathbf{u}|^2|\mathbf{v}|^2 - (\mathbf{u}\cdot\mathbf{v})^2$.
-By the Eckmann–Hurwitz theorem (Hurwitz 1898; Eckmann 1943), such a product exists if and only if $d+1$ is
-the dimension of a normed division algebra over $\mathbb{R}$. The normed division algebras are $\mathbb{R}$,
-$\mathbb{C}$, $\mathbb{H}$, $\mathbb{O}$ of dimensions 1, 2, 4, 8 (Hurwitz 1898). Excluding $d=1$
-(degenerate: $|\mathbf{u}||\mathbf{v}|\sin\theta = 0$ for $d=1$) and $d=2$ (the cross product maps to a
-scalar, not a vector), the admissible dimensions are:
+By the Eckmann theorem (Eckmann 1943; see also Adams 1960), such a product exists if and only if
+$d \in \{1, 3, 7\}$, equivalently if and only if $d+1$ is the dimension of a normed division algebra over
+$\mathbb{R}$ (Hurwitz 1898): $\mathbb{C}$ ($d=1$), $\mathbb{H}$ ($d=3$), $\mathbb{O}$ ($d=7$).
+The case $d=1$ is degenerate: in $\mathbb{R}^1$ the norm identity forces $|\mathbf{u} \times \mathbf{v}|^2 =
+u^2v^2 - (uv)^2 = 0$, so the cross product is identically zero. Excluding this trivial case, the admissible
+non-degenerate dimensions are:
 - $d = 3$ (quaternionic branch, $\mathbb{H}$): the **space-time branch**
 - $d = 7$ (octonionic branch, $\mathbb{O}$): the **internal/atemporal branch**
 
-*The choice of branch is not free.* The $d = 7$ branch lacks a temporal generator (the octonionic algebra
-has no grade-1 element that squares to $-1$ and commutes with all spatial generators of $G(7)$); it is the
-algebraic structure of the *internal* sector (color symmetry, three generations). The $d = 3$ branch
-admits a temporal extension — Lemma 3 below. The remainder of this paper works the $d=3$ branch. $\square$
+*The choice of branch is not free.* The $d = 3$ branch admits a temporal extension: one can adjoin a fourth
+generator $\partial_\tau$ (Lemma 3) without breaking the cross product structure, because $G(3)$ already
+exhausts the grade-1 space and the fourth direction belongs to a distinct grade. The $d = 7$ branch does not
+admit an analogous temporal extension: the geometric algebra $G(7)$ has all grade-1 elements squaring to
+$+1$ (positive definite base metric), and there is no canonical grade-1 element squaring to $-1$ within
+$G(7)$ itself; a temporal direction would have to be adjoined externally, breaking the octonionic product
+structure (non-associativity of $\mathbb{O}$ precludes the Clifford algebra factorization used in Lemma 4).
+This branch is the algebraic home of the *internal* sector (three generations, $\mathrm{Der}(\mathbb{O}) = G_2$).
+The remainder of this paper works the $d=3$ branch. $\square$
 
 *Corollary 1.1.* "Why exactly three vector attributes" is not a free parametric choice — it is the
 answer to "why is the field a cross product", which is Hurwitz.
@@ -142,15 +148,24 @@ direction is provided by the equation of motion.*
 
 *Proof.* An ODU evolves; its configuration satisfies a second-order equation of motion (EOM):
 $$\ddot\Gamma + \gamma\dot\Gamma + \nabla P(\Gamma) = N(\Gamma)$$
-where $\gamma > 0$ is a constitutive damping parameter and $P(\Gamma)$ is the structural potential. A real
-$4\times4$ matrix algebra requires four generators. The three vectors $\{\mathbf{A}, \mathbf{I}, \mathbf{R}\}$
-provide three spatial generators. A fourth generator is needed.
+where $\gamma > 0$ is a constitutive damping parameter and $P(\Gamma)$ is the structural potential. (The
+EOM is second-order because the ODU has both a configuration and a rate of change as independent degrees of
+freedom; first-order equations would conflate the two. The gradient-flow term $\nabla P$ is required for
+dissipation to be consistent with Lyapunov stability, and the wave term $\ddot\Gamma$ is required for
+oscillatory behavior — both are structural requirements, not additional postulates.)
 
-This fourth generator is *not* an attribute: (i) three linearly independent vectors cannot span a
-four-dimensional space; (ii) $S$ is grade-0 (scalar), not grade-1 (vector); (iii) promoting one of
-$\{\mathbf{A}, \mathbf{I}, \mathbf{R}\}$ to the temporal role breaks the attribute symmetry and
-miscategorizes it. The fourth direction is provided by the dynamics: $\partial_\tau$, the evolution
-operator of the EOM. The ODU has a time axis because it evolves — not because spacetime is postulated. $\square$
+Lemma 2 establishes that the spatial attribute space is generated by three grade-1 vectors $\{\mathbf{A},
+\mathbf{I}, \mathbf{R}\}$ spanning $\mathbb{R}^3$. This is a 3-dimensional space. However, the EOM contains
+$\partial_\tau$, a differentiation operator that is not a spatial attribute — it acts on the temporal
+argument $\tau$ of $\Gamma(\tau, \mathbf{x})$. This operator is distinct from the spatial generators: (i)
+it cannot be expressed as a linear combination of $\mathbf{A}, \mathbf{I}, \mathbf{R}$; (ii) $S$ is
+grade-0 (scalar), not grade-1; (iii) promoting one spatial attribute to the temporal role would miscategorize
+it and break the cross product (Lemma 1). Therefore $\partial_\tau$ is a genuinely fourth independent
+direction. Together $\{\mathbf{A}, \mathbf{I}, \mathbf{R}, \partial_\tau\}$ span a 4-dimensional vector
+space $V^4$. The Clifford algebra $\mathrm{Cl}(V^4, q)$ of any 4-dimensional space has dimension $2^4 = 16$;
+its smallest faithful real matrix representation is $4\times4$ (this follows from Bott periodicity, once the
+signature $q$ of $V^4$ is fixed by Lemma 4). The ODU has a time axis because it evolves — not because
+spacetime is postulated. $\square$
 
 ### Lemma 4 (Lorentzian signature from the wave operator)
 
@@ -260,11 +275,13 @@ Any physical metric must be invariant under this action. The grade decomposition
 $\Lambda^0 \oplus \Lambda^1 \oplus \Lambda^2 \oplus \Lambda^3 \oplus \Lambda^4$ of $\mathrm{Cl}_{3,1}$
 consists of pairwise non-isomorphic irreducible representations of $\mathrm{Spin}(3,1)$. By Schur's lemma,
 any $\mathrm{Spin}(3,1)$-invariant bilinear form is proportional to $\mathrm{Tr}(A^\top B)$ on each
-grade-block. The submultiplicativity constraint ($\|\Gamma\| \leq \|\Gamma_s\|\|\Gamma_a\|$, required for
-$P(\Gamma) = \|\Gamma\|^2$ to be a sensible potential) forces equal scaling across all grades. The
+grade-block, with a possibly different constant on each grade. The submultiplicativity constraint —
+$\|\Gamma\Gamma'\| \leq \|\Gamma\|\|\Gamma'\|$ for all $\Gamma, \Gamma' \in \mathrm{Cl}_{3,1}$, required for
+$P(\Gamma) = \|\Gamma\|^2$ to be compatible with the algebra product — forces equal scaling across all
+grades (a different scale per grade would violate submultiplicativity for mixed-grade products). The
 result is Frobenius, uniquely. $\square$
 
-*Extension to $\mathrm{Cl}_{4,1}$.* The UoC spacetime object lives in $\mathrm{Cl}_{4,1} \cong M_4(\mathbb{C})$
+*Extension to $\mathrm{Cl}_{4,1}$.* The spacetime configuration in the GSF framework lives in $\mathrm{Cl}_{4,1} \cong M_4(\mathbb{C})$
 (Bott periodicity: $p-q = 3$). The same argument applies with the Clifford reverse replaced by the Hermitian
 conjugate: $\langle A, B\rangle = \tfrac{1}{4}\mathrm{Tr}(A^\dagger B)$, giving the Hilbert-Schmidt norm
 $\|\Gamma\|^2 = \mathrm{Tr}(\Gamma^\dagger\Gamma)$, real and non-negative. P3 holds without modification.
@@ -314,7 +331,7 @@ The following steps in the derivation are numerically confirmed; scripts are in 
 | $\{\gamma_\mu, \gamma_\nu\}/2 = \eta_{\mu\nu}$ in real $4\times4$ rep | `verify_cl31.py` | $< 10^{-14}$ |
 | $\gamma_0^2 = -I$, $\gamma_i^2 = +I$ | `verify_cl31.py` | $< 10^{-14}$ |
 | $\langle A, B\rangle_\mathrm{Cl} = \mathrm{Tr}(A^\top B)/4$ on grade-1 elements | `verify_clifford_metric.py` | $< 10^{-14}$ |
-| Frobenius submultiplicativity: $\|\Gamma\|_F \leq \|\Gamma_s\|_F\|\Gamma_a\|_F$ with equality at $\Gamma_a = 0$ | `verify_frobenius.py` | confirmed, $10^5$ samples |
+| Frobenius submultiplicativity: $\|\Gamma\Gamma'\|_F \leq \|\Gamma\|_F\|\Gamma'\|_F$ (0 violations); Pythagorean: $\|\Gamma\|^2 = \|\Gamma_s\|^2 + \|\Gamma_a\|^2$ | `verify_frobenius.py` | $0$ violations; error $< 10^{-13}$ |
 | $\det\Gamma$ as invariant under $SO(3,1)$ conjugation | `verify_det_invariance.py` | $< 10^{-12}$ |
 
 ---
@@ -336,13 +353,14 @@ a theorem by showing it is the *only* Clifford algebra consistent with A1 and A2
 
 ### 8.2 The octonionic branch
 
-Lemma 1 identifies a second branch: $d = 7$ (octonions). The $d = 7$ branch has no temporal generator
-(the octonionic algebra $\mathbb{O}$ does not admit a grade-1 element squaring to $-1$ that is central
-to the grade-1 subspace in $G(7)$). This branch is the algebraic home of the *internal* structure of
-the ODU: color symmetry SU(3) = Der($\mathbb{O}$), three generations, and the Jordan algebra
-$h_3(\mathbb{O})$. The two branches ($d=3$ with time, $d=7$ without) are orthogonal: the temporal
-generator of the $d=3$ branch does not act on the $d=7$ sector. This may explain why quantum numbers
-(internal structure) appear to be independent of spacetime dynamics.
+Lemma 1 identifies a second branch: $d = 7$ (octonions). As argued in Lemma 1, this branch does not
+admit a canonical temporal extension compatible with the octonionic product structure. It is the algebraic
+home of the *internal* structure of the ODU: the derivation algebra $\mathrm{Der}(\mathbb{O}) = G_2$
+(with $\mathrm{SU}(3) \subset G_2$), three generations encoded in the exceptional Jordan algebra
+$h_3(\mathbb{O})$, and color symmetry. The two branches ($d=3$ with time, $d=7$ without) are algebraically
+orthogonal: the temporal generator of the $d=3$ branch does not act on the $d=7$ sector. This structural
+orthogonality may explain why internal quantum numbers appear to be independent of spacetime dynamics, but
+the connection remains conjectural and is open for future work.
 
 ### 8.3 Honest scope
 
@@ -402,9 +420,6 @@ Doran, C. and Lasenby, A. (2003). *Geometric Algebra for Physicists*. Cambridge 
 
 Eckmann, B. (1943). Stetige Lösungen linearer Gleichungssysteme. *Commentarii Mathematici Helvetici*,
 15(1), 318–339.
-
-Golubitsky, M., Stewart, I., and Schaeffer, D. G. (1988). *Singularities and Groups in Bifurcation Theory,
-Vol. II*. Springer.
 
 Hestenes, D. (1966). *Space-Time Algebra*. Gordon and Breach.
 
