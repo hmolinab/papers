@@ -80,9 +80,11 @@ generados por las sumas de potencias $p_k=\operatorname{tr}((\Gamma^\top\Gamma)^
 grado par y funciones de $\Gamma^\top\Gamma$, y por el determinante $\det\Gamma=\pm\prod_i\sigma_i$, con
 $\det^2$ ya expresable en los $p_k$. El determinante es así el único generador que no es función de
 $\Gamma^\top\Gamma$; es el invariante sensible a la orientación. El candidato ingenuo a cúbico,
-$\operatorname{tr}\Gamma^3=\sum_i\lambda_i^3$ (potencias de los autovalores), no es función de los valores
-singulares y por tanto no es $G$-invariante; queda fuera del anillo bilateral. Solo bajo la subsimetría de
-conjugación $U=V$ sería invariante, que es el caso de los tensores simétricos (§7).
+$\operatorname{tr}\Gamma^3=\sum_i\lambda_i^3$ (potencias de los autovalores), no es $G$-invariante: bajo
+$(U,V)\in G$, $\operatorname{tr}(U\Gamma V^\top)^3=\operatorname{tr}(U\Gamma(V^\top U)\Gamma(V^\top U)\Gamma V^\top)$,
+que depende de $V^\top U$ y se reduce a $\operatorname{tr}\Gamma^3$ solo cuando $V=U$. Queda fuera del anillo
+bilateral. Solo bajo la subsimetría de conjugación $U=V$ sería invariante, que es el caso de los tensores
+simétricos (§7).
 
 La simetría continua haría que las degeneraciones aparecieran en órbitas de $G$ y no aisladas. El término lineal
 $-\langle J,\Gamma\rangle$ rompe $G$. Genéricamente lo rompe por completo: intersecta transversalmente las
@@ -138,8 +140,10 @@ $h=O(\xi^2,\xi\tilde\mu)$, sobre la cual el flujo es gradiente, $\dot\xi=-\parti
 2. si una isotropía $\mathbb Z_2$ fuerza $a_3=0$, la forma reducida es el tridente
    $\dot\xi=-a_2'\xi-\tfrac16 a_4^{\mathrm{eff}}\xi^3$;
 3. $a_3=\mu_*\,D^3\!\det(\Gamma_*)[V,V,V]+24\beta\langle\Gamma_*,V\rangle$; el segundo término se anula sobre el
-   estrato $V\perp\Gamma_*$, donde el determinante es la única fuente del cúbico dentro de $P$. La contribución
-   del determinante es, además, la única sensible a la orientación (Obs. 2.2);
+   estrato $V\perp\Gamma_*$ (el conjunto de equilibrios $\Gamma_*$ ortogonales a su modo blando $V$ en el
+   producto interno de Frobenius, $\langle V,\Gamma_*\rangle=\operatorname{tr}(V^\top\Gamma_*)=0$), donde el
+   determinante es la única fuente del cúbico dentro de $P$. La contribución del determinante es, además, la
+   única sensible a la orientación (Obs. 2.2);
 4. $a_4^{\mathrm{eff}}=D^4P[V^{\otimes4}]-3\,\langle D^3P[V,V],(H_*|_{V^\perp})^{-1}D^3P[V,V]\rangle$; su signo lo
    fija el espectro de $H_*|_{V^\perp}$.
 
@@ -196,13 +200,17 @@ tres equilibrios; fuera, uno. El recuadro muestra la ley $3/2$.](figs/fig2_cuspi
 
 ## 6. Un lema sin Hopf
 
-Lema 1 (sin Hopf en el flujo metric-gradiente). En un equilibrio, el Jacobiano de $\dot\Gamma=-G^{-1}\nabla P$,
-para cualquier métrica $G\succ0$ simétrica, incluida una métrica Riemanniana dependiente del estado $G(\Gamma)$
-(en $\nabla P=0$ el término con la derivada de la métrica se anula), es semejante a la matriz simétrica
-$-G_*^{-1/2}H_*G_*^{-1/2}$, luego tiene espectro real. Ningún par complejo cruza el eje imaginario y no ocurre
+Lema 1 (sin Hopf en el flujo metric-gradiente). En un equilibrio $\Gamma_*$, el Jacobiano de
+$\dot\Gamma=-G^{-1}\nabla P$, para cualquier métrica simétrica definida positiva $G\succ0$ (incluida una
+métrica Riemanniana dependiente del estado $G(\Gamma)$; en $\nabla P(\Gamma_*)=0$ el término con la derivada
+de la métrica se anula), tiene espectro real. Ningún par complejo cruza el eje imaginario y no ocurre
 bifurcación de Hopf: mientras la dinámica es metric-gradiente, el modo blando solo admite bifurcaciones
-estacionarias (pliegue, tridente, cúspide). Una inestabilidad oscilatoria exige romper la forma gradiente: que
-$G$ pierda positividad, o un término reactivo no-gradiente.
+estacionarias (pliegue, tridente, cúspide). Una inestabilidad oscilatoria exige romper la forma gradiente:
+que $G$ pierda positividad, o un término reactivo no-gradiente.
+
+*Demostración.* El Jacobiano en $\Gamma_*$ es $J=-G_*^{-1}H_*$, con $G_*=G(\Gamma_*)\succ0$ y $H_*=D^2P(\Gamma_*)\in\mathrm{Sim}$. Escribiendo
+$J=G_*^{-1/2}\bigl(-G_*^{-1/2}H_*G_*^{-1/2}\bigr)G_*^{1/2}$,
+el factor interior es simétrico, luego tiene espectro real; la semejanza preserva el espectro. Por tanto $\sigma(J)\subset\mathbb R$ para todo $G_*\succ0$ y $H_*\in\mathrm{Sim}$. $\square$
 
 El lema organiza el catálogo por el espectro de la degeneración. Un autovalor real que cruza cero da una
 bifurcación estacionaria, con cúbico originado por el determinante (Teoremas 1–2). Un régimen oscilatorio exige
@@ -210,8 +218,10 @@ un par complejo cruzando el eje, imposible en el sector gradiente. El tipo se le
 
 El lema admite una lectura termodinámica: la disipación estricta, como flujo gradiente con métrica positiva,
 está obstruida de producir oscilación sostenida o ciclos límite. Es el correlato dinámico de por qué un sistema
-en relajación monótona no alberga ritmo autosostenido. A diferencia de los Teoremas 1–2, el lema no depende del
-potencial particular ni de la dimensión.
+en relajación monótona no alberga ritmo autosostenido. En el marco de Onsager (1931), el sector puramente
+disipativo (matriz de Onsager simétrica) no admite corrientes oscilatorias; las inestabilidades oscilatorias
+requieren la contribución reactiva antisimétrica, exactamente como el Lema 1 requiere un término no-gradiente.
+A diferencia de los Teoremas 1–2, el lema no depende del potencial particular ni de la dimensión.
 
 ---
 
@@ -303,3 +313,5 @@ Lema 1), con su certificado de coeficientes en $16+16$ dimensiones abierto; la f
 10. P. Hänggi, P. Talkner y M. Borkovec, *Reaction-rate theory: fifty years after Kramers*, Rev. Mod. Phys. 62 (1990) 251–341.
 11. E. J. Doedel, *AUTO: a program for the automatic bifurcation analysis of autonomous systems*, Congr. Numer. 30 (1981) 265–284.
 12. G. Benettin, L. Galgani, A. Giorgilli y J.-M. Strelcyn, *Lyapunov characteristic exponents for smooth dynamical systems*, Meccanica 15 (1980) 9–30.
+13. L. Onsager, *Reciprocal relations in irreversible processes I–II*, Phys. Rev. 37 (1931) 405–426; 38 (1931) 2265–2279.
+14. L. D. Landau y E. M. Lifshitz, *Física estadística*, Parte 1, 3.ª ed., Reverté, 1980, §§143–147 (teoría de transiciones de fase; término cúbico y transiciones de primer orden).
