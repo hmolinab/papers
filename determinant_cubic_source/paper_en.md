@@ -77,9 +77,11 @@ by the power sums $p_k=\operatorname{tr}((\Gamma^\top\Gamma)^k)=\sum_i\sigma_i^{
 functions of $\Gamma^\top\Gamma$, and by the determinant $\det\Gamma=\pm\prod_i\sigma_i$, with $\det^2$ already
 expressible in the $p_k$. The determinant is thus the only generator that is not a function of
 $\Gamma^\top\Gamma$; it is the orientation-sensitive invariant. The naive candidate for a cubic,
-$\operatorname{tr}\Gamma^3=\sum_i\lambda_i^3$ (powers of the eigenvalues), is not a function of the singular
-values and is therefore not $G$-invariant; it lies outside the bilateral ring. Only under the conjugation
-subsymmetry $U=V$ would it be invariant, which is the case of symmetric tensors (§7).
+$\operatorname{tr}\Gamma^3=\sum_i\lambda_i^3$ (powers of the eigenvalues), is not $G$-invariant: under
+$(U,V)\in G$, $\operatorname{tr}(U\Gamma V^\top)^3=\operatorname{tr}(U\Gamma(V^\top U)\Gamma(V^\top U)\Gamma V^\top)$,
+which depends on $V^\top U$ and reduces to $\operatorname{tr}\Gamma^3$ only when $V=U$. It lies outside the
+bilateral ring. Only under the conjugation subsymmetry $U=V$ would it be invariant, which is the case of
+symmetric tensors (§7).
 
 The continuous symmetry would make the degeneracies appear in $G$-orbits rather than in isolation. The linear
 term $-\langle J,\Gamma\rangle$ breaks $G$. Generically it breaks it completely: it intersects the $G$-orbits
@@ -134,7 +136,9 @@ $h=O(\xi^2,\xi\tilde\mu)$, on which the flow is gradient, $\dot\xi=-\partial_\xi
 2. if a $\mathbb Z_2$ isotropy forces $a_3=0$, the reduced form is the pitchfork
    $\dot\xi=-a_2'\xi-\tfrac16 a_4^{\mathrm{eff}}\xi^3$;
 3. $a_3=\mu_*\,D^3\!\det(\Gamma_*)[V,V,V]+24\beta\langle\Gamma_*,V\rangle$; the second term vanishes on the
-   stratum $V\perp\Gamma_*$, where the determinant is the only source of the cubic within $P$. The determinant's
+   stratum $V\perp\Gamma_*$ (the set of equilibria $\Gamma_*$ orthogonal to their soft mode $V$ in the
+   Frobenius inner product, $\langle V,\Gamma_*\rangle=\operatorname{tr}(V^\top\Gamma_*)=0$), where the
+   determinant is the only source of the cubic within $P$. The determinant's
    contribution is, moreover, the only orientation-sensitive one (Remark 2.2);
 4. $a_4^{\mathrm{eff}}=D^4P[V^{\otimes4}]-3\,\langle D^3P[V,V],(H_*|_{V^\perp})^{-1}D^3P[V,V]\rangle$; its sign is
    fixed by the spectrum of $H_*|_{V^\perp}$.
@@ -193,13 +197,18 @@ three equilibria; outside, one. The inset shows the $3/2$ law.](figs/fig2_cuspid
 
 ## 6. A no-Hopf lemma
 
-Lemma 1 (no Hopf in the metric-gradient flow). At an equilibrium, the Jacobian of $\dot\Gamma=-G^{-1}\nabla P$,
-for any symmetric metric $G\succ0$, including a state-dependent Riemannian metric $G(\Gamma)$ (at $\nabla P=0$
-the term with the derivative of the metric vanishes), is similar to the symmetric matrix
-$-G_*^{-1/2}H_*G_*^{-1/2}$, hence has real spectrum. No complex pair crosses the imaginary axis and no Hopf
-bifurcation occurs: while the dynamics is metric-gradient, the soft mode admits only stationary bifurcations
-(fold, pitchfork, cusp). An oscillatory instability requires breaking the gradient form: either $G$ losing
+Lemma 1 (no Hopf in the metric-gradient flow). At an equilibrium $\Gamma_*$, the Jacobian of
+$\dot\Gamma=-G^{-1}\nabla P$, for any symmetric positive-definite metric $G\succ0$ (including a
+state-dependent Riemannian metric $G(\Gamma)$; at $\nabla P(\Gamma_*)=0$ the term with the derivative of
+the metric vanishes), has real spectrum. No complex pair crosses the imaginary axis and no Hopf bifurcation
+occurs: while the dynamics is metric-gradient, the soft mode admits only stationary bifurcations (fold,
+pitchfork, cusp). An oscillatory instability requires breaking the gradient form: either $G$ losing
 positivity, or a non-gradient reactive term.
+
+*Proof.* The Jacobian at $\Gamma_*$ is $J=-G_*^{-1}H_*$, with $G_*=G(\Gamma_*)\succ0$ and $H_*=D^2P(\Gamma_*)\in\mathrm{Sym}$. Write
+$J=G_*^{-1/2}\bigl(-G_*^{-1/2}H_*G_*^{-1/2}\bigr)G_*^{1/2}$;
+since $G_*^{-1/2}H_*G_*^{-1/2}$ is symmetric, its spectrum is real, and similarity preserves the spectrum.
+Hence $\sigma(J)\subset\mathbb R$ for every $G_*\succ0$ and $H_*\in\mathrm{Sym}$. $\square$
 
 The lemma organizes the catalogue by the spectrum of the degeneracy. A simple real eigenvalue crossing zero
 gives a stationary bifurcation, with the cubic originating from the determinant (Theorems 1–2). An oscillatory
@@ -208,7 +217,9 @@ critical spectrum.
 
 The lemma admits a thermodynamic reading: strict dissipation, as a gradient flow with a positive metric, is
 obstructed from producing sustained oscillation or limit cycles. It is the dynamical correlate of why a system
-in monotone relaxation harbours no self-sustained rhythm. Unlike Theorems 1–2, the lemma does not depend on the
+in monotone relaxation harbours no self-sustained rhythm. In Onsager's framework (1931), the purely dissipative
+sector (symmetric Onsager matrix) admits no oscillatory currents; oscillatory instabilities require the
+antisymmetric reactive contribution, exactly as Lemma 1 requires a non-gradient term. Unlike Theorems 1–2, the lemma does not depend on the
 particular potential or on the dimension.
 
 ---
@@ -299,3 +310,5 @@ Shilnikov) of the non-gradient sector; and the extension to $M_n(\mathbb R)$, $n
 10. P. Hänggi, P. Talkner and M. Borkovec, *Reaction-rate theory: fifty years after Kramers*, Rev. Mod. Phys. 62 (1990) 251–341.
 11. E. J. Doedel, *AUTO: a program for the automatic bifurcation analysis of autonomous systems*, Congr. Numer. 30 (1981) 265–284.
 12. G. Benettin, L. Galgani, A. Giorgilli and J.-M. Strelcyn, *Lyapunov characteristic exponents for smooth dynamical systems*, Meccanica 15 (1980) 9–30.
+13. L. Onsager, *Reciprocal relations in irreversible processes I–II*, Phys. Rev. 37 (1931) 405–426; 38 (1931) 2265–2279.
+14. L. D. Landau and E. M. Lifshitz, *Statistical Physics*, Part 1, 3rd ed., Pergamon, 1980, §§143–147 (theory of phase transitions; cubic term and first-order transitions).
