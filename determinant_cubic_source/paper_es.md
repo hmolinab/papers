@@ -172,6 +172,18 @@ $D^3(\|\Gamma\|^4)[V,V,V]=24\langle\Gamma_*,V\rangle$. Para el determinante, de 
 $D^3(\mu\det)[V,V,V]=\mu_*\,D^3\!\det(\Gamma_*)[V,V,V]$. Sumando se obtiene el punto 3. Sobre $V\perp\Gamma_*$ el
 término de norma se anula y solo sobrevive el del determinante.
 
+*Expansión de Taylor explícita de $\det$.* Como $\det$ es multilineal en las cuatro filas, la expansión de
+$\det(\Gamma_*+\xi V)$ en $\xi$ es exacta en grado 4:
+$$\det(\Gamma_*+\xi V)=\det\Gamma_*+\xi\langle\mathrm{C}(\Gamma_*),V\rangle+\tfrac{\xi^2}{2}D^2\!\det(\Gamma_*)[V,V]
++\tfrac{\xi^3}{6}D^3\!\det(\Gamma_*)[V,V,V]+\xi^4\det V,$$
+donde $\mathrm{C}(\Gamma_*)=\mathrm{adj}(\Gamma_*)$ es la matriz de cofactores, y cada coeficiente toma $k$ filas de $V$
+y $4-k$ filas de $\Gamma_*$. En particular, $D^3\det(\Gamma_*)[V,V,V]=6\sum_{j=1}^{4}\det(M_j)$, donde $M_j$
+es la matriz $4\times4$ cuya fila $j$ proviene de $\Gamma_*$ y las otras tres de $V$. Esto es lineal en
+$\Gamma_*$ (grado $4-3=1$), confirmando que $D^3\det$ es un polinomio lineal en el punto de equilibrio, no una
+función de $V$ solo. El último término $\xi^4\det V=0$ cuando $V$ tiene rango $\le3$ (p.ej. cuando $V$ es el modo
+blando de rango 1), por lo que el coeficiente cúbico $\xi^3$ es el término dominante sensible a orientación en
+la variedad centro.
+
 La lectura geométrica es directa en los valores singulares: $\det\Gamma=\prod_i\sigma_i$ acopla los cuatro de
 forma irreducible y aporta la parte sensible a la orientación; $\|\Gamma\|^2=\sum_i\sigma_i^2$ es función de
 $\Gamma^\top\Gamma$ y solo entra por $\langle\Gamma_*,V\rangle$. El cuártico efectivo se obtiene de derivar $g$
