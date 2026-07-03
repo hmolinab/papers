@@ -11,19 +11,22 @@ conventions. Numerical verifications referenced in §7 are in `code/` (companion
 
 ## Abstract
 
-We exhibit a derivation of the real Clifford algebra $\mathrm{Cl}_{3,1} \cong M_4(\mathbb{R})$ from two
-structural axioms about the minimal description of any operative dynamical unit. The first axiom (A1) asserts
-that such a unit is characterized by four intrinsic attributes: a scalar $S$ (identity), and three
-vectors $\mathbf{A}$, $\mathbf{I}$, $\mathbf{R}$ (agency, impulse, relation). The second axiom (A2) asserts
-that the dynamics is governed by the geometric product of those attributes. From these two axioms — without
-postulating a spacetime metric, a Lagrangian, or a background geometry — we derive, via the Eckmann–Hurwitz
-theorem and the symbol of the wave operator, that the configuration object of the unit is necessarily an
-element of $M_4(\mathbb{R}) = \mathrm{Cl}_{3,1}$, equipped with Lorentzian signature $(3,1)$. Three closing
-propositions establish that orthonormality of the attribute frame is gauge-redundant (P1), that the temporal
-generator is the evolution operator of the equation of motion (P2), and that the Frobenius metric is the
-unique Clifford inner product forced by the geometric product (P3). The result promotes the Clifford algebra
-of spacetime from a geometric postulate to a structural theorem. Classical mechanics and free electrodynamics
-appear as limiting cases.
+We exhibit a derivation of the real Clifford algebra $\mathrm{Cl}_{3,1} \cong M_4(\mathbb{R})$ from three
+structural axioms about any operative dynamical unit (ODU). A1 (SAIR): the unit is described by four
+intrinsic attributes — a scalar $S$ and three vectors $\mathbf{A}, \mathbf{I}, \mathbf{R}$ in $\mathbb{R}^d$.
+A2 (geometric product): structure is governed by the geometric product of those attributes, whose grade-2
+part $\mathbf{I}\wedge\mathbf{R}$ is the Field bivector. A3 (continuous evolution): the ODU evolves
+smoothly in time and space at finite propagation speed. From these three axioms — without postulating a
+spacetime metric or background geometry — we derive: (i) the closure condition
+$\binom{d}{2}=d$ forces $d=3$ uniquely (Hodge self-duality of bivectors in $\mathbb{R}^3$, confirmed by
+Hurwitz); (ii) smooth evolution (A3) requires a fourth temporal direction independent of the spatial
+attributes; (iii) the principal symbol of the resulting second-order PDE is the Minkowski form
+$\eta=\mathrm{diag}(-1,+1,+1,+1)$, whose real Clifford algebra is $\mathrm{Cl}_{3,1}\cong M_4(\mathbb{R})$.
+Three closing propositions establish that orthonormality is gauge-redundant (P1), that $\gamma_0$ is the
+algebraic generator conjugate to $\partial_\tau$ in the Dirac factorization of $\Box$ (P2, without
+conflating algebra elements with differential operators), and that the Frobenius norm is the unique
+Clifford inner product forced by A2 (P3). The result promotes the Clifford algebra of spacetime from a
+geometric postulate to a structural theorem. Classical mechanics and free electrodynamics appear as limits.
 
 **Keywords:** Clifford algebra, geometric algebra, Hurwitz theorem, spacetime signature, dynamical systems,
 matrix normal form, Frobenius metric.
@@ -38,9 +41,9 @@ geometric: one postulates a Minkowski spacetime with signature $(3,1)$ and then 
 Clifford algebra. The question we address is different: *is the Lorentzian signature a theorem, rather than a
 postulate, if one asks what algebraic structure a self-describing dynamical unit must have?*
 
-We show that the answer is yes, under two minimal axioms about the attribute structure and dynamics of such a
-unit. The derivation does not require spacetime as an input; the signature emerges from the symbol of the
-equation of motion that the unit must satisfy.
+We show that the answer is yes, under three minimal axioms: A1 (attribute structure), A2 (geometric
+product), and A3 (smooth evolution at finite speed). The derivation does not require spacetime as an
+input; the signature emerges from the principal symbol of the equation of motion dictated by A3.
 
 This paper is part of a larger program — the Gamma Space Framework (GSF) — whose central object is a real
 $4\times4$ configuration matrix $\Gamma \in M_4(\mathbb{R})$. The present paper establishes the algebraic
@@ -58,7 +61,7 @@ a real matrix (dissipation and gradient flows are real processes); this distingu
 the algebraic level. The derivation does not compete with the spacetime algebra program; it identifies which
 real algebra is forced by the structure of any evolving dynamical unit, and explains why that program works.
 
-**Plan.** §2 states the two axioms. §3 derives the four lemmas. §4 states and proves the main theorem. §5
+**Plan.** §2 states the three axioms. §3 derives the four lemmas. §4 states and proves the main theorem. §5
 establishes the three closing propositions. §6 illustrates with two physical limits (Newton and Maxwell). §7
 gives numerical verification of key steps. §8 discusses scope, related work, and open problems.
 
@@ -91,44 +94,56 @@ elements $u, v$ decomposes canonically:
 $$uv = u \cdot v + u \wedge v$$
 into a symmetric (grade-0) scalar part and an antisymmetric (grade-2) bivector part. Applied to the
 attributes: the **Force** $F = S \cdot \mathbf{A}$ (grade-0 coupling, symmetric) and the **Field**
-$\mathcal{F} = \mathbf{I} \wedge \mathbf{R}$ (grade-2 coupling, antisymmetric via the Hodge dual $= \mathbf{I} \times \mathbf{R}$
-in $d=3$). The Force/Field decomposition is algebraically forced by A2 — it is not an independent postulate.
+$\mathcal{F} = \mathbf{I} \wedge \mathbf{R}$ (grade-2, antisymmetric). The Force/Field decomposition is
+algebraically forced by A2 — it is not an independent postulate.
 
-*Remark 2.2.* The genuine content of A2 is the claim that *dynamics is the geometric product*. The
-symmetric/antisymmetric split of that product is a theorem of geometric algebra, not an additional hypothesis.
+**Axiom A3 (continuous evolution).** The ODU evolves smoothly in time $\tau$ and space $\mathbf{x}$,
+with a finite propagation speed $c > 0$. The generic Taylor expansion of its evolution to second order in
+time and space, consistent with A1 and A2, yields the equation of motion
+$$\ddot\Gamma + \gamma\dot\Gamma + \nabla P(\Gamma) = N(\Gamma),$$
+where $\gamma\ge0$ is a constitutive damping parameter and $P$ is the structural potential. This is the
+lowest-order equation coupling inertia ($\ddot\Gamma$), dissipation ($\gamma\dot\Gamma$), and a
+restoring gradient ($\nabla P$); no additional postulate about dynamics is made beyond smoothness and
+finite speed.
+
+*Remark 2.2.* The genuine content of A2 is the claim that *structure is the geometric product*. A3 adds
+the claim that *evolution is smooth and second-order*: position and velocity are independent degrees of
+freedom, so a first-order equation would conflate them. The symmetric/antisymmetric split of the
+geometric product is a theorem of geometric algebra, not an additional hypothesis.
 
 ---
 
 ## 3. Four Lemmas
 
-### Lemma 1 (Hurwitz — dimension is forced)
+### Lemma 1 (Closure — dimension is forced to $d=3$)
 
-**Lemma 1.** *Under A1 and A2, the dimension of the vector attribute space is $d = 3$ or $d = 7$.*
+**Lemma 1.** *Under A1 and A2, the dimension of the vector attribute space is $d = 3$.*
 
-*Proof.* A2 requires $\mathcal{F} = \mathbf{I} \times \mathbf{R}$ to be a **vector cross product** on
-$\mathbb{R}^d$: a bilinear, antisymmetric map $\mathbb{R}^d \times \mathbb{R}^d \to \mathbb{R}^d$
-satisfying the norm identity $|\mathbf{u} \times \mathbf{v}|^2 = |\mathbf{u}|^2|\mathbf{v}|^2 - (\mathbf{u}\cdot\mathbf{v})^2$.
-By the Eckmann theorem (Eckmann 1943; see also Adams 1960), such a product exists if and only if
-$d \in \{1, 3, 7\}$, equivalently if and only if $d+1$ is the dimension of a normed division algebra over
-$\mathbb{R}$ (Hurwitz 1898): $\mathbb{C}$ ($d=1$), $\mathbb{H}$ ($d=3$), $\mathbb{O}$ ($d=7$).
-The case $d=1$ is degenerate: in $\mathbb{R}^1$ the norm identity forces $|\mathbf{u} \times \mathbf{v}|^2 =
-u^2v^2 - (uv)^2 = 0$, so the cross product is identically zero. Excluding this trivial case, the admissible
-non-degenerate dimensions are:
-- $d = 3$ (quaternionic branch, $\mathbb{H}$): the **space-time branch**
-- $d = 7$ (octonionic branch, $\mathbb{O}$): the **internal/atemporal branch**
+*Proof (closure argument).* A2 says the Field is the grade-2 part of the geometric product:
+$\mathcal{F} = \mathbf{I} \wedge \mathbf{R} \in \Lambda^2(\mathbb{R}^d)$, a bivector of dimension
+$\binom{d}{2} = \tfrac{d(d-1)}{2}$. For the ODU to be closed — for $\mathcal{F}$ to couple back to the
+grade-1 attribute $\mathbf{A}$ without introducing objects of higher rank than those in A1 — the Field
+space and the attribute space must be isomorphic as vector spaces:
+$$\binom{d}{2} = d \;\Longrightarrow\; \tfrac{d(d-1)}{2} = d \;\Longrightarrow\; d = 3.$$
+The unique non-trivial solution is $d = 3$. This isomorphism is the Hodge duality
+$\star: \Lambda^2(\mathbb{R}^3) \xrightarrow{\;\sim\;} \mathbb{R}^3$, which maps
+$\mathcal{F} = \mathbf{I} \wedge \mathbf{R}$ to the familiar vector cross product
+$\mathbf{I} \times \mathbf{R} \in \mathbb{R}^3$.
 
-*The choice of branch is not free.* The $d = 3$ branch admits a temporal extension: one can adjoin a fourth
-generator $\partial_\tau$ (Lemma 3) without breaking the cross product structure, because $G(3)$ already
-exhausts the grade-1 space and the fourth direction belongs to a distinct grade. The $d = 7$ branch does not
-admit an analogous temporal extension: the geometric algebra $G(7)$ has all grade-1 elements squaring to
-$+1$ (positive definite base metric), and there is no canonical grade-1 element squaring to $-1$ within
-$G(7)$ itself; a temporal direction would have to be adjoined externally, breaking the octonionic product
-structure (non-associativity of $\mathbb{O}$ precludes the Clifford algebra factorization used in Lemma 4).
-This branch is the algebraic home of the *internal* sector (three generations, $\mathrm{Der}(\mathbb{O}) = G_2$).
-The remainder of this paper works the $d=3$ branch. $\square$
+*Confirmation by Hurwitz.* Once $d=3$ is established by closure, the Eckmann theorem (Eckmann 1943;
+Adams 1960) confirms that a non-degenerate vector cross product on $\mathbb{R}^3$ exists — it is the
+imaginary part of the quaternion product ($\mathbb{H}$, dimension $d+1=4$). This is a consistency check,
+not the source of the derivation: Hurwitz verifies that $d=3$ works, but closure is what forces it.
+
+*The octonionic branch ($d=7$) is structurally distinct.* A cross product on $\mathbb{R}^7$ exists
+(Eckmann 1943) as the imaginary part of the octonion product, but it does not arise from the closure
+condition $\binom{d}{2}=d$ (since $\binom{7}{2}=21\neq7$). It is not the Hodge dual of a bivector;
+it is a genuinely different algebraic structure. This branch is the algebraic home of the *internal*
+sector ($\mathrm{Der}(\mathbb{O})=G_2$, three generations) and is treated separately in §8.2.
+The remainder of this paper works $d=3$. $\square$
 
 *Corollary 1.1.* "Why exactly three vector attributes" is not a free parametric choice — it is the
-answer to "why is the field a cross product", which is Hurwitz.
+answer to "what dimension allows the Field to couple back to the Agents without rank escalation."
 
 ### Lemma 2 (Algebra closure)
 
@@ -141,38 +156,39 @@ grade 0; $\{\mathbf{A}, \mathbf{I}, \mathbf{R}\}$ occupy grade 1; the bivectors 
 pseudoscalar (grade 3) are generated by their products. No fifth grade-1 generator is available in $G(3)$:
 the grade-1 subspace has dimension 3. $\square$
 
-### Lemma 3 (Time as evolution)
+### Lemma 3 (Time as a fourth direction)
 
-**Lemma 3.** *An operative ODU requires a temporal direction $\partial_\tau$ that is not an attribute. This
-direction is provided by the equation of motion.*
+**Lemma 3.** *Under A3, the smooth evolution of the ODU requires a temporal direction $\partial_\tau$
+that is independent of the three spatial attribute directions of A1. Together they span a
+$4$-dimensional vector space $V^4$.*
 
-*Proof.* An ODU evolves; its configuration satisfies a second-order equation of motion (EOM):
-$$\ddot\Gamma + \gamma\dot\Gamma + \nabla P(\Gamma) = N(\Gamma)$$
-where $\gamma > 0$ is a constitutive damping parameter and $P(\Gamma)$ is the structural potential. (The
-EOM is second-order because the ODU has both a configuration and a rate of change as independent degrees of
-freedom; first-order equations would conflate the two. The gradient-flow term $\nabla P$ is required for
-dissipation to be consistent with Lyapunov stability, and the wave term $\ddot\Gamma$ is required for
-oscillatory behavior — both are structural requirements, not additional postulates.)
+*Proof.* By A3, the configuration $\Gamma(\tau,\mathbf{x})$ is smooth in time $\tau$ and space
+$\mathbf{x}$. Smoothness implies the existence of partial derivatives $\partial_\tau$ and $\nabla$
+(the spatial gradient along the attribute directions). Lemma 2 establishes that the spatial attribute
+space is $\mathbb{R}^3$, spanned by $\{\mathbf{A}, \mathbf{I}, \mathbf{R}\}$. The temporal direction
+$\partial_\tau$ is independent of these three generators for three reasons: (i) it cannot be expressed
+as a spatial combination of $\mathbf{A}, \mathbf{I}, \mathbf{R}$, since it differentiates the temporal
+argument, not the attribute frame; (ii) $S$ is grade-0 (scalar), not a grade-1 direction; (iii)
+promoting one spatial attribute to the temporal role would break the closure condition $\binom{d}{2}=d$
+that forces $d=3$ in Lemma 1. Therefore $\partial_\tau$ is a genuinely fourth independent direction.
 
-Lemma 2 establishes that the spatial attribute space is generated by three grade-1 vectors $\{\mathbf{A},
-\mathbf{I}, \mathbf{R}\}$ spanning $\mathbb{R}^3$. This is a 3-dimensional space. However, the EOM contains
-$\partial_\tau$, a differentiation operator that is not a spatial attribute — it acts on the temporal
-argument $\tau$ of $\Gamma(\tau, \mathbf{x})$. This operator is distinct from the spatial generators: (i)
-it cannot be expressed as a linear combination of $\mathbf{A}, \mathbf{I}, \mathbf{R}$; (ii) $S$ is
-grade-0 (scalar), not grade-1; (iii) promoting one spatial attribute to the temporal role would miscategorize
-it and break the cross product (Lemma 1). Therefore $\partial_\tau$ is a genuinely fourth independent
-direction. Together $\{\mathbf{A}, \mathbf{I}, \mathbf{R}, \partial_\tau\}$ span a 4-dimensional vector
-space $V^4$. The Clifford algebra $\mathrm{Cl}(V^4, q)$ of any 4-dimensional space has dimension $2^4 = 16$;
-its smallest faithful real matrix representation is $4\times4$ (this follows from Bott periodicity, once the
-signature $q$ of $V^4$ is fixed by Lemma 4). The ODU has a time axis because it evolves — not because
-spacetime is postulated. $\square$
+Together $\{\mathbf{A}, \mathbf{I}, \mathbf{R}, \partial_\tau\}$ span a 4-dimensional vector space $V^4$.
+The Clifford algebra $\mathrm{Cl}(V^4, q)$ has dimension $2^4=16$; its smallest faithful real matrix
+representation is $4\times4$ (Bott periodicity, once the signature $q$ of $V^4$ is fixed by Lemma 4).
+The ODU has a time axis because it evolves smoothly — not because spacetime is postulated. $\square$
 
 ### Lemma 4 (Lorentzian signature from the wave operator)
 
-**Lemma 4.** *The Lorentzian signature $(3,1)$ is the symbol of the equation of motion, not a postulate.*
+**Lemma 4.** *The Lorentzian signature $(3,1)$ is forced by the principal symbol of the EOM (A3), not postulated.*
 
-*Proof.* The principal part of the EOM is the wave operator $\Box\Gamma = \ddot\Gamma - c^2\nabla^2\Gamma$.
-Taking the Fourier symbol ($\partial_\tau \to i\omega$, $\nabla \to i\mathbf{k}$):
+*Proof.* By A3, the EOM is a second-order PDE in $(\tau, \mathbf{x})$. Its principal part — the
+highest-derivative term, which governs propagation — couples the second time derivative $\ddot\Gamma$
+and the spatial Laplacian $c^2\nabla^2\Gamma$ through the wave operator $\Box\Gamma = \ddot\Gamma - c^2\nabla^2\Gamma$.
+(The wave operator is the unique second-order hyperbolic operator in $V^4$ consistent with isotropy in
+the three spatial directions and a single temporal direction; a parabolic operator such as the heat
+equation $\partial_\tau\Gamma = c^2\nabla^2\Gamma$ is first-order in time and does not treat $\partial_\tau$
+as an independent generator on equal footing with the spatial ones.) Taking the Fourier symbol
+($\partial_\tau \to i\omega$, $\nabla \to i\mathbf{k}$):
 $$\sigma(\Box) = -\omega^2 + c^2|\mathbf{k}|^2 = \eta^{\mu\nu}p_\mu p_\nu, \quad
 \eta = \mathrm{diag}(-1, +1, +1, +1)$$
 This is the Minkowski quadratic form with signature $(3,1)$. The real Clifford algebra of this form
@@ -244,19 +260,23 @@ entries of $\Gamma_s$ (diagonal in that frame) but not its spectrum. $\square$
 ### Proposition P2 (The temporal generator is the evolution operator)
 
 **Proposition P2.** *The temporal Clifford generator $\gamma_0 \in \mathrm{Cl}_{3,1}$ satisfying
-$\gamma_0^2 = -\mathbf{1}$ is canonically identified with the time derivative $\partial_\tau$ of the EOM.*
+$\gamma_0^2 = -\mathbf{1}$ is the unique grade-1 generator assigned to the temporal direction such that
+the linear differential operator $\mathcal{D} = \gamma^\mu\partial_\mu$ factorizes the wave operator:
+$\mathcal{D}^2 = \Box$.*
 
 *Proof.* The symbol of the wave operator $\Box = \partial_\tau^2 - c^2\nabla^2$ is $\eta^{\mu\nu}p_\mu p_\nu$
 with $\eta = \mathrm{diag}(-1,+1,+1,+1)$. This defines the anticommutation relations $\{\gamma_\mu, \gamma_\nu\}
-= 2\eta_{\mu\nu}$, with $\gamma_0^2 = -\mathbf{1}$ forced by $\eta_{00} = -1$. The identification
-$\partial_\tau \leftrightarrow \gamma_0$ is the unique one that makes $\Box = (\gamma^\mu\partial_\mu)^2$
-(the Dirac factorization). Verified numerically: a real $4\times4$ representation satisfying $\{\gamma_\mu,
-\gamma_\nu\}/2 = \eta_{\mu\nu} = \mathrm{diag}(-1,+1,+1,+1)$ exists with $\gamma_0^2 = -I$, $\gamma_i^2 = +I$
-(residual $< 10^{-14}$; see `code/verify_cl31.py`). $\square$
+= 2\eta_{\mu\nu}$, with $\gamma_0^2 = -\mathbf{1}$ forced by $\eta_{00} = -1$. The assignment of $\gamma_0$
+to the temporal direction $\partial_\tau$ is the unique one that makes $(\gamma^\mu\partial_\mu)^2 = \Box$
+(the Dirac factorization). Here $\gamma_0$ is an algebra element and $\partial_\tau$ is a differential
+operator; P2 does not claim they are the same object — it claims $\gamma_0$ is the algebraic generator
+conjugate to $\partial_\tau$ in the factorization of $\Box$. Verified numerically: a real $4\times4$
+representation satisfying $\{\gamma_\mu, \gamma_\nu\}/2 = \eta_{\mu\nu} = \mathrm{diag}(-1,+1,+1,+1)$
+exists with $\gamma_0^2 = -I$, $\gamma_i^2 = +I$ (residual $< 10^{-14}$; see `code/verify_cl31.py`). $\square$
 
-*Note.* P2 does not introduce a new temporal variable. The EOM already contains $\partial_\tau$. P2 says
-that the Clifford temporal generator *is* that operator — not a new geometric structure, but the evolution
-already present in the framework.
+*Note.* P2 does not conflate categories: $\gamma_0$ is an element of $\mathrm{Cl}_{3,1}$; $\partial_\tau$
+is a differential operator acting on functions $\Gamma(\tau,\mathbf{x})$. What P2 establishes is a
+canonical pairing between the two, mediated by the Dirac factorization of the wave operator given by A3.
 
 ### Proposition P3 (Frobenius is the canonical Clifford metric)
 
@@ -371,8 +391,9 @@ This paper establishes the algebraic structure. It does not:
   which we take as foundational rather than derived)
 - Close the $d=7$ (octonionic) branch identification (open problem; partial results in Molina 2025, §Q)
 
-The residues that remain open after P1/P2/P3 are exactly A1 and A2 — the two axioms. Everything
-else in the derivation is a theorem.
+The residues that remain open after P1/P2/P3 are exactly A1, A2, and A3 — the three axioms. Everything
+else in the derivation is a theorem. The cost of explicitness: three axioms instead of two. The gain:
+no premiss enters the derivation undeclared.
 
 ### 8.4 Related work
 
@@ -389,20 +410,22 @@ else in the derivation is a theorem.
 
 ## 9. Conclusions
 
-From two structural axioms about the minimal description of an operative dynamical unit — SAIR attribute
-structure (A1) and geometric product dynamics (A2) — the real Clifford algebra $\mathrm{Cl}_{3,1}$
-emerges as a structural theorem rather than a geometric postulate. The derivation chain is:
+From three structural axioms — SAIR attribute structure (A1), geometric product (A2), and continuous
+smooth evolution (A3) — the real Clifford algebra $\mathrm{Cl}_{3,1}$ emerges as a structural theorem
+rather than a geometric postulate. The derivation chain is:
 
-$$\underbrace{\text{SAIR}}_\text{A1} + \underbrace{\text{geometric product}}_\text{A2}
-\xrightarrow{\text{Hurwitz}} d=3
+$$\underbrace{\text{SAIR}}_\text{A1} + \underbrace{\text{geom. product}}_\text{A2}
+\xrightarrow{\binom{d}{2}=d} d=3
 \xrightarrow{G(3)} \{\mathbf{A},\mathbf{I},\mathbf{R}\}=\gamma_i
-\xrightarrow{\text{EOM: }\Box} \gamma_0=\partial_\tau,\ (3,1)
+\xrightarrow{\text{A3: smooth, finite }c} \partial_\tau \perp \mathbb{R}^3
+\xrightarrow{\sigma(\Box)=\eta} (3,1)
 \xrightarrow{\text{P1/P2/P3}} \Gamma = \Gamma_s\oplus\Gamma_a \in M_4(\mathbb{R})$$
 
-Three propositions close the technical residues (orthonormality is gauge, temporal generator is the
-evolution operator, Frobenius is the canonical Clifford metric). The only irreducible axioms remaining
-are A1 and A2. Classical mechanics (Newton projection, §6.1) and free electrodynamics (Maxwell limit,
-§6.2) appear as structural correspondences.
+Three propositions close the technical residues: orthonormality is a representational gauge (P1);
+$\gamma_0$ is the unique algebraic generator conjugate to $\partial_\tau$ in the Dirac factorization
+of $\Box$ — not the operator itself (P2); Frobenius is the canonical Clifford metric forced by A2 (P3).
+The irreducible axioms are A1, A2, and A3. Classical mechanics (§6.1) and free electrodynamics (§6.2)
+appear as structural limits.
 
 The result supplies a structural foundation for the spacetime algebra program: not "given Minkowski
 space, use $\mathrm{Cl}_{3,1}$", but "from the structure of a dynamical unit, $\mathrm{Cl}_{3,1}$ is
