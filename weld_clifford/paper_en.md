@@ -98,13 +98,15 @@ $\mathcal{F} = \mathbf{I} \wedge \mathbf{R}$ (grade-2, antisymmetric). The Force
 algebraically forced by A2 — it is not an independent postulate.
 
 **Axiom A3 (continuous evolution).** The ODU evolves smoothly in time $\tau$ and space $\mathbf{x}$,
-with a finite propagation speed $c > 0$. The generic Taylor expansion of its evolution to second order in
-time and space, consistent with A1 and A2, yields the equation of motion
-$$\ddot\Gamma + \gamma\dot\Gamma + \nabla P(\Gamma) = N(\Gamma),$$
-where $\gamma\ge0$ is a constitutive damping parameter and $P$ is the structural potential. This is the
-lowest-order equation coupling inertia ($\ddot\Gamma$), dissipation ($\gamma\dot\Gamma$), and a
-restoring gradient ($\nabla P$); no additional postulate about dynamics is made beyond smoothness and
-finite speed.
+with a finite propagation speed $c > 0$. Treating $\Gamma(\tau,\mathbf{x})$ as a field and expanding to
+second order in both $\tau$ and $\mathbf{x}$, consistent with A1 and A2, the generic equation of motion is
+$$\ddot\Gamma + \gamma\dot\Gamma - c^2\nabla_{\mathbf{x}}^2\Gamma + \nabla_\Gamma P(\Gamma) = N(\Gamma),$$
+where $\gamma\ge0$ is a constitutive damping parameter, $\nabla_{\mathbf{x}}^2 = \partial_{x_1}^2 + \partial_{x_2}^2 + \partial_{x_3}^2$
+is the spatial Laplacian (propagation at speed $c$), and $\nabla_\Gamma P$ is the gradient of the
+structural potential in configuration space. This is the lowest-order equation coupling inertia
+($\ddot\Gamma$), spatial propagation ($-c^2\nabla_{\mathbf{x}}^2\Gamma$), dissipation ($\gamma\dot\Gamma$),
+and restoring forces ($\nabla_\Gamma P$); no additional postulate about dynamics is made beyond smoothness
+and finite speed.
 
 *Remark 2.2.* The genuine content of A2 is the claim that *structure is the geometric product*. A3 adds
 the claim that *evolution is smooth and second-order*: position and velocity are independent degrees of
@@ -181,13 +183,16 @@ The ODU has a time axis because it evolves smoothly — not because spacetime is
 
 **Lemma 4.** *The Lorentzian signature $(3,1)$ is forced by the principal symbol of the EOM (A3), not postulated.*
 
-*Proof.* By A3, the EOM is a second-order PDE in $(\tau, \mathbf{x})$. Its principal part — the
-highest-derivative term, which governs propagation — couples the second time derivative $\ddot\Gamma$
-and the spatial Laplacian $c^2\nabla^2\Gamma$ through the wave operator $\Box\Gamma = \ddot\Gamma - c^2\nabla^2\Gamma$.
-(The wave operator is the unique second-order hyperbolic operator in $V^4$ consistent with isotropy in
-the three spatial directions and a single temporal direction; a parabolic operator such as the heat
-equation $\partial_\tau\Gamma = c^2\nabla^2\Gamma$ is first-order in time and does not treat $\partial_\tau$
-as an independent generator on equal footing with the spatial ones.) Taking the Fourier symbol
+*Proof.* By A3, the EOM explicitly contains the spatial Laplacian $-c^2\nabla_{\mathbf{x}}^2\Gamma$.
+The principal part — the highest-derivative terms, which govern propagation — is therefore the wave operator
+$\Box\Gamma = \ddot\Gamma - c^2\nabla_{\mathbf{x}}^2\Gamma$. Isotropy of the Laplacian across the three
+spatial directions follows directly from P1: since all physical invariants of $\Gamma$ are $SO(3)$-invariant
+under rotations of $\{\mathbf{A},\mathbf{I},\mathbf{R}\}$, no spatial direction is preferred, and the
+spatial part of the principal symbol must be $c^2|\mathbf{k}|^2$ (scalar in $\mathbf{k}$, not a
+directionally biased tensor). This rules out any anisotropic operator. (A parabolic operator such as the
+heat equation $\partial_\tau\Gamma = c^2\nabla_{\mathbf{x}}^2\Gamma$ is first-order in time and does not
+treat $\partial_\tau$ as an independent generator on equal footing with the spatial ones; it is excluded.)
+Taking the Fourier symbol
 ($\partial_\tau \to i\omega$, $\nabla \to i\mathbf{k}$):
 $$\sigma(\Box) = -\omega^2 + c^2|\mathbf{k}|^2 = \eta^{\mu\nu}p_\mu p_\nu, \quad
 \eta = \mathrm{diag}(-1, +1, +1, +1)$$
@@ -364,7 +369,7 @@ The spacetime algebra program (Hestenes 1966; Doran and Lasenby 2003) takes $\ma
 $\mathrm{Cl}_{1,3}$ as the algebra of physical space or spacetime, motivated by the known geometry.
 The present work reverses this logic: $\mathrm{Cl}_{3,1}$ is derived as the forced algebraic structure
 of any self-describing dynamical unit, without assuming a spacetime background. The key steps are:
-(i) Hurwitz forces the dimension of the vector attribute space; (ii) the wave operator fixes the signature.
+(i) the closure condition $\binom{d}{2}=d$ forces the dimension of the vector attribute space (Hurwitz confirms consistency); (ii) the wave operator fixes the signature.
 Neither step is obvious from the physics-first perspective.
 
 The closest structural antecedent we are aware of is the observation (Lounesto 2001, §17) that the
