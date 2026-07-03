@@ -92,9 +92,12 @@ is analogous to that of natural selection in Darwinian theory: a minimal posit t
 of its attributes. In a geometric algebra $G(d)$ over $\mathbb{R}^d$, the geometric product of two grade-1
 elements $u, v$ decomposes canonically:
 $$uv = u \cdot v + u \wedge v$$
-into a symmetric (grade-0) scalar part and an antisymmetric (grade-2) bivector part. Applied to the
-attributes: the **Force** $F = S \cdot \mathbf{A}$ (grade-0 coupling, symmetric) and the **Field**
-$\mathcal{F} = \mathbf{I} \wedge \mathbf{R}$ (grade-2, antisymmetric). The Force/Field decomposition is
+into a symmetric (grade-0) scalar part and an antisymmetric (grade-2) bivector part. Applied to the attributes: the **Force** sector $\Gamma_s$ is the symmetric Gram coupling of the scalar
+identity $S$ with the grade-1 attributes $\{\mathbf{A},\mathbf{I},\mathbf{R}\}$ — it encodes the metric
+structure of the unit and is invariant under exchange of paired attributes; the **Field**
+$\mathcal{F} = \mathbf{I} \wedge \mathbf{R} \in \Lambda^2(\mathbb{R}^d)$ (grade-2, antisymmetric) is the
+reactive sector. *Note:* the product $S\mathbf{A}$ in grade-1 (scalar times vector = vector); "Force" here
+names the symmetric sector of $\Gamma$, not a grade-0 element. The Force/Field decomposition is
 algebraically forced by A2 — it is not an independent postulate.
 
 **Axiom A3 (continuous evolution).** The ODU evolves smoothly in time $\tau$ and space $\mathbf{x}$,
@@ -221,8 +224,8 @@ $$\boxed{\Gamma = \Gamma_s \oplus \Gamma_a \;\in\; M_4(\mathbb{R}) = \mathrm{Cl}
 *where $\Gamma_s = \tfrac{1}{2}(\Gamma + \Gamma^\top)$ (symmetric, 10 independent entries — the Force
 sector) and $\Gamma_a = \tfrac{1}{2}(\Gamma - \Gamma^\top)$ (antisymmetric, 6 independent entries —
 the Field sector), with:*
-- *$\Gamma_s = \mathrm{Gram}(\mathbf{A}, \mathbf{I}, \mathbf{R}; S)$ — the metric coupling structure of
-  the attributes (Force = $S \cdot \mathbf{A}$, symmetric)*
+- *$\Gamma_s = \mathrm{Gram}(\mathbf{A}, \mathbf{I}, \mathbf{R}; S)$ — the symmetric metric coupling
+  structure of the attributes (Force sector; $S$ is the grade-0 identity, not a grade-1 generator)*
 - *$\Gamma_a$ = magnetic part ($\mathbf{I}\wedge\mathbf{R}$, spatial bivector, from SAIR) $\oplus$
   electric part ($\partial_\tau\wedge\nabla$, spacetime bivector, coupling structure$\leftrightarrow$evolution)*
 

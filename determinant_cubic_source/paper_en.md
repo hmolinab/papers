@@ -168,6 +168,17 @@ $D^3(\|\Gamma\|^4)[V,V,V]=24\langle\Gamma_*,V\rangle$. For the determinant, of d
 $D^3(\mu\det)[V,V,V]=\mu_*\,D^3\!\det(\Gamma_*)[V,V,V]$. Summing gives point 3. On $V\perp\Gamma_*$ the norm term
 vanishes and only the determinant term survives.
 
+*Explicit Taylor expansion of $\det$.* Since $\det$ is multilinear in the four rows, the expansion of
+$\det(\Gamma_*+\xi V)$ in $\xi$ is exact at degree 4:
+$$\det(\Gamma_*+\xi V)=\det\Gamma_*+\xi\langle\mathrm{C}(\Gamma_*),V\rangle+\tfrac{\xi^2}{2}D^2\!\det(\Gamma_*)[V,V]
++\tfrac{\xi^3}{6}D^3\!\det(\Gamma_*)[V,V,V]+\xi^4\det V,$$
+where $\mathrm{C}(\Gamma_*)=\mathrm{adj}(\Gamma_*)$ is the cofactor matrix, and each coefficient picks $k$ rows from $V$
+and $4-k$ rows from $\Gamma_*$. In particular, $D^3\det(\Gamma_*)[V,V,V]=6\sum_{j=1}^{4}\det(M_j)$, where $M_j$
+is the $4\times4$ matrix whose $j$-th row is taken from $\Gamma_*$ and the other three rows from $V$. This is
+linear in $\Gamma_*$ (degree $4-3=1$), confirming that $D^3\det$ is a linear polynomial in the equilibrium point,
+not a function of $V$ alone. The last term $\xi^4\det V=0$ whenever $V$ has rank $\le3$ (e.g., when $V$ is the
+rank-1 soft mode), so the cubic $\xi^3$ coefficient is the leading orientation-sensitive term on the centre manifold.
+
 The geometric reading is direct in the singular values: $\det\Gamma=\prod_i\sigma_i$ couples the four
 irreducibly and supplies the orientation-sensitive part; $\|\Gamma\|^2=\sum_i\sigma_i^2$ is a function of
 $\Gamma^\top\Gamma$ and enters only through $\langle\Gamma_*,V\rangle$. The effective quartic follows from
