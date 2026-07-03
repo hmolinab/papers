@@ -51,6 +51,10 @@ foundation: that $\Gamma$ is an element of $\mathrm{Cl}_{3,1}$, not by postulate
 companion paper (Molina 2024a) establishes the dynamical result: that the determinant of $\Gamma$ is the
 source of the cubic term in the soft-mode reduction of the matrix gradient flow.
 
+*Terminology note.* Throughout this paper we use the term **operative dynamical unit (ODU)** as a
+self-contained technical term requiring no prior knowledge of the GSF. In the GSF literature (Molina 2025),
+the same object is called a **Unit of Coherence (UoC)**; the two terms are synonymous.
+
 **Relation to the geometric algebra literature.** The spacetime algebra program (Hestenes 1966, 1986;
 Doran and Lasenby 2003) is the closest antecedent. That program takes Minkowski spacetime as given and
 develops physics in terms of $\mathrm{Cl}_{1,3}$ (one time, three space — Hestenes' convention). The
