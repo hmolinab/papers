@@ -1,7 +1,7 @@
 # El álgebra de espacio-tiempo como teorema: derivación de Cl(3,1) a partir de la estructura de una unidad dinámica
 
 Henry Molina  
-Investigador independiente, Bogotá, Colombia  
+Investigador independiente
 henrymolina@gmail.com  
 DOI: 10.5281/zenodo.21184516
 

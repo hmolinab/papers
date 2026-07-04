@@ -1,7 +1,7 @@
 # Spacetime Algebra as a Theorem: Deriving Cl(3,1) from the Structure of a Dynamical Unit
 
 Henry Molina  
-Independent researcher, Bogotá, Colombia  
+Independent researcher
 henrymolina@gmail.com
 DOI: 10.5281/zenodo.21184516
 

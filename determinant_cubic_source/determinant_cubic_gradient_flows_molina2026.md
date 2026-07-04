@@ -1,7 +1,7 @@
 # The determinant as an orientation invariant and the source of the cubic term in equivariant matrix gradient flows
 
 Henry Molina
-Independent researcher, Bogotá, Colombia
+Independent researcher
 hmolinab@unal.edu.co
 DOI: 10.5281/zenodo.20752208 (v3)
 

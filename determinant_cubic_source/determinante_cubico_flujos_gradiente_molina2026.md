@@ -1,7 +1,7 @@
 # El determinante como invariante de orientación y fuente del término cúbico en flujos gradiente matriciales equivariantes
 
 Henry Molina
-Investigador independiente, Bogotá, Colombia
+Investigador independiente
 hmolinab@unal.edu.co
 DOI: 10.5281/zenodo.20752208 (v3)
 
