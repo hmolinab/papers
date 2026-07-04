@@ -3,9 +3,11 @@
 Henry Molina  
 Independent researcher, Bogotá, Colombia  
 henrymolina@gmail.com
+DOI: 10.5281/zenodo.21184516
 
 Self-contained manuscript; requires no external framework beyond standard linear algebra and Clifford algebra
-conventions. Numerical verifications referenced in §7 are in `code/` (companion to this file).
+conventions. Numerical verifications referenced in §7 are at
+https://github.com/hmolinab/papers/tree/main/weld_clifford/code
 
 ---
 
@@ -358,11 +360,11 @@ The following steps in the derivation are numerically confirmed; scripts are in 
 
 | Result | Script | Residual |
 |---|---|---|
-| $\{\gamma_\mu, \gamma_\nu\}/2 = \eta_{\mu\nu}$ in real $4\times4$ rep | `verify_cl31.py` | $< 10^{-14}$ |
-| $\gamma_0^2 = -I$, $\gamma_i^2 = +I$ | `verify_cl31.py` | $< 10^{-14}$ |
-| $\langle A, B\rangle_\mathrm{Cl} = \mathrm{Tr}(A^\top B)/4$ on grade-1 elements | `verify_clifford_metric.py` | $< 10^{-14}$ |
-| Frobenius submultiplicativity: $\|\Gamma\Gamma'\|_F \leq \|\Gamma\|_F\|\Gamma'\|_F$ (0 violations); Pythagorean: $\|\Gamma\|^2 = \|\Gamma_s\|^2 + \|\Gamma_a\|^2$ | `verify_frobenius.py` | $0$ violations; error $< 10^{-13}$ |
-| $\det\Gamma$ as invariant under $SO(3,1)$ conjugation | `verify_det_invariance.py` | $< 10^{-12}$ |
+| $\{\gamma_\mu, \gamma_\nu\}/2 = \eta_{\mu\nu}$ in real $4\times4$ rep | [`verify_cl31.py`](https://github.com/hmolinab/papers/tree/main/weld_clifford/code/verify_cl31.py) | $< 10^{-14}$ |
+| $\gamma_0^2 = -I$, $\gamma_i^2 = +I$ | [`verify_cl31.py`](https://github.com/hmolinab/papers/tree/main/weld_clifford/code/verify_cl31.py) | $< 10^{-14}$ |
+| $\langle A, B\rangle_\mathrm{Cl} = \mathrm{Tr}(A^\top B)/4$ on grade-1 elements | [`verify_clifford_metric.py`](https://github.com/hmolinab/papers/tree/main/weld_clifford/code/verify_clifford_metric.py) | $< 10^{-14}$ |
+| Frobenius submultiplicativity: $\|\Gamma\Gamma'\|_F \leq \|\Gamma\|_F\|\Gamma'\|_F$ (0 violations); Pythagorean: $\|\Gamma\|^2 = \|\Gamma_s\|^2 + \|\Gamma_a\|^2$ | [`verify_frobenius.py`](https://github.com/hmolinab/papers/tree/main/weld_clifford/code/verify_frobenius.py) | $0$ violations; error $< 10^{-13}$ |
+| $\det\Gamma$ as invariant under $SO(3,1)$ conjugation | [`verify_det_invariance.py`](https://github.com/hmolinab/papers/tree/main/weld_clifford/code/verify_det_invariance.py) | $< 10^{-12}$ |
 
 ---
 

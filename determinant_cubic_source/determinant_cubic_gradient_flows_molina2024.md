@@ -5,10 +5,12 @@ Independent researcher, Bogotá, Colombia
 hmolinab@unal.edu.co
 DOI: 10.5281/zenodo.20752208 (v3)
 
-Self-contained manuscript in the language of dynamical systems; it requires no external framework. English
-version; the Spanish source is in `paper_es.md`. Reproducible verification scripts, one per numerical statement
-(§8), are in `code/`. The inertial extension (Bogdanov–Takens) and the phenomenology of chaos are treated, as
-numerically explored directions and not as theorems, in the companion document `outlook_inercial_caos.md`.
+Self-contained manuscript in the language of dynamical systems; it requires no external framework. Spanish
+version: `determinante_cubico_flujos_gradiente_molina2024.md`. Reproducible verification scripts, one per
+numerical statement (§8), are at
+https://github.com/hmolinab/papers/tree/main/determinant_cubic_source/code
+The inertial extension (Bogdanov–Takens) and the phenomenology of chaos are treated, as numerically explored
+directions and not as theorems, in the companion document `outlook_inercial_caos.md`.
 
 ---
 
@@ -187,8 +189,9 @@ classification follows from Sotomayor's conditions (1973): with $a_1(\mu_*)=a_2(
 obtains the fold; if a $\mathbb Z_2$ annuls $a_3$, the first nontrivial term is the quartic and one obtains the
 pitchfork. $\square$
 
-The full symbolic computation is in the Supplementary Material (`code/`) and in the technical document
-`teorema_gamma_xi.md`, §2.
+The full symbolic computation is in the repository at
+https://github.com/hmolinab/papers/tree/main/determinant_cubic_source/code
+and in the technical document `teorema_gamma_xi.md`, §2.
 
 ---
 
@@ -263,14 +266,14 @@ branches by pseudo-arclength continuation (Doedel 1981).
 
 | # | object | result | script |
 |---|--------|--------|--------|
-| 1 | fold/pitchfork as invariant objects; Var$\sim1/k$; Monte Carlo $10^3$ | critical pitchfork $k_2=0$; 100% classification | `code/pieza1_bifurcaciones_rigor.py` |
-| 2 | exact reduction (invariant ray) | $\nabla P\parallel\Gamma$; threshold $\mu=16\beta$ | `code/pieza1_reduccion_normal_forms.py` |
-| 3 | generic centre manifold | full flow $=$ reduced (not the naive one) | `code/pieza1_centro_manifold_generico.py` |
-| 4 | Kramers $+$ continuation | $\ln\langle\tau\rangle=0.904\,\Delta U/D+1.78$, $R^2=0.989$; fold to $\mu\approx2.04$ | `code/pieza1_kramers_continuacion.py` |
-| 5 | Theorem 1 in 16-dim | simple zero; $\tau=-12.84$; $a_3=5.09$ (det $-11.67$); real saddle-node | `code/pieza1_teorema_4x4.py` |
-| 6 | Theorem 2 (cusp) | $a_2,a_3\sim10^{-11}$; versal $=1.30$; $3/2$ law: $\propto(-a_2)^{1.503}$, $R^2=1.0$ | `code/pieza1_cuspide_codim2.py` |
-| 7 | invariants: $\operatorname{tr}\Gamma^3$ outside the bilateral ring; Lemma 1 | $\operatorname{tr}\Gamma^3$ not $G$-invariant; real spectrum in metric-gradient | `code/pieza1_no_hopf_invariantes.py` |
-| 8 | robustness / structural stability | $(\beta,b_6,J)$: 40/40 retain simple soft mode, fold, and det contribution | `code/pieza1_robustez_teorema.py` |
+| 1 | fold/pitchfork as invariant objects; Var$\sim1/k$; Monte Carlo $10^3$ | critical pitchfork $k_2=0$; 100% classification | [`pieza1_bifurcaciones_rigor.py`](https://github.com/hmolinab/papers/tree/main/determinant_cubic_source/code/pieza1_bifurcaciones_rigor.py) |
+| 2 | exact reduction (invariant ray) | $\nabla P\parallel\Gamma$; threshold $\mu=16\beta$ | [`pieza1_reduccion_normal_forms.py`](https://github.com/hmolinab/papers/tree/main/determinant_cubic_source/code/pieza1_reduccion_normal_forms.py) |
+| 3 | generic centre manifold | full flow $=$ reduced (not the naive one) | [`pieza1_centro_manifold_generico.py`](https://github.com/hmolinab/papers/tree/main/determinant_cubic_source/code/pieza1_centro_manifold_generico.py) |
+| 4 | Kramers $+$ continuation | $\ln\langle\tau\rangle=0.904\,\Delta U/D+1.78$, $R^2=0.989$; fold to $\mu\approx2.04$ | [`pieza1_kramers_continuacion.py`](https://github.com/hmolinab/papers/tree/main/determinant_cubic_source/code/pieza1_kramers_continuacion.py) |
+| 5 | Theorem 1 in 16-dim | simple zero; $\tau=-12.84$; $a_3=5.09$ (det $-11.67$); real saddle-node | [`pieza1_teorema_4x4.py`](https://github.com/hmolinab/papers/tree/main/determinant_cubic_source/code/pieza1_teorema_4x4.py) |
+| 6 | Theorem 2 (cusp) | $a_2,a_3\sim10^{-11}$; versal $=1.30$; $3/2$ law: $\propto(-a_2)^{1.503}$, $R^2=1.0$ | [`pieza1_cuspide_codim2.py`](https://github.com/hmolinab/papers/tree/main/determinant_cubic_source/code/pieza1_cuspide_codim2.py) |
+| 7 | invariants: $\operatorname{tr}\Gamma^3$ outside the bilateral ring; Lemma 1 | $\operatorname{tr}\Gamma^3$ not $G$-invariant; real spectrum in metric-gradient | [`pieza1_no_hopf_invariantes.py`](https://github.com/hmolinab/papers/tree/main/determinant_cubic_source/code/pieza1_no_hopf_invariantes.py) |
+| 8 | robustness / structural stability | $(\beta,b_6,J)$: 40/40 retain simple soft mode, fold, and det contribution | [`pieza1_robustez_teorema.py`](https://github.com/hmolinab/papers/tree/main/determinant_cubic_source/code/pieza1_robustez_teorema.py) |
 
 The numerical study of the inertial and chaotic regime is in the companion document.
 
