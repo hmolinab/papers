@@ -104,6 +104,13 @@ circularidad resuelta por la consistencia mutua de A1 y A2, no por una prueba in
 papel de A1 en esta estructura es análogo al de la selección natural en la teoría darwiniana: un postulado
 mínimo que genera el resto.
 
+Una UDO no es simplemente un sistema con cuatro casilleros etiquetables. Los atributos son intrínsecos
+en el sentido operacional: son los generadores del producto geométrico de A2, no etiquetas observacionales
+asignadas desde afuera. Un relé de umbral (p.ej., un termostato) tiene cuatro propiedades asignables pero
+no satisface ni A2 (su dinámica es una regla de conmutación discontinua, no un producto geométrico) ni A3
+(su evolución no es suave). La palabra «intrínseco» en A1 queda anclada por A2 y A3 en conjunto, no
+declarada por decreto.
+
 **Axioma A2 (dinámica por producto geométrico).** La dinámica de una UDO está gobernada por el
 **producto geométrico** de sus atributos. En un álgebra geométrica $G(d)$ sobre $\mathbb{R}^d$, el
 producto geométrico de dos elementos de grado 1, $u, v$, se descompone canónicamente:

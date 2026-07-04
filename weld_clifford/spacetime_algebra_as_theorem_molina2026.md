@@ -94,6 +94,12 @@ are the grades of a geometric algebra of minimal dimension consistent with A2 â€
 the mutual consistency of A1 and A2, not by an independent proof of A1. The role of A1 in this structure
 is analogous to that of natural selection in Darwinian theory: a minimal posit that generates the rest.
 
+An ODU is not merely a system with four labelable slots. The attributes are intrinsic in the operational
+sense: they are the generators of the geometric product of A2, not observational labels assigned from
+outside. A threshold relay (e.g., a thermostat) has four assignable properties but satisfies neither A2
+(its dynamics are a discontinuous switching rule, not a geometric product) nor A3 (its evolution is not
+smooth). The word "intrinsic" in A1 is therefore grounded by A2 and A3 together, not declared by fiat.
+
 **Axiom A2 (geometric product dynamics).** The dynamics of an ODU is governed by the **geometric product**
 of its attributes. In a geometric algebra $G(d)$ over $\mathbb{R}^d$, the geometric product of two grade-1
 elements $u, v$ decomposes canonically:
