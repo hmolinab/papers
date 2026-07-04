@@ -64,9 +64,9 @@ unit, $\mathrm{Cl}_{3,1}$ is the forced representation."
 
 ### Instrucciones de envío a arXiv
 
-1. **Formato:** arXiv acepta PDF directo. Subir `paper_en.pdf`. Si piden fuente, convertir con:
+1. **Formato:** arXiv acepta PDF directo. Subir `spacetime_algebra_as_theorem_molina2026.pdf`. Si piden fuente, convertir con:
    ```bash
-   pandoc paper_en.md -o paper_en.tex --standalone
+   pandoc spacetime_algebra_as_theorem_molina2026.md -o spacetime_algebra_as_theorem_molina2026.tex --standalone
    ```
    y subir el .tex + figuras.
 
@@ -117,7 +117,7 @@ El resultado eleva el álgebra de Clifford del espacio-tiempo de postulado geom�
 - "Este preprint está relacionado con" → DOI del det³ (10.5281/zenodo.20752208)
 
 **Archivos a subir:**
-- `paper_en.pdf` (versión principal)
+- `spacetime_algebra_as_theorem_molina2026.pdf` (versión principal)
 - `code/verify_cl31.py`
 - `code/verify_clifford_metric.py`
 - `code/verify_frobenius.py`

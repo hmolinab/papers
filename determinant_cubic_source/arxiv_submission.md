@@ -64,9 +64,9 @@ nematic $Q$-tensor. Each statement is accompanied by a reproducible numerical ve
 1. **Existing Zenodo record:** DOI 10.5281/zenodo.20752208 (v3) — already timestamped. arXiv will
    cross-reference automatically once submitted.
 
-2. **Format:** submit PDF (`paper_en.pdf`) + source if requested. Convert with:
+2. **Format:** submit PDF (`determinant_cubic_gradient_flows_molina2024.pdf`) + source if requested. Convert with:
    ```bash
-   pandoc paper_en.md -o paper_en.tex --standalone
+   pandoc determinant_cubic_gradient_flows_molina2024.md -o determinant_cubic_gradient_flows_molina2024.tex --standalone
    ```
 
 3. **Endorsement:** if bounced in math.DS, try math-ph (broader, more active community). The Zenodo
