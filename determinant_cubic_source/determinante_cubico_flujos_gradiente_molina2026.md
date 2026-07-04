@@ -7,7 +7,9 @@ DOI: 10.5281/zenodo.20752208 (v3)
 
 Manuscrito autónomo en el lenguaje de los sistemas dinámicos; no requiere ningún marco externo. Versión en
 español; la de envío en inglés está en `paper_en.md`. Los scripts de verificación reproducibles, uno por
-enunciado numérico (§8), están en `code/`. La extensión inercial (Bogdanov–Takens) y la fenomenología del
+enunciado numérico (§8), están en:  
+https://github.com/hmolinab/papers/tree/main/determinant_cubic_source/code  
+La extensión inercial (Bogdanov–Takens) y la fenomenología del
 caos se tratan, como direcciones numéricamente exploradas y no como teoremas, en el documento compañero
 `outlook_inercial_caos.md`.
 

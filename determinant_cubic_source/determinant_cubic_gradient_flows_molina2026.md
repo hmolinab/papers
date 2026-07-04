@@ -7,8 +7,8 @@ DOI: 10.5281/zenodo.20752208 (v3)
 
 Self-contained manuscript in the language of dynamical systems; it requires no external framework. Spanish
 version: `determinante_cubico_flujos_gradiente_molina2024.md`. Reproducible verification scripts, one per
-numerical statement (§8), are at
-https://github.com/hmolinab/papers/tree/main/determinant_cubic_source/code
+numerical statement (§8), are at:  
+https://github.com/hmolinab/papers/tree/main/determinant_cubic_source/code  
 The inertial extension (Bogdanov–Takens) and the phenomenology of chaos are treated, as numerically explored
 directions and not as theorems, in the companion document `outlook_inercial_caos.md`.
 
