@@ -3,10 +3,10 @@
 Henry Molina  
 Independent researcher
 henrymolina@gmail.com
-DOI: 10.5281/zenodo.21184516
+DOI: 10.5281/zenodo.21184515
 
 Self-contained manuscript; requires no external framework beyond standard linear algebra and Clifford algebra
-conventions. Numerical verifications referenced in §7 are at
+conventions. Numericaa verifications referenced in §7 are at:  
 https://github.com/hmolinab/papers/tree/main/weld_clifford/code
 
 ---

@@ -3,10 +3,10 @@
 Henry Molina  
 Investigador independiente
 henrymolina@gmail.com  
-DOI: 10.5281/zenodo.21184516
+DOI: 10.5281/zenodo.21184515
 
 Manuscrito autocontenido; no requiere ningún marco externo más allá del álgebra lineal estándar y las
-convenciones del álgebra de Clifford. Las verificaciones numéricas referenciadas en §7 están en
+convenciones del álgebra de Clifford. Las verificaciones numéricas referenciadas en §7 están en:  
 https://github.com/hmolinab/papers/tree/main/weld_clifford/code
 
 ---
