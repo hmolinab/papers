@@ -11,8 +11,8 @@ conventions. Numerical verifications referenced in §7 are in `code/` (companion
 
 ## Abstract
 
-We exhibit a derivation of the real Clifford algebra $\mathrm{Cl}_{3,1} \cong M_4(\mathbb{R})$ from three
-structural axioms about any operative dynamical unit (ODU). A1 (SAIR): the unit is described by four
+We derive the real Clifford algebra $\mathrm{Cl}_{3,1} \cong M_4(\mathbb{R})$ from three structural axioms
+about any operative dynamical unit (ODU). A1 (SAIR): the unit is described by four
 intrinsic attributes — a scalar $S$ and three vectors $\mathbf{A}, \mathbf{I}, \mathbf{R}$ in $\mathbb{R}^d$.
 A2 (geometric product): structure is governed by the geometric product of those attributes, whose grade-2
 part $\mathbf{I}\wedge\mathbf{R}$ is the Field bivector. A3 (continuous evolution): the ODU evolves
@@ -97,12 +97,12 @@ of its attributes. In a geometric algebra $G(d)$ over $\mathbb{R}^d$, the geomet
 elements $u, v$ decomposes canonically:
 $$uv = u \cdot v + u \wedge v$$
 into a symmetric (grade-0) scalar part and an antisymmetric (grade-2) bivector part. Applied to the attributes: the **Force** sector $\Gamma_s$ is the symmetric Gram coupling of the scalar
-identity $S$ with the grade-1 attributes $\{\mathbf{A},\mathbf{I},\mathbf{R}\}$ — it encodes the metric
-structure of the unit and is invariant under exchange of paired attributes; the **Field**
-$\mathcal{F} = \mathbf{I} \wedge \mathbf{R} \in \Lambda^2(\mathbb{R}^d)$ (grade-2, antisymmetric) is the
-reactive sector. *Note:* the product $S\mathbf{A}$ in grade-1 (scalar times vector = vector); "Force" here
-names the symmetric sector of $\Gamma$, not a grade-0 element. The Force/Field decomposition is
-algebraically forced by A2 — it is not an independent postulate.
+identity $S$ with the grade-1 attributes $\{\mathbf{A},\mathbf{I},\mathbf{R}\}$, encoding the metric
+structure of the unit. The **Field** $\mathcal{F} = \mathbf{I} \wedge \mathbf{R} \in \Lambda^2(\mathbb{R}^d)$
+(grade-2, antisymmetric) is the reactive sector. "Force" names the symmetric sector of $\Gamma$; $S$ is
+grade-0 and $S\mathbf{A}$ is a grade-1 vector, not a scalar — the symmetric structure enters through the
+Gram matrix, not through a grade-0 product. The Force/Field split is algebraically forced by A2, not a
+separate postulate.
 
 **Axiom A3 (continuous evolution).** The ODU evolves smoothly in time $\tau$ and space $\mathbf{x}$,
 with a finite propagation speed $c > 0$. Treating $\Gamma(\tau,\mathbf{x})$ as a field and expanding to
@@ -233,7 +233,7 @@ the Field sector), with:*
 - *$\Gamma_a$ = magnetic part ($\mathbf{I}\wedge\mathbf{R}$, spatial bivector, from SAIR) $\oplus$
   electric part ($\partial_\tau\wedge\nabla$, spacetime bivector, coupling structure$\leftrightarrow$evolution)*
 
-*Proof.* Lemma 1 (Hurwitz) forces $d = 3$. Lemma 2 establishes $G(3)$. Lemma 3 adds the temporal
+*Proof.* Lemma 1 forces $d = 3$ by closure. Lemma 2 establishes $G(3)$. Lemma 3 adds the temporal
 generator $\partial_\tau$, extending $G(3)$ to a 4-generator algebra. Lemma 4 identifies the resulting
 algebra as $\mathrm{Cl}_{3,1} \cong M_4(\mathbb{R})$ via the wave operator symbol.
 
@@ -252,9 +252,8 @@ object that is an element of $\mathrm{Cl}_{3,1}$. Physical spacetime is not an i
 
 ## 5. Three Closing Propositions
 
-The proof of the main theorem rests on three technical choices — the orthonormality of the attribute frame,
-the identification of the temporal generator, and the choice of metric on $M_4(\mathbb{R})$ — that might
-appear to be additional postulates. The following propositions show that each is in fact forced.
+Three technical choices appear in the proof — the orthonormality of the attribute frame, the identification
+of the temporal generator, and the metric on $M_4(\mathbb{R})$. Each is forced, not free.
 
 ### Proposition P1 (Orthonormality is gauge-redundant)
 
@@ -322,8 +321,8 @@ $\|\Gamma\|^2 = \mathrm{Tr}(\Gamma^\dagger\Gamma)$, real and non-negative. P3 ho
 
 ## 6. Two Physical Limits
 
-The main theorem and propositions establish the algebraic structure. We exhibit two physical theories as
-limiting cases of the framework, to confirm that the abstract structure is not vacuous.
+The main theorem and propositions establish the algebraic structure. Two physical theories appear as
+limiting cases, showing the algebra has concrete content.
 
 ### 6.1 Newton's second law (Force sector, det > 0)
 
@@ -331,10 +330,9 @@ In the operationally active sector ($\det\Gamma > 0$, $\Gamma_s \succ 0$), the d
 the soft mode of $\Gamma$ — the direction of smallest singular value. Project the EOM onto the soft-mode
 scalar $x$ (dominant singular value of $\Gamma$ along $\mathbf{A}$):
 $$\ddot{x} + \gamma\dot{x} + \partial_x P = F_\text{ext}$$
-This is Newton's second law for a damped oscillator, with $\gamma$ the constitutive damping and $F_\text{ext}$
-an external force term. The structural identification is: mass $\sim$ inertia of the soft mode;
-$\gamma$ the damping coefficient of the ODU; $P$ the potential landscape. Newton is not a special case
-of the framework — it is a limiting projection onto the dominant mode. **Status: structural correspondence
+This is Newton's second law for a damped oscillator: mass is the inertia of the soft mode, $\gamma$ is the
+damping of the ODU, and $P$ is the potential landscape. Newton's law is not a special case built into the
+framework — it is what the EOM becomes when projected onto the dominant mode. **Status: structural correspondence
 $\langle\mathrm{CE}\rangle$, not a derivation from first principles.**
 
 ### 6.2 Free electrodynamics (Field sector, det = 0 boundary)
@@ -379,9 +377,9 @@ of any self-describing dynamical unit, without assuming a spacetime background. 
 (i) the closure condition $\binom{d}{2}=d$ forces the dimension of the vector attribute space (Hurwitz confirms consistency); (ii) the wave operator fixes the signature.
 Neither step is obvious from the physics-first perspective.
 
-The closest structural antecedent we are aware of is the observation (Lounesto 2001, §17) that the
-Clifford algebra of the symbol of the wave operator is $\mathrm{Cl}_{3,1}$. We make this observation
-a theorem by showing it is the *only* Clifford algebra consistent with A1 and A2.
+The closest antecedent is the observation (Lounesto 2001, §17) that the Clifford algebra of the symbol
+of the wave operator is $\mathrm{Cl}_{3,1}$. Here that observation becomes a theorem: it is the
+*only* Clifford algebra consistent with A1 and A2.
 
 ### 8.2 The octonionic branch
 
