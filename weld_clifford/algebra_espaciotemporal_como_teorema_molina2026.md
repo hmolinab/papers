@@ -28,8 +28,8 @@ Clifford real es $\mathrm{Cl}_{3,1}\cong M_4(\mathbb{R})$. Tres proposiciones de
 ortonormalidad es una redundancia de gauge (P1), que $\gamma_0$ es el generador algebraico conjugado a
 $\partial_\tau$ en la factorización de Dirac de $\Box$ (P2, sin confundir elementos algebraicos con
 operadores diferenciales), y que la norma de Frobenius es el producto interno de Clifford único forzado
-por A2 (P3). El resultado eleva el álgebra de Clifford del espacio-tiempo de postulado geométrico a
-teorema estructural. La mecánica clásica y la electrodinámica libre aparecen como límites.
+por A2 (P3). En el marco SAIR, Cl(3,1) es una consecuencia derivada más que un postulado geométrico.
+La mecánica clásica y la electrodinámica libre aparecen como límites estructurales.
 
 **Palabras clave:** álgebra de Clifford, álgebra geométrica, teorema de Hurwitz, firma del espacio-tiempo,
 sistemas dinámicos, forma normal matricial, métrica de Frobenius.
@@ -72,7 +72,7 @@ derivación fuerza $\mathrm{Cl}_{3,1}$ — no $\mathrm{Cl}_{1,3}$ — porque exi
 matriz real (la disipación y los flujos gradiente son procesos reales); esto distingue las dos
 convenciones al nivel algebraico. La derivación no compite con el programa de álgebra de espacio-tiempo;
 identifica qué álgebra real es forzada por la estructura de cualquier unidad dinámica en evolución, y
-explica por qué ese programa funciona.
+provee una base estructural para ese programa.
 
 **Plan.** §2 enuncia los tres axiomas. §3 deriva los cuatro lemas. §4 enuncia y prueba el teorema
 principal. §5 establece las tres proposiciones de cierre. §6 ilustra con dos límites físicos (Newton y
@@ -164,8 +164,7 @@ que lo fuerza.
 *La rama octoniónica ($d=7$) es estructuralmente distinta.* Existe un producto vectorial en
 $\mathbb{R}^7$ (Eckmann 1943) como parte imaginaria del producto octoniómico, pero no surge de la
 condición de clausura $\binom{d}{2}=d$ (ya que $\binom{7}{2}=21\neq7$). No es el dual de Hodge de un
-bivector; es una estructura algebraica genuinamente diferente. Esta rama es el hogar algebraico del
-sector *interno* ($\mathrm{Der}(\mathbb{O})=G_2$, tres generaciones) y se trata por separado en §8.2.
+bivector; es una estructura algebraica genuinamente diferente. Esta rama no se desarrolla en este artículo.
 El resto de este artículo trabaja con $d=3$. $\square$
 
 *Corolario 1.1.* «¿Por qué exactamente tres atributos vectoriales?» no es una elección paramétrica
@@ -243,7 +242,7 @@ firma Lorentziana no es una elección — es lo que queda tras exigir realidad y
 
 ## 4. Teorema Principal
 
-**Teorema ($\Gamma$ es forzada).** *Dados los axiomas A1 y A2, la configuración de cualquier unidad
+**Teorema ($\Gamma$ es forzada).** *Dados los axiomas A1, A2 y A3, la configuración de cualquier unidad
 dinámica operativa es necesariamente*
 $$\boxed{\Gamma = \Gamma_s \oplus \Gamma_a \;\in\; M_4(\mathbb{R}) = \mathrm{Cl}_{3,1}}$$
 *donde $\Gamma_s = \tfrac{1}{2}(\Gamma + \Gamma^\top)$ (simétrica, 10 entradas independientes — sector
@@ -383,7 +382,7 @@ la identidad de Bianchi $\partial_{[\mu}F_{\nu\rho]} = 0$ (automática de $F = \
 $F_{\mu\nu}$ es el tensor de Faraday; la identificación de $\Gamma_a$ con el sector de grado 2 de
 $\mathrm{Cl}_{3,1}$ hace que el Campo $\mathbf{I}\wedge\mathbf{R}$ corresponda a la parte espacial
 (magnética) de $F_{\mu\nu}$, y la parte eléctrica surge del acoplamiento $\partial_\tau\wedge\nabla$.
-La conservación de carga $\partial^\mu J_\mu = 0$ se sigue de la antisimetría de $F$ sin suposiciones
+En el sector de campo libre, la conservación de carga $\partial^\mu J_\mu = 0$ se sigue de la antisimetría de $F$ sin suposiciones
 adicionales. **Estado: Maxwell libre $\langle\mathrm{TEO}\rangle[\mathrm{D}]$; ecuación con fuentes
 $\langle\mathrm{A}\rangle$ (requiere cerrar el bloque de acoplamiento cruzado).**
 
@@ -420,33 +419,18 @@ El antecedente más cercano es la observación (Lounesto 2001, §17) de que el �
 símbolo del operador de onda es $\mathrm{Cl}_{3,1}$. Aquí esa observación se convierte en teorema: es
 la *única* álgebra de Clifford compatible con A1 y A2.
 
-### 8.2 La rama octoniónica
-
-El Lema 1 identifica una segunda rama: $d = 7$ (octoniones). Como se argumenta en el Lema 1, esta rama
-no admite una extensión temporal canónica compatible con la estructura del producto octoniómico. Es el
-hogar algebraico de la estructura *interna* de la UDO: el álgebra de derivaciones
-$\mathrm{Der}(\mathbb{O}) = G_2$ (con $\mathrm{SU}(3) \subset G_2$), tres generaciones codificadas en
-el álgebra de Jordan excepcional $h_3(\mathbb{O})$ y la simetría de color. Las dos ramas ($d=3$ con
-tiempo, $d=7$ sin él) son algebraicamente ortogonales: el generador temporal de la rama $d=3$ no actúa
-sobre el sector $d=7$. Esta ortogonalidad estructural puede explicar por qué los números cuánticos
-internos parecen ser independientes de la dinámica del espacio-tiempo, pero la conexión sigue siendo
-conjetural y queda abierta para trabajo futuro.
-
-### 8.3 Alcance honesto
+### 8.2 Alcance honesto
 
 Este artículo establece la estructura algebraica. No:
-- Deriva la métrica específica del espacio-tiempo físico (la RG es un límite; la derivación requiere
-  pasos adicionales desarrollados en Molina 2025, Parte V)
 - Prueba la unicidad de la estructura de atributos SAIR con independencia de A1 (ese es el contenido
   de A1 mismo, que tomamos como fundacional en lugar de derivado)
-- Cierra la identificación de la rama $d=7$ (octoniónica) (problema abierto; resultados parciales en
-  Molina 2025, §Q)
+- Cierra la rama $d=7$ (octoniónica) (problema abierto; no desarrollado en este artículo)
 
 Los residuos que quedan abiertos tras P1/P2/P3 son exactamente A1, A2 y A3 — los tres axiomas. Todo lo
 demás en la derivación es un teorema. El costo de la explicitud: tres axiomas en lugar de dos. La
 ganancia: ninguna premisa entra en la derivación sin declararse.
 
-### 8.4 Trabajo relacionado
+### 8.3 Trabajo relacionado
 
 - Hurwitz (1898): álgebras normadas de división en dimensiones 1, 2, 4, 8.
 - Eckmann (1943): productos vectoriales en $\mathbb{R}^n$ solo existen para $n = 1, 3, 7$.
@@ -479,7 +463,7 @@ $\Box$ — no el operador mismo (P2); Frobenius es la métrica de Clifford canó
 Los axiomas irreducibles son A1, A2 y A3. La mecánica clásica (§6.1) y la electrodinámica libre (§6.2)
 aparecen como límites estructurales.
 
-El resultado provee una fundación estructural para el programa de álgebra de espacio-tiempo: no «dado
+El resultado provee una base estructural para el programa de álgebra de espacio-tiempo: no «dado
 el espacio de Minkowski, usar $\mathrm{Cl}_{3,1}$», sino «desde la estructura de una unidad dinámica,
 $\mathrm{Cl}_{3,1}$ es la representación forzada».
 

@@ -27,8 +27,8 @@ $\eta=\mathrm{diag}(-1,+1,+1,+1)$, whose real Clifford algebra is $\mathrm{Cl}_{
 Three closing propositions establish that orthonormality is gauge-redundant (P1), that $\gamma_0$ is the
 algebraic generator conjugate to $\partial_\tau$ in the Dirac factorization of $\Box$ (P2, without
 conflating algebra elements with differential operators), and that the Frobenius norm is the unique
-Clifford inner product forced by A2 (P3). The result promotes the Clifford algebra of spacetime from a
-geometric postulate to a structural theorem. Classical mechanics and free electrodynamics appear as limits.
+Clifford inner product forced by A2 (P3). Within the SAIR framework, Cl(3,1) is a derived consequence rather than a geometric postulate.
+Classical mechanics and free electrodynamics appear as structural limits.
 
 **Keywords:** Clifford algebra, geometric algebra, Hurwitz theorem, spacetime signature, dynamical systems,
 matrix normal form, Frobenius metric.
@@ -65,7 +65,7 @@ whereas $\mathrm{Cl}_{3,1} \cong M_4(\mathbb{R})$ (real). These are non-isomorph
 present derivation forces $\mathrm{Cl}_{3,1}$ — not $\mathrm{Cl}_{1,3}$ — because we require $\Gamma$ to be
 a real matrix (dissipation and gradient flows are real processes); this distinguishes the two conventions at
 the algebraic level. The derivation does not compete with the spacetime algebra program; it identifies which
-real algebra is forced by the structure of any evolving dynamical unit, and explains why that program works.
+real algebra is forced by the structure of any evolving dynamical unit, and provides a structural basis for that program.
 
 **Plan.** §2 states the three axioms. §3 derives the four lemmas. §4 states and proves the main theorem. §5
 establishes the three closing propositions. §6 illustrates with two physical limits (Newton and Maxwell). §7
@@ -149,8 +149,7 @@ not the source of the derivation: Hurwitz verifies that $d=3$ works, but closure
 *The octonionic branch ($d=7$) is structurally distinct.* A cross product on $\mathbb{R}^7$ exists
 (Eckmann 1943) as the imaginary part of the octonion product, but it does not arise from the closure
 condition $\binom{d}{2}=d$ (since $\binom{7}{2}=21\neq7$). It is not the Hodge dual of a bivector;
-it is a genuinely different algebraic structure. This branch is the algebraic home of the *internal*
-sector ($\mathrm{Der}(\mathbb{O})=G_2$, three generations) and is treated separately in §8.2.
+it is a genuinely different algebraic structure. This branch is not pursued further in this paper.
 The remainder of this paper works $d=3$. $\square$
 
 *Corollary 1.1.* "Why exactly three vector attributes" is not a free parametric choice — it is the
@@ -224,7 +223,7 @@ signature is not a choice — it is what remains after demanding reality and thr
 
 ## 4. Main Theorem
 
-**Theorem (Γ is forced).** *Given axioms A1 and A2, the configuration of any operative dynamical unit
+**Theorem (Γ is forced).** *Given axioms A1, A2, and A3, the configuration of any operative dynamical unit
 is necessarily*
 $$\boxed{\Gamma = \Gamma_s \oplus \Gamma_a \;\in\; M_4(\mathbb{R}) = \mathrm{Cl}_{3,1}}$$
 *where $\Gamma_s = \tfrac{1}{2}(\Gamma + \Gamma^\top)$ (symmetric, 10 independent entries — the Force
@@ -347,7 +346,7 @@ which is the free Maxwell equation in the absence of sources ($\partial^\mu F_{\
 with the Bianchi identity $\partial_{[\mu}F_{\nu\rho]} = 0$ (automatic from $F = \mathrm{d}A$). The
 bivector $F_{\mu\nu}$ is the Faraday tensor; the identification of $\Gamma_a$ with the grade-2 sector
 of $\mathrm{Cl}_{3,1}$ makes the Field $\mathbf{I}\wedge\mathbf{R}$ correspond to the spatial (magnetic)
-part of $F_{\mu\nu}$, and the electric part arises from the $\partial_\tau\wedge\nabla$ coupling. Charge
+part of $F_{\mu\nu}$, and the electric part arises from the $\partial_\tau\wedge\nabla$ coupling. In the free-field sector, charge
 conservation $\partial^\mu J_\mu = 0$ follows from the antisymmetry of $F$ without additional assumptions.
 **Status: free Maxwell $\langle\mathrm{TEO}\rangle[\mathrm{D}]$; source equation $\langle\mathrm{A}\rangle$
 (requires closing the cross-coupling block).**
@@ -383,31 +382,18 @@ The closest antecedent is the observation (Lounesto 2001, §17) that the Cliffor
 of the wave operator is $\mathrm{Cl}_{3,1}$. Here that observation becomes a theorem: it is the
 *only* Clifford algebra consistent with A1 and A2.
 
-### 8.2 The octonionic branch
-
-Lemma 1 identifies a second branch: $d = 7$ (octonions). As argued in Lemma 1, this branch does not
-admit a canonical temporal extension compatible with the octonionic product structure. It is the algebraic
-home of the *internal* structure of the ODU: the derivation algebra $\mathrm{Der}(\mathbb{O}) = G_2$
-(with $\mathrm{SU}(3) \subset G_2$), three generations encoded in the exceptional Jordan algebra
-$h_3(\mathbb{O})$, and color symmetry. The two branches ($d=3$ with time, $d=7$ without) are algebraically
-orthogonal: the temporal generator of the $d=3$ branch does not act on the $d=7$ sector. This structural
-orthogonality may explain why internal quantum numbers appear to be independent of spacetime dynamics, but
-the connection remains conjectural and is open for future work.
-
-### 8.3 Honest scope
+### 8.2 Honest scope
 
 This paper establishes the algebraic structure. It does not:
-- Derive the specific metric of physical spacetime (GR is a limit; the derivation requires additional
-  steps developed in Molina 2025, Part V)
 - Prove uniqueness of the SAIR attribute structure independent of A1 (that is the content of A1 itself,
   which we take as foundational rather than derived)
-- Close the $d=7$ (octonionic) branch identification (open problem; partial results in Molina 2025, §Q)
+- Close the $d=7$ (octonionic) branch (open problem; not pursued in this paper)
 
 The residues that remain open after P1/P2/P3 are exactly A1, A2, and A3 — the three axioms. Everything
 else in the derivation is a theorem. The cost of explicitness: three axioms instead of two. The gain:
 no premiss enters the derivation undeclared.
 
-### 8.4 Related work
+### 8.3 Related work
 
 - Hurwitz (1898): normed division algebras in dimensions 1, 2, 4, 8.
 - Eckmann (1943): cross products in $\mathbb{R}^n$ exist only for $n = 1, 3, 7$.
@@ -439,7 +425,7 @@ of $\Box$ — not the operator itself (P2); Frobenius is the canonical Clifford 
 The irreducible axioms are A1, A2, and A3. Classical mechanics (§6.1) and free electrodynamics (§6.2)
 appear as structural limits.
 
-The result supplies a structural foundation for the spacetime algebra program: not "given Minkowski
+The result provides a structural basis for the spacetime algebra program: not "given Minkowski
 space, use $\mathrm{Cl}_{3,1}$", but "from the structure of a dynamical unit, $\mathrm{Cl}_{3,1}$ is
 the forced representation."
 
