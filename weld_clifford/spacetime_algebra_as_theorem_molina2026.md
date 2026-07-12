@@ -225,6 +225,26 @@ generator is $(3,1)$. $\square$
 generators in a real matrix algebra forces exactly $M_4(\mathbb{R}) = \mathrm{Cl}_{3,1}$. The Lorentzian
 signature is not a choice — it is what remains after demanding reality and three spatial dimensions.
 
+*Remark 3.2 (The ladder $\mathrm{Cl}_{3,0}\to\mathrm{Cl}_{3,1}\to\mathrm{Cl}_{4,1}$).* Lemma 3 is the
+general mechanism by which a UoC's host algebra grows: a new generator is added exactly when A3's
+smoothness condition exposes a genuinely independent direction that the existing generators cannot
+express. Newton's second law (§6.1) is the $d=3$, no-time-generator floor: it needs no $\partial_\tau$
+beyond an ordinary scalar time parameter, so its host is $\mathrm{Cl}_{3,0}$. Promoting $\partial_\tau$
+to an independent grade-1 generator — forced once the EOM couples space and time symmetrically through
+the wave operator $\Box$ (Lemma 4) — is exactly the step that produces $\mathrm{Cl}_{3,1}$, the host of
+free electrodynamics (§6.2). A further UoC, explored outside this paper under the name UoC$_\mathrm{st}$
+(spacetime as a dynamical unit in its own right, with $\rho$ as a genuine fifth attribute rather than a
+derived quantity), exposes a *second* independent direction beyond the four of $\mathrm{Cl}_{3,1}$ — a
+conformal/scale direction, verified numerically to require a spacelike generator ($e_\rho^2=+1$) to keep
+the Gram signature Lorentzian, $(3,1)$, rather than degrading to $(2,2)$ under a timelike choice
+($\mathrm{Cl}_{3,2}$). This fixes the host to $\mathrm{Cl}_{4,1}$, which contains $\mathrm{Cl}_{3,1}$ as
+the even subalgebra of its Clifford grading (§30.3 of the companion exploration). The pattern across all
+three steps is the same: *the temporal/scale component is never postulated — each new generator is forced
+by a smoothness or signature-consistency condition applied to the previous algebra.* See
+`brainstorming/physics/uoc_cin_R_slot.md` (companion GSF exploration) for the full numerical verification
+of the $\mathrm{Cl}_{4,1}$ vs. $\mathrm{Cl}_{3,2}$ signature comparison; this extension is not part of the
+closed theorem of this paper and is flagged as such in §8.2.
+
 ---
 
 ## 4. Main Theorem
@@ -394,6 +414,9 @@ This paper establishes the algebraic structure. It does not:
 - Prove uniqueness of the SAIR attribute structure independent of A1 (that is the content of A1 itself,
   which we take as foundational rather than derived)
 - Close the $d=7$ (octonionic) branch (open problem; not pursued in this paper)
+- Close the further ladder step $\mathrm{Cl}_{3,1}\to\mathrm{Cl}_{4,1}$ sketched in Remark 3.2: the
+  conformal/scale generator's necessity is verified numerically in the companion exploration but not yet
+  derived from A1–A3 with the same rigor as Lemmas 1–4
 
 The residues that remain open after P1/P2/P3 are exactly A1, A2, and A3 — the three axioms. Everything
 else in the derivation is a theorem. The cost of explicitness: three axioms instead of two. The gain:
