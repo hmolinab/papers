@@ -377,6 +377,21 @@ conservation $\partial^\mu J_\mu = 0$ follows from the antisymmetry of $F$ witho
 **Status: free Maxwell $\langle\mathrm{TEO}\rangle[\mathrm{D}]$; source equation $\langle\mathrm{A}\rangle$
 (requires closing the cross-coupling block).**
 
+*Remark 6.1 (reconciling two decompositions of $F$).* $\mathbf{I},\mathbf{R}$ here are ordinary grade-1
+generators of $V^4$ (Lemma 3) — the same status as $\mathbf{A},\mathbf{I},\mathbf{R}$ in A1 — and
+$\mathbf{I}\wedge\mathbf{R}$ is a genuine wedge of two grade-1 vectors, exactly the mechanism that
+produces $\mathbf{L}=\mathbf{I}\wedge\mathbf{R}$ in the Newton limit (§6.1) or vorticity in the
+Navier–Stokes correspondence. $B$ is grade-2 already in $\mathbb{R}^3$ (it is dual to the ordinary
+grade-1 magnetic vector, i.e. an axial vector), so identifying it with $\mathbf{I}\wedge\mathbf{R}$
+requires no change to A1. $E$, by contrast, is grade-1 in $\mathbb{R}^3$; it only becomes a bivector
+component once lifted to $V^4$ by wedging with the temporal generator ($\partial_\tau\wedge\nabla$,
+not $\mathbf{I}\wedge\mathbf{R}$). A companion exploration (Pieza 4, `pieza4_electromagnetismo.md`)
+labels the two covariant halves of the *already-assembled* Faraday bivector $F$ as "$I=E$, $R=B$" under
+a work-based criterion (which component does work on a charge). That labeling answers a different
+question — how to split $F$ once it exists — and is not in tension with the derivation here, which
+answers how $F$'s magnetic half is *built* from two grade-1 generators. The two readings share names
+but not referents; they should not be conflated.
+
 ---
 
 ## 7. Numerical Verification
