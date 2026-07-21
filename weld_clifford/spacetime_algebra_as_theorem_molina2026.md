@@ -13,12 +13,14 @@ https://github.com/hmolinab/papers/tree/main/weld_clifford/code
 
 ## Abstract
 
-We derive the real Clifford algebra $\mathrm{Cl}_{3,1} \cong M_4(\mathbb{R})$ from three structural axioms
-about any operative dynamical unit (ODU). A1 (SAIR): the unit is described by four
+We derive the real Clifford algebra $\mathrm{Cl}_{3,1} \cong M_4(\mathbb{R})$ from four structural axioms
+about any operative dynamical unit (ODU) — the fourth making explicit a co-location premise used implicitly
+in an earlier draft. A1 (SAIR): the unit is described by four
 intrinsic attributes — a scalar $S$ and three vectors $\mathbf{A}, \mathbf{I}, \mathbf{R}$ in $\mathbb{R}^d$.
 A2 (geometric product): structure is governed by the geometric product of those attributes, whose grade-2
 part $\mathbf{I}\wedge\mathbf{R}$ is the Field bivector. A3 (continuous evolution): the ODU evolves
-smoothly in time and space at finite propagation speed. From these three axioms — without postulating a
+smoothly in time and space at finite propagation speed, with the attribute space and the propagation
+coordinates identified (A3$'$, co-location). From these four axioms — without postulating a
 spacetime metric or background geometry — we derive: (i) the closure condition
 $\binom{d}{2}=d$ forces $d=3$ uniquely (Hodge self-duality of bivectors in $\mathbb{R}^3$, confirmed by
 Hurwitz); (ii) smooth evolution (A3) requires a fourth temporal direction independent of the spatial
@@ -43,8 +45,9 @@ geometric: one postulates a Minkowski spacetime with signature $(3,1)$ and then 
 Clifford algebra. The question we address is different: *is the Lorentzian signature a theorem, rather than a
 postulate, if one asks what algebraic structure a self-describing dynamical unit must have?*
 
-We show that the answer is yes, under three minimal axioms: A1 (attribute structure), A2 (geometric
-product), and A3 (smooth evolution at finite speed). The derivation does not require spacetime as an
+We show that the answer is yes, under four minimal axioms: A1 (attribute structure), A2 (geometric
+product), A3 (smooth evolution at finite speed), and A3$'$ (co-location of the attribute space with the
+propagation coordinates). The derivation does not require spacetime as an
 input; the signature emerges from the principal symbol of the equation of motion dictated by A3.
 
 This paper is part of a larger program — the Gamma Space Framework (GSF) — whose central object is a real
@@ -67,7 +70,7 @@ a real matrix (dissipation and gradient flows are real processes); this distingu
 the algebraic level. The derivation does not compete with the spacetime algebra program; it identifies which
 real algebra is forced by the structure of any evolving dynamical unit, and provides a structural basis for that program.
 
-**Plan.** §2 states the three axioms. §3 derives the four lemmas. §4 states and proves the main theorem. §5
+**Plan.** §2 states the four axioms. §3 derives the four lemmas. §4 states and proves the main theorem. §5
 establishes the three closing propositions. §6 illustrates with two physical limits (Newton and Maxwell). §7
 gives numerical verification of key steps. §8 discusses scope, related work, and open problems.
 
@@ -85,14 +88,46 @@ intrinsic attributes:
 - $\mathbf{A}, \mathbf{I}, \mathbf{R} \in \mathbb{R}^d$ (Agency, Impulse, Relation — grade-1 vectors)
 
 where $d$ is to be determined. The mapping from observable properties of any coherent entity to the four
-structural slots $\{S, \mathbf{A}, \mathbf{I}, \mathbf{R}\}$ is structurally unique (no two inequivalent
-assignments produce structurally identical predictions for the same entity).
+structural slots $\{S, \mathbf{A}, \mathbf{I}, \mathbf{R}\}$ is claimed to be structurally unique (no two
+inequivalent assignments produce structurally identical predictions for the same entity) — but this paper
+establishes that claim only at the level of the *container*, not of *instances*, and the two should not be
+conflated (see the qualification at the end of Remark 2.1).
 
 *Remark 2.1.* A1 is the foundational axiom of the framework; it is not derived from simpler premises
 within this paper. Its justification is the structural argument that $\{S, \mathbf{A}, \mathbf{I}, \mathbf{R}\}$
 are the grades of a geometric algebra of minimal dimension consistent with A2 — a circularity resolved by
 the mutual consistency of A1 and A2, not by an independent proof of A1. The role of A1 in this structure
 is analogous to that of natural selection in Darwinian theory: a minimal posit that generates the rest.
+
+*Qualification (what "structurally unique" means here, and what it does not).* A1's uniqueness clause is
+proved in this paper only for the **container**: given that an ODU has one grade-0 and three grade-1
+attributes at all, Lemmas 2–4 show the algebra hosting them is forced to $\mathrm{Cl}_{3,1}$, uniquely — a
+Schur-type argument (representation compatibility) that is exactly why the grades cannot be reshuffled once
+fixed. This paper does **not** establish uniqueness at the level of **instances**: given a specific ODU (a
+particle, a cell, a market), which observable quantity fills $S$ versus $\mathbf{A}$ versus $\mathbf{I}$
+versus $\mathbf{R}$ is an assignment problem the container theorem is silent on. A necessary condition for
+that assignment (candidates must share the slot's representation under the domain's covariance group) is
+the same Schur argument specialized to instances, and a companion line of work develops sufficient
+selection criteria and tests them against seven worked domains — but that work is at an earlier stage of
+rigor than this paper's closed lemmas and is deliberately not imported here (see §8.3). The word "unique"
+in A1 should be read as "unique at the container level, proved; open at the instance level" until that
+companion work matures. This is not a retreat from A1 — it is the same discipline §8.3 applies elsewhere:
+say exactly what is proved, and do not let a strong word in an axiom imply more than the theorem delivers.
+
+*A second, prior qualification: existence, not just uniqueness.* Everything above concerns *uniqueness*
+of the slot assignment given that a well-posed SAIR quadruple already exists for a domain. A separate and
+more basic question is *existence*: does a given domain admit $\mathbf A,\mathbf I,\mathbf R$ as grade-1
+vectors at all? **The theorem of this paper is conditional on a positive answer, and does not itself
+supply one.** This is not automatic: a systematic scan of chemical and biological kinetics (companion
+work, `brainstorming/physics/veinte_dominios_quimica_biologia.md`) found that 13 of 20 domains tested
+have **no** vector candidate for $\mathbf A,\mathbf I,\mathbf R$ — the native variables are scalars
+(concentrations, rates, occupation numbers) with no natural embedding into $\mathbb R^3$ or a grade-1
+Clifford subspace. For those domains, $\Gamma$ as constructed here simply does not arise; a different
+object (a spectral/Schur reduction of a Jacobian, outside this paper's scope) is used instead. **Read
+correctly, the Main Theorem (§4) says: "if a domain has grade-1 $\mathbf A,\mathbf I,\mathbf R$, then
+their host algebra is forced to $\mathrm{Cl}_{3,1}$" — not "every domain has such attributes."** The
+container theorem is proved unconditionally as a piece of algebra; its applicability to a specific
+domain is not, and should never be read off this paper alone.
 
 An ODU is not merely a system with four labelable slots. The attributes are intrinsic in the operational
 sense: they are the generators of the geometric product of A2, not observational labels assigned from
@@ -112,6 +147,33 @@ grade-0 and $S\mathbf{A}$ is a grade-1 vector, not a scalar — the symmetric st
 Gram matrix, not through a grade-0 product. The Force/Field split is algebraically forced by A2, not a
 separate postulate.
 
+**Definition (SAIR embedding — the matrix construction named, gauge closed).** The phrase "Gram coupling"
+above names an operation without writing it; we write it once, explicitly. Embed the vector attributes as
+the columns of $W = [\,\mathbf{A}\mid\mathbf{I}\mid\mathbf{R}\,] \in \mathbb{R}^{4\times3}$ inside the
+ambient $4$-dimensional space carrying a bilinear form $q$, and complete $W$ to a basis with a scalar
+direction $\mathbf{e}_0$ for $S$: $V = [\,S\mathbf{e}_0\mid W\,]$.
+
+$\mathbf{e}_0$ is not a free choice. Whenever the $3\times3$ Gram $W^{\mathsf T}qW$ is non-degenerate
+(the same invertibility hypothesis Corollary 4.2 already requires), the $q$-orthogonal complement of
+$\mathrm{span}\{\mathbf{A},\mathbf{I},\mathbf{R}\}$ is exactly one-dimensional — a standard fact of
+bilinear algebra: for non-degenerate $q$ on the full $4$-space, $\dim W + \dim W^{\perp_q} = 4$, and
+$W\cap W^{\perp_q}=\{0\}$ precisely because $q|_W$ is non-degenerate. **We fix $\mathbf{e}_0$ to be this
+unique direction** (normalized, with the residual sign ambiguity the same harmless kind as P1's gauge).
+With this choice, $\Gamma_s := V^{\mathsf T}qV$ is automatically block-diagonal:
+$$\Gamma_s = \begin{pmatrix}S^2\,q(\mathbf{e}_0,\mathbf{e}_0) & 0\\ 0 & W^{\mathsf T}qW\end{pmatrix},$$
+i.e. the **congruence reading** collapses, by construction, to the **per-slot reading**
+$\Gamma_s=\mathrm{diag}\big(q_S(S\mathbf{e}_0),q_A(\mathbf{A}),q_I(\mathbf{I}),q_R(\mathbf{R})\big)$ used
+in the companion instantiation work — the two are not independent alternatives licensed separately by A2;
+the per-slot reading *is* the congruence reading evaluated at the one gauge consistent with treating $S$
+as grade-0 (no cross-coupling to the vector slots, matching the grade-mismatch fact that $S$ and a
+grade-1 attribute cannot pair under a grade-respecting product). Any other choice of $\mathbf{e}_0$ gives
+the same signature by Sylvester (Corollary 4.2 below does not depend on which invertible $V$ is used) but
+populates spurious $S$–$\mathbf{A}$, $S$–$\mathbf{I}$, $S$–$\mathbf{R}$ cross-entries with no counterpart
+anywhere they are actually used — so the orthogonal $\mathbf{e}_0$ is not merely *a* valid gauge, it is
+the canonical one, singled out by consistency with every explicit construction in this program.
+Verification (existence, uniqueness, and the block-diagonal collapse, 5 random trials):
+`models/calcs/brainstorming/papers/weld_clifford/puente_simbolo_gram_sylvester_prueba.py`, part IV.
+
 **Axiom A3 (continuous evolution).** The ODU evolves smoothly in time $\tau$ and space $\mathbf{x}$,
 with a finite propagation speed $c > 0$. Treating $\Gamma(\tau,\mathbf{x})$ as a field and expanding to
 second order in both $\tau$ and $\mathbf{x}$, consistent with A1 and A2, the generic equation of motion is
@@ -127,6 +189,20 @@ and finite speed.
 the claim that *evolution is smooth and second-order*: position and velocity are independent degrees of
 freedom, so a first-order equation would conflate them. The symmetric/antisymmetric split of the
 geometric product is a theorem of geometric algebra, not an additional hypothesis.
+
+*Remark 2.3 (the EOM does not retire $\Gamma_s,\Gamma_a$).* A3's equation is written for the undivided
+$\Gamma$, and from here on the paper works mostly with $\Gamma$ as a single matrix — it is easy to read
+this as A2's Force/Field split being used once, in §2, and then abandoned. It is not: every term of the
+EOM acts on both sectors simultaneously, because $\ddot\Gamma=\ddot\Gamma_s+\ddot\Gamma_a$,
+$\nabla^2_{\mathbf x}\Gamma=\nabla^2_{\mathbf x}\Gamma_s+\nabla^2_{\mathbf x}\Gamma_a$, and likewise for
+$\gamma\dot\Gamma$, by linearity of $\Gamma\mapsto\Gamma_s,\Gamma_a$. The one term that is *not*
+sector-blind is the potential: $P(\Gamma)$ in this paper's scope (§6, and Definition 2.1 of the
+companion atlas work) is a functional of $\Gamma_s$ alone — the Force sector supplies the restoring
+force, and $\Gamma_a$ is source-free and dissipation-free at this order, evolving only by inertia and
+propagation. So the decomposition is not lost; it reappears as a statement about which terms of the EOM
+each sector feels. This is used below without further comment (§6.1–6.2 recover Newton and Maxwell as,
+respectively, the $\Gamma_s$-only and $\Gamma_a$-only limits of the same equation) and is made fully
+explicit, with the spectral consequence at $\det\Gamma_s=0$, in the companion atlas work.
 
 ---
 
@@ -192,6 +268,29 @@ Together $\{\mathbf{A}, \mathbf{I}, \mathbf{R}, \partial_\tau\}$ span a 4-dimens
 The Clifford algebra $\mathrm{Cl}(V^4, q)$ has dimension $2^4=16$; its smallest faithful real matrix
 representation is $4\times4$ (Bott periodicity, once the signature $q$ of $V^4$ is fixed by Lemma 4).
 The ODU has a time axis because it evolves smoothly — not because spacetime is postulated. $\square$
+
+**Postulate A3′ (co-location — named explicitly, not derived).** A3 writes $\Gamma(\tau,\mathbf{x})$ as
+a field over external coordinates $\mathbf{x}$ with a spatial Laplacian $\nabla_{\mathbf{x}}^2$, while
+A1/Lemma 1 give an *internal* attribute space $\mathrm{span}\{\mathbf{A},\mathbf{I},\mathbf{R}\}$. Lemma
+3's phrase "the spatial attribute directions of A1" silently identifies the two. This identification is
+not forced by A1–A3 as stated: an ODU could in principle carry internal grade-1 attributes without those
+attributes coinciding, as a vector space, with the coordinates over which it propagates. We name the
+identification a fourth postulate, since the derivation genuinely needs it and it was previously used
+without being declared:
+
+> **A3′.** *The grade-1 attribute directions $\{\mathbf{A},\mathbf{I},\mathbf{R}\}$ are realized as
+> tangent vectors of the same physical space over which $\Gamma$ propagates; i.e. the internal attribute
+> space of A1 and the external coordinate space of A3 are one and the same $\mathbb{R}^3$.*
+
+This is the natural reading whenever the attributes are ordinary spatial vectors (velocity, angular
+momentum, a relational displacement) — objects that already transform as $SO(3)$ vectors under rotations
+of the physical space the unit occupies, which is what "grade-1" was meant to capture in A1. It stops
+being automatic once an attribute is not literally a spatial vector (e.g. the per-slot norms of §2's
+Definition, where $q_S,q_I,q_R$ need not come from the coordinate metric at all). A3′ is therefore load-
+bearing precisely at the joint the referee identified in Lemma 3 (§8.3): without it, Lemma 4 constrains
+only the coordinate space $\mathbf{x}$, and says nothing about $\{\mathbf{A},\mathbf{I},\mathbf{R}\}$.
+With it, the $(3,1)$ conclusion of Lemma 4 transfers onto the attribute space itself, which is what
+Corollary 4.2 (below) requires to even be a meaningful question.
 
 ### Lemma 4 (Lorentzian signature from the wave operator)
 
@@ -464,8 +563,40 @@ companion paper uses precisely this stratification to organise the dynamical reg
 
 *Scope.* Corollary 4.1 concerns the principal symbol — the object that fixes PDE type and
 well-posedness. It should not be conflated with the inertia of the Gram matrix $\Gamma_s$ of A2,
-which is a different object built from the attribute slots; whether the two signatures must agree is
-not established here and is flagged as open in §8.3.
+which is a different object built from the attribute slots. The two signatures are, in general,
+independent invariants of different objects; Corollary 4.2 states exactly when they must agree.
+
+**Corollary 4.2 (when the Gram inherits the symbol's signature).** *Let $\eta$ be the symbol's
+$(3,1)$ form (Lemma 4, under A3′) and let $\Gamma_s$ be built by the congruence reading of the
+Definition in §2 (Axiom A2), $\Gamma_s = V^{\mathsf T}\eta V$ with $V=[S\mathbf{e}_0\mid\mathbf{A}\mid
+\mathbf{I}\mid\mathbf{R}]$. Then $\mathrm{signature}(\Gamma_s)=\mathrm{signature}(\eta)=(3,1)$
+whenever $V$ is invertible, with no further condition.*
+
+*Proof.* This is exactly Sylvester's law of inertia: congruence by an invertible matrix preserves
+signature. $\square$
+
+The condition is sharp. With $\mathbf e_0$ fixed by the gauge closure of §2, the per-slot reading with
+*heterogeneous* forms $q_S,q_I,q_R\neq\eta$ — used whenever the four attributes are not all measured
+under the one form $\eta$, e.g. $S,\mathbf{I},\mathbf{R}$ carrying ordinary positive-definite norms with
+no Minkowski content — is not a congruence of $\eta$ at all (it is still a congruence of *some* block
+form, namely $q_S\oplus q_A\oplus q_I\oplus q_R$, but not of the single $\eta$ Corollary 4.2 requires).
+Corollary 4.2 does not apply there, and $\Gamma_s$'s signature is free to range over all five classes of
+Corollary 4.1(i); this is confirmed numerically in the companion instantiation work, where a massive
+(particle) state lands on $(4,0)$, a photon state on the degenerate boundary, and a general-relativistic
+state — where the attribute $\mathbf{A}$ genuinely *is* a Minkowski four-velocity, satisfying $\langle
+\mathbf{A},\mathbf{A}\rangle_\eta=-c^2$ — on $(3,1)$, the one case closest to satisfying Corollary 4.2's
+hypothesis. Verification:
+`models/calcs/brainstorming/papers/weld_clifford/puente_simbolo_gram_sylvester_prueba.py`.
+
+**Remark (no residual mystery).** The apparent tension — "the symbol forces $(3,1)$" versus "the Gram
+ranges over five sectors" — dissolves once the two constructions of §2 are told apart. There is no
+hidden inconsistency: the symbol's $(3,1)$ is a fixed background fact about the operator (governs
+whether *evolution of the field* $\Gamma(\tau,\mathbf{x})$ is well-posed); the Gram's signature is a
+state-dependent fact about the *value* $\Gamma_s$ takes at an instant (classifies the *regime of that
+state*). They coincide, by theorem, exactly on the congruence reading with $V$ invertible; they are
+free to differ, also by theorem (Sylvester simply does not constrain a non-congruence construction),
+under the per-slot reading. Which reading a given physical domain uses is a modelling fact about that
+domain, not a gap in the algebra.
 
 ### 8.2 Relation to emergent-signature approaches
 
@@ -506,35 +637,56 @@ This paper establishes the algebraic structure. It does not:
 - Close the further ladder step $\mathrm{Cl}_{3,1}\to\mathrm{Cl}_{4,1}$ sketched in Remark 3.2: the
   conformal/scale generator's necessity is verified numerically in the companion exploration but not yet
   derived from A1–A3 with the same rigor as Lemmas 1–4
+- Establish instance-level **uniqueness** of the SAIR slot assignment (Remark 2.1's qualification): which
+  observable quantity of a given ODU fills $S$ versus $\mathbf{A},\mathbf{I},\mathbf{R}$ is not decided by
+  the container theorem. A necessary condition (representation compatibility, Schur) follows from the same
+  argument as Lemmas 2–4; sufficient selection criteria are the subject of a companion, less mature line of
+  work (seven domains checked by blind retrodiction and active rejection of incorrect-but-compatible
+  assignments) that is intentionally kept out of this paper rather than diluting its closed lemmas with an
+  open one
+- Establish, for a given domain, **existence** of a SAIR quadruple in the first place (Remark 2.1's second
+  qualification): whether $\mathbf{A},\mathbf{I},\mathbf{R}$ arise as grade-1 vectors at all is empirical,
+  not algebraic, and fails in most domains tested (13/20 in a companion scan). This is logically prior to,
+  and independent of, the uniqueness question above — the container theorem is conditional on existence and
+  proves nothing about it
 
-Two structural gaps deserve to be named explicitly, since both are places where the derivation moves
-faster than its own machinery warrants.
+Two structural gaps were identified in an earlier draft; both are now named and given precise
+(partial) resolutions rather than left as bare admissions, since a named gap that is only asserted
+open, without stating exactly what would close it, is not yet doing its job.
 
-**(a) The attribute space and the coordinate space are identified without argument.** A1 and Lemma 1
-give an *internal* attribute space $\mathbb{R}^3$ spanned by $\{\mathbf{A},\mathbf{I},\mathbf{R}\}$.
-A3, however, treats $\Gamma(\tau,\mathbf{x})$ as a field over an *external* coordinate space carrying
-the Laplacian $\nabla_{\mathbf{x}}^2$, and Lemma 4 reads the signature off that Laplacian. The step
-that identifies the internal attribute directions with the external coordinate directions is used but
-never justified; without it, Lemma 4 constrains the coordinate space and says nothing about the
-attribute space. We regard this identification as the least-defended move in the paper. It is not
-circular — A3 is an axiom and is allowed to introduce $\mathbf{x}$ — but the theorem's reach depends
-on whether the $\mathbb{R}^3$ of Lemma 1 and the $\mathbf{x}$ of A3 are the same $\mathbb{R}^3$, and
-that is an assumption, not a result.
+**(a) The attribute space and the coordinate space were identified without argument — now Postulate
+A3′.** A1 and Lemma 1 give an *internal* attribute space $\mathbb{R}^3$ spanned by
+$\{\mathbf{A},\mathbf{I},\mathbf{R}\}$. A3 treats $\Gamma(\tau,\mathbf{x})$ as a field over an
+*external* coordinate space carrying $\nabla_{\mathbf{x}}^2$, and Lemma 4 reads the signature off that
+Laplacian. The step identifying the two spaces is now named explicitly, immediately after Lemma 3, as
+**Postulate A3′**: the resolution is not to derive the identification from A1–A3 (it is not derivable
+from them; an ODU could in principle carry internal attributes that do not coincide with its
+propagation coordinates) but to state it as a fourth, independent premise, exactly as A1's own
+irreducibility is handled in Remark 2.1. This is a genuine strengthening, not a rebranding: the
+theorem's reach was always conditional on A3′; the reader can now see that condition and evaluate it,
+rather than absorb it silently inside "the spatial attribute directions of A1" in Lemma 3.
 
-**(b) Two distinct objects are both called "the signature".** Lemma 4 and Corollary 4.1 concern the
-inertia of the *principal symbol* on $V^4=\mathrm{span}\{\mathbf{A},\mathbf{I},\mathbf{R},\partial_\tau\}$.
-A2 independently supplies the Gram matrix $\Gamma_s$ of the slots $\{S,\mathbf{A},\mathbf{I},\mathbf{R}\}$,
-which also carries an inertia. These are different $4$-dimensional spaces — one contains the temporal
-generator and no $S$, the other contains the grade-$0$ slot $S$ and no $\partial_\tau$ — so their
-signatures are *a priori* independent invariants. Nothing in this paper establishes that they agree.
-Any argument that reads a dynamical regime off the Gram inertia (as a companion paper does) therefore
-requires a bridge between the two that is not supplied here. We state this as an open problem rather
-than assume it away.
+**(b) Two distinct objects were both called "the signature" — now Corollary 4.2.** Lemma 4 and
+Corollary 4.1 concern the inertia of the *principal symbol* on
+$V^4=\mathrm{span}\{\mathbf{A},\mathbf{I},\mathbf{R},\partial_\tau\}$. A2 independently supplies a Gram
+matrix $\Gamma_s$ of the slots $\{S,\mathbf{A},\mathbf{I},\mathbf{R}\}$ (§2, Definition), which also
+carries an inertia. These need not agree in general — they are different $4$-spaces, and the Gram's
+construction admits two readings (§2). Corollary 4.2 closes this with an exact condition rather than
+a bridge asserted or merely hoped for: the Gram inherits the symbol's $(3,1)$ signature, by Sylvester's
+law of inertia, precisely when it is built as an authentic congruence $V^{\mathsf T}\eta V$ with $V$
+invertible; under the alternative per-slot construction (also licensed by A2, and the one used whenever
+an attribute carries no Minkowski structure of its own) no such inheritance is claimed or needed, and
+the signature is free to range over all admissible classes — which is exactly what a companion paper
+observes when it reads dynamical regimes off the Gram. Nothing here was contradictory; the two readings
+of the Definition in §2 were simply not told apart before.
 
-The residues that remain open after P1/P2/P3 are the three axioms A1, A2, A3, together with the two
-structural gaps (a) and (b) just named. Everything else in the derivation is a theorem. The cost of
-explicitness: three axioms instead of two, and two acknowledged joints instead of a seamless story.
-The gain: no premiss enters the derivation undeclared.
+The residues that remain open after P1/P2/P3 are the three original axioms A1, A2, A3, together with
+the newly named Postulate A3′. Gap (a) is resolved by declaring A3′ as a premise — its truth for a
+given physical domain remains a modelling question, not a theorem, and is flagged as such. Gap (b) is
+resolved outright: Corollary 4.2 is a theorem with a checkable hypothesis, not an open problem. The
+cost of explicitness: four axioms instead of two, and one corollary earning its keep instead of a
+promissory note. The gain: no premiss enters the derivation undeclared, and the one place where two
+different "signatures" could be silently conflated no longer can be.
 
 ### 8.4 Related work
 
@@ -558,9 +710,10 @@ The gain: no premiss enters the derivation undeclared.
 
 ## 9. Conclusions
 
-From three structural axioms — SAIR attribute structure (A1), geometric product (A2), and continuous
-smooth evolution (A3) — the real Clifford algebra $\mathrm{Cl}_{3,1}$ emerges as a structural theorem
-rather than a geometric postulate. The derivation chain is:
+From four structural axioms — SAIR attribute structure (A1), geometric product (A2), continuous
+smooth evolution (A3), and co-location of the attribute space with the propagation coordinates (A3$'$) —
+the real Clifford algebra $\mathrm{Cl}_{3,1}$ emerges as a structural theorem rather than a geometric
+postulate. The derivation chain is:
 
 $$\underbrace{\text{SAIR}}_\text{A1} + \underbrace{\text{geom. product}}_\text{A2}
 \xrightarrow{\binom{d}{2}=d} d=3

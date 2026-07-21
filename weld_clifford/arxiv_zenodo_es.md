@@ -28,33 +28,41 @@ Clifford algebra, geometric algebra, Hurwitz theorem, spacetime signature, SAIR 
 operative dynamical unit, Lorentzian signature, wave operator, Frobenius metric, no-Hopf lemma
 
 **Campo "Comments":**
-14 pages, 4 numerical verification scripts (companion repository). Companion paper: arXiv:[det³ ID].
+15 pages, 4 numerical verification scripts (companion repository). Companion paper: arXiv:[det³ ID].
 Part of the Gamma Space Framework program; see also Molina (2025), working manuscript.
 
 ---
 
 ### Abstract (para arXiv — en inglés, ≤ 250 palabras)
 
-We derive the real Clifford algebra $\mathrm{Cl}_{3,1} \cong M_4(\mathbb{R})$ from three structural
-axioms about any operative dynamical unit (ODU). A1 (SAIR attribute structure): the unit is described
+We derive the real Clifford algebra $\mathrm{Cl}_{3,1} \cong M_4(\mathbb{R})$ from four structural
+axioms about any operative dynamical unit (ODU) — the fourth making explicit a co-location premise used
+implicitly in an earlier draft. A1 (SAIR attribute structure): the unit is described
 by a scalar $S$ and three vectors $\mathbf{A}, \mathbf{I}, \mathbf{R}$ in $\mathbb{R}^d$. A2 (geometric
 product): structure is governed by the geometric product of those attributes, whose grade-2 part
-$\mathbf{I}\wedge\mathbf{R}$ is the Field bivector. A3 (continuous evolution): the ODU evolves smoothly
-in time and space at finite propagation speed $c$, with equation of motion
-$\ddot\Gamma + \gamma\dot\Gamma - c^2\nabla_{\mathbf{x}}^2\Gamma + \nabla_\Gamma P = N$.
+$\mathbf{I}\wedge\mathbf{R}$ is the Field bivector; the SAIR-to-$\Gamma$ embedding is written explicitly,
+with a canonical, gauge-closed choice of reference direction for the scalar slot. A3 (continuous
+evolution): the ODU evolves smoothly in time and space at finite propagation speed $c$, with equation of
+motion $\ddot\Gamma + \gamma\dot\Gamma - c^2\nabla_{\mathbf{x}}^2\Gamma + \nabla_\Gamma P = N$. A3$'$
+(co-location): the attribute space and the propagation coordinates are identified.
 
-From these three axioms, without postulating a spacetime metric or background geometry, we derive:
+From these four axioms, without postulating a spacetime metric or background geometry, we derive:
 (i) the closure condition $\binom{d}{2}=d$ forces $d=3$ uniquely via Hodge self-duality of bivectors
 in $\mathbb{R}^3$, confirmed by the Eckmann–Hurwitz theorem; (ii) smooth evolution at finite speed
 requires a fourth temporal direction independent of the three spatial attributes; (iii) the principal
 symbol of the resulting second-order PDE is the Minkowski quadratic form
 $\eta = \mathrm{diag}(-1,+1,+1,+1)$, whose real Clifford algebra is $\mathrm{Cl}_{3,1} \cong M_4(\mathbb{R})$.
+A completeness corollary shows this signature is the only one of five inertia classes admitting a
+well-posed Cauchy problem, and a second corollary states exactly when the state-dependent Gram matrix
+$\Gamma_s$ inherits the symbol's signature (Sylvester's law of inertia, under an invertible congruence).
 
 Three closing propositions establish that orthonormality is gauge-redundant (P1), that $\gamma_0$ is the
 unique algebraic generator conjugate to $\partial_\tau$ in the Dirac factorization of $\Box$ (P2), and
 that the Frobenius norm is the canonical Clifford metric forced by A2 (P3). Classical mechanics and free
 electrodynamics appear as structural limits. Isotropy of the spatial Laplacian is anchored to the
-$SO(3)$-invariance of $\Gamma$ under rotations of $\{\mathbf{A},\mathbf{I},\mathbf{R}\}$ (P1).
+$SO(3)$-invariance of $\Gamma$ under rotations of $\{\mathbf{A},\mathbf{I},\mathbf{R}\}$ (P1). The
+theorem is explicitly conditional — existence of a grade-1 SAIR quadruple for a given domain is not
+established here and fails in most domains tested in companion work.
 
 The result promotes the spacetime Clifford algebra from a geometric postulate to a structural theorem:
 not "given Minkowski space, use $\mathrm{Cl}_{3,1}$", but "from the structure of any evolving dynamical
@@ -93,19 +101,28 @@ unit, $\mathrm{Cl}_{3,1}$ is the forced representation."
 
 **Descripción (resumen en español para Zenodo):**
 
-Derivamos el álgebra de Clifford real $\mathrm{Cl}_{3,1} \cong M_4(\mathbb{R})$ a partir de tres axiomas
+Derivamos el álgebra de Clifford real $\mathrm{Cl}_{3,1} \cong M_4(\mathbb{R})$ a partir de cuatro axiomas
 estructurales sobre cualquier unidad dinámica operativa (en el GSF: Unidad de Coherencia, UoC). El Axioma
 A1 (estructura de atributos SAIR) postula un escalar $S$ y tres vectores $\mathbf{A},\mathbf{I},\mathbf{R}$
 en $\mathbb{R}^d$. El Axioma A2 (producto geométrico) establece que la dinámica se rige por el producto
-geométrico de esos atributos. El Axioma A3 (evolución continua) exige suavidad en tiempo y espacio con
-velocidad finita $c$.
+geométrico de esos atributos, y se escribe explícitamente el embebido SAIR→$\Gamma$, con una elección
+canónica y de gauge cerrado para la dirección de referencia del casillero escalar. El Axioma A3
+(evolución continua) exige suavidad en tiempo y espacio con velocidad finita $c$. El Axioma A3′
+(co-localización) identifica el espacio de atributos con las coordenadas de propagación.
 
-De estos tres axiomas, sin postular una métrica de espacio-tiempo, se deriva: (i) la condición de clausura
-$\binom{d}{2}=d$ fuerza $d=3$ de forma única; (ii) la evolución suave requiere una cuarta dirección temporal
-independiente; (iii) el símbolo principal de la EOP resultante es la forma de Minkowski con firma $(3,1)$,
-cuya álgebra de Clifford real es $\mathrm{Cl}_{3,1} \cong M_4(\mathbb{R})$.
+De estos cuatro axiomas, sin postular una métrica de espacio-tiempo, se deriva: (i) la condición de
+clausura $\binom{d}{2}=d$ fuerza $d=3$ de forma única; (ii) la evolución suave requiere una cuarta
+dirección temporal independiente; (iii) el símbolo principal de la EOP resultante es la forma de
+Minkowski con firma $(3,1)$, cuya álgebra de Clifford real es $\mathrm{Cl}_{3,1} \cong M_4(\mathbb{R})$.
+Un corolario de completitud muestra que esta firma es la única, de cinco clases de inercia posibles, que
+admite un problema de Cauchy bien puesto; un segundo corolario establece exactamente cuándo la matriz de
+Gram $\Gamma_s$ (dependiente del estado) hereda la firma del símbolo (ley de inercia de Sylvester, bajo
+una congruencia invertible).
 
-El resultado eleva el álgebra de Clifford del espacio-tiempo de postulado geométrico a teorema estructural.
+El resultado eleva el álgebra de Clifford del espacio-tiempo de postulado geométrico a teorema
+estructural. El teorema es explícitamente condicional: la existencia de una cuádrupla SAIR de grado 1
+para un dominio dado no se establece aquí, y falla en la mayoría de los dominios probados en trabajo
+compañero.
 
 **Palabras clave:** álgebra de Clifford, teorema de Hurwitz, firma Lorentziana, marco SAIR, operador de onda
 
