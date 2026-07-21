@@ -428,6 +428,45 @@ the symbol of the wave operator is $\mathrm{Cl}_{3,1}$. Here that observation be
 axioms A1–A3 it is the *only* Clifford algebra consistent with a real, smoothly-evolving self-describing
 unit.
 
+### 8.1bis Corollary: the signature result exhausts the alternatives
+
+Lemma 4 selects $(3,1)$. It is worth recording that the same argument, run over the full space of
+candidate symbols rather than only the one A3 produces, *classifies* the alternatives rather than
+merely excluding them — which strengthens the theorem at no additional cost.
+
+**Corollary 4.1 (completeness of the regimes).** *Let $q$ be the principal symbol of a second-order
+EOM on $V^4$, i.e. a real quadratic form on a $4$-dimensional space. Then:*
+*(i) by Sylvester's law of inertia, $q$ falls into exactly one of $15$ congruence classes indexed by
+$(n_+,n_0,n_-)$ with $n_++n_0+n_-=4$; the non-degenerate ones form $5$ connected components of the
+space of such forms, since the inertia is a complete and locally constant invariant;*
+*(ii) modulo the global sign convention $(n_+,\cdot,n_-)\sim(n_-,\cdot,n_+)$, exactly three regimes
+remain — elliptic $(4,0)$, hyperbolic $(3,1)$, ultrahyperbolic $(2,2)$;*
+*(iii) of these, exactly one, the Lorentzian $(3,1)$, yields a well-posed Cauchy problem. The
+elliptic case is well-posed as a boundary-value problem but describes equilibrium, not evolution; the
+ultrahyperbolic case has two temporal directions and is Hadamard ill-posed.*
+
+*Proof.* (i) is Sylvester's law together with continuity of eigenvalues: a path between forms of
+different inertia must pass through a degenerate form, so each class is open and closed in the
+non-degenerate stratum. (ii) is the identification of a form with its negative. (iii) is the standard
+PDE classification by principal symbol (Courant and Hilbert 1962, vol. II): all eigenvalues of one
+sign gives an elliptic operator; exactly one of opposite sign gives a hyperbolic operator with
+well-posed Cauchy data; two or more of each gives an ultrahyperbolic operator, for which the Cauchy
+problem is ill-posed. $\square$
+
+Two consequences for the reading of Lemma 4. First, the uniqueness of $(3,1)$ is not a statement
+about a short list of physically motivated candidates: the list of *all* real signatures on $V^4$ is
+finite, is exhausted above, and $(3,1)$ is the only survivor. Second, the excluded cases acquire
+meaning rather than merely being ruled out — the elliptic class is the static/equilibrium regime, and
+the ultrahyperbolic class is the genuine pathology. This matters because $\det$-based classifications
+cannot see the distinction: $\det q>0$ holds for both $(4,0)$ and $(2,2)$, so the determinant sign
+merges a physical regime with a pathological one, and only the full inertia separates them. A
+companion paper uses precisely this stratification to organise the dynamical regimes of $\Gamma$.
+
+*Scope.* Corollary 4.1 concerns the principal symbol — the object that fixes PDE type and
+well-posedness. It should not be conflated with the inertia of the Gram matrix $\Gamma_s$ of A2,
+which is a different object built from the attribute slots; whether the two signatures must agree is
+not established here and is flagged as open in §8.3.
+
 ### 8.2 Relation to emergent-signature approaches
 
 The idea that the Lorentzian signature should be *derived* rather than *postulated* is not new, and this
@@ -468,9 +507,34 @@ This paper establishes the algebraic structure. It does not:
   conformal/scale generator's necessity is verified numerically in the companion exploration but not yet
   derived from A1–A3 with the same rigor as Lemmas 1–4
 
-The residues that remain open after P1/P2/P3 are exactly A1, A2, and A3 — the three axioms. Everything
-else in the derivation is a theorem. The cost of explicitness: three axioms instead of two. The gain:
-no premiss enters the derivation undeclared.
+Two structural gaps deserve to be named explicitly, since both are places where the derivation moves
+faster than its own machinery warrants.
+
+**(a) The attribute space and the coordinate space are identified without argument.** A1 and Lemma 1
+give an *internal* attribute space $\mathbb{R}^3$ spanned by $\{\mathbf{A},\mathbf{I},\mathbf{R}\}$.
+A3, however, treats $\Gamma(\tau,\mathbf{x})$ as a field over an *external* coordinate space carrying
+the Laplacian $\nabla_{\mathbf{x}}^2$, and Lemma 4 reads the signature off that Laplacian. The step
+that identifies the internal attribute directions with the external coordinate directions is used but
+never justified; without it, Lemma 4 constrains the coordinate space and says nothing about the
+attribute space. We regard this identification as the least-defended move in the paper. It is not
+circular — A3 is an axiom and is allowed to introduce $\mathbf{x}$ — but the theorem's reach depends
+on whether the $\mathbb{R}^3$ of Lemma 1 and the $\mathbf{x}$ of A3 are the same $\mathbb{R}^3$, and
+that is an assumption, not a result.
+
+**(b) Two distinct objects are both called "the signature".** Lemma 4 and Corollary 4.1 concern the
+inertia of the *principal symbol* on $V^4=\mathrm{span}\{\mathbf{A},\mathbf{I},\mathbf{R},\partial_\tau\}$.
+A2 independently supplies the Gram matrix $\Gamma_s$ of the slots $\{S,\mathbf{A},\mathbf{I},\mathbf{R}\}$,
+which also carries an inertia. These are different $4$-dimensional spaces — one contains the temporal
+generator and no $S$, the other contains the grade-$0$ slot $S$ and no $\partial_\tau$ — so their
+signatures are *a priori* independent invariants. Nothing in this paper establishes that they agree.
+Any argument that reads a dynamical regime off the Gram inertia (as a companion paper does) therefore
+requires a bridge between the two that is not supplied here. We state this as an open problem rather
+than assume it away.
+
+The residues that remain open after P1/P2/P3 are the three axioms A1, A2, A3, together with the two
+structural gaps (a) and (b) just named. Everything else in the derivation is a theorem. The cost of
+explicitness: three axioms instead of two, and two acknowledged joints instead of a seamless story.
+The gain: no premiss enters the derivation undeclared.
 
 ### 8.4 Related work
 
