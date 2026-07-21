@@ -240,10 +240,10 @@ the Gram signature Lorentzian, $(3,1)$, rather than degrading to $(2,2)$ under a
 ($\mathrm{Cl}_{3,2}$). This fixes the host to $\mathrm{Cl}_{4,1}$, which contains $\mathrm{Cl}_{3,1}$ as
 the even subalgebra of its Clifford grading (§30.3 of the companion exploration). The pattern across all
 three steps is the same: *the temporal/scale component is never postulated — each new generator is forced
-by a smoothness or signature-consistency condition applied to the previous algebra.* See
-`brainstorming/physics/uoc_cin_R_slot.md` (companion GSF exploration) for the full numerical verification
-of the $\mathrm{Cl}_{4,1}$ vs. $\mathrm{Cl}_{3,2}$ signature comparison; this extension is not part of the
-closed theorem of this paper and is flagged as such in §8.2.
+by a smoothness or signature-consistency condition applied to the previous algebra.* The full numerical
+verification of the $\mathrm{Cl}_{4,1}$ vs. $\mathrm{Cl}_{3,2}$ signature comparison is given in the
+companion code repository (§7); this extension is not part of the closed theorem of this paper and is
+flagged as such in §8.3.
 
 ---
 
@@ -416,14 +416,49 @@ The spacetime algebra program (Hestenes 1966; Doran and Lasenby 2003) takes $\ma
 $\mathrm{Cl}_{1,3}$ as the algebra of physical space or spacetime, motivated by the known geometry.
 The present work reverses this logic: $\mathrm{Cl}_{3,1}$ is derived as the forced algebraic structure
 of any self-describing dynamical unit, without assuming a spacetime background. The key steps are:
-(i) the closure condition $\binom{d}{2}=d$ forces the dimension of the vector attribute space (Hurwitz confirms consistency); (ii) the wave operator fixes the signature.
+(i) the closure condition $\binom{d}{2}=d$ forces the dimension of the vector attribute space (Hurwitz confirms consistency); (ii) the wave operator fixes the signature; (iii) the reality of $\Gamma$ selects
+$\mathrm{Cl}_{3,1}\cong M_4(\mathbb{R})$ over the vector-space-isomorphic but algebra-distinct
+$\mathrm{Cl}_{1,3}\cong M_2(\mathbb{H})$. Step (iii) is a selection between signature conventions that a
+metric-first derivation does not face and that other emergent-signature routes (§8.2) do not make; it is
+specific to the demand that the configuration and its dissipative dynamics be real.
 Neither step is obvious from the physics-first perspective.
 
-The closest antecedent is the observation (Lounesto 2001, §17) that the Clifford algebra of the symbol
-of the wave operator is $\mathrm{Cl}_{3,1}$. Here that observation becomes a theorem: it is the
-*only* Clifford algebra consistent with A1 and A2.
+The closest algebraic antecedent is the observation (Lounesto 2001, §17) that the Clifford algebra of
+the symbol of the wave operator is $\mathrm{Cl}_{3,1}$. Here that observation becomes a theorem: within
+axioms A1–A3 it is the *only* Clifford algebra consistent with a real, smoothly-evolving self-describing
+unit.
 
-### 8.2 Honest scope
+### 8.2 Relation to emergent-signature approaches
+
+The idea that the Lorentzian signature should be *derived* rather than *postulated* is not new, and this
+paper does not claim priority for that program; it contributes a specific route. Two comparisons fix the
+position of the present derivation.
+
+Singh (2025) obtains a Lorentzian signature within an octonionic pre-spacetime theory by adopting *split*
+division algebras: the split-complex unit $\omega$ with $\omega^2=+1$ gives a magnitude $x^2-y^2$
+(Lorentzian) in place of $x^2+y^2$ (Euclidean), and split bioctonions then generate a base of signature
+$(3,3)$ carrying embedded $4$-dimensional Lorentzian spacetimes. The signature there is a consequence of
+*choosing split algebras*, a choice motivated by the target signature. The present derivation differs in
+two respects. First, the mechanism: the signature is fixed by the requirement that the second-order
+equation of motion (A3) admit a well-posed Cauchy problem — a Lorentzian principal symbol is the only one
+that does (Lemma 4; Hadamard) — rather than by selecting a split number system. No split-ness is assumed;
+the sign flip is forced by hyperbolicity of the evolution. Second, the target algebra is pinned to
+$\mathrm{Cl}_{3,1}\cong M_4(\mathbb{R})$ *specifically* — not the isomorphic-as-vector-space but
+distinct-as-algebra $\mathrm{Cl}_{1,3}\cong M_2(\mathbb{H})$ — by the reality of $\Gamma$ (dissipative and
+gradient dynamics are real processes; §8.1, §4). Singh's construction lives in higher dimension $(3,3)$
+with embedded Lorentzian slices and does not make this reality-of-configuration selection between the two
+signature conventions. The two derivations are therefore complementary: both answer "yes" to the
+theorem-vs-postulate question, by independent mechanisms, and the present one is arguably the more
+economical in its premisses (well-posedness of a real evolution, rather than a chosen split algebra).
+
+More broadly, the view of an emergent Lorentzian signature has a long tradition in analogue and induced
+gravity (Sakharov 1967; Barceló, Liberati and Visser 2011; Volovik 2003), where the effective Lorentzian
+metric arises from the low-energy behaviour of a non-relativistic substrate. The present result is narrower
+and purely algebraic: it does not construct an effective metric from a substrate, but identifies which real
+Clifford algebra the structure of a self-describing dynamical unit forces. It is offered as a structural
+companion to those programs, not a replacement.
+
+### 8.3 Honest scope
 
 This paper establishes the algebraic structure. It does not:
 - Prove uniqueness of the SAIR attribute structure independent of A1 (that is the content of A1 itself,
@@ -437,7 +472,7 @@ The residues that remain open after P1/P2/P3 are exactly A1, A2, and A3 — the 
 else in the derivation is a theorem. The cost of explicitness: three axioms instead of two. The gain:
 no premiss enters the derivation undeclared.
 
-### 8.3 Related work
+### 8.4 Related work
 
 - Hurwitz (1898): normed division algebras in dimensions 1, 2, 4, 8.
 - Eckmann (1943): cross products in $\mathbb{R}^n$ exist only for $n = 1, 3, 7$.
@@ -446,6 +481,13 @@ no premiss enters the derivation undeclared.
 - Doran and Lasenby (2003): geometric algebra for physicists (Cambridge).
 - Lounesto (2001): Clifford algebras and spinors (Cambridge).
 - Adams (1960): vector fields on spheres; confirms Hurwitz via K-theory.
+- Sakharov (1967): induced gravity; the metric as an emergent elastic response.
+- Barceló, Liberati and Visser (2011): analogue gravity (Living Rev. Relativity); emergent Lorentzian
+  metrics from non-relativistic substrates.
+- Volovik (2003): *The Universe in a Helium Droplet* (Oxford); emergent relativity and effective metric
+  in quantum liquids.
+- Singh (2025): trace dynamics, octonions and unification; Lorentzian signature from split bioctonions.
+  arXiv:2501.18139.
 - Molina (2024a): the determinant as the source of the cubic term in matrix gradient flows. DOI: 10.5281/zenodo.20752208
 
 ---
