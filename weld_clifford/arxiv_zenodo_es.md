@@ -35,9 +35,9 @@ Part of the Gamma Space Framework program; see also Molina (2025), working manus
 
 ### Abstract (para arXiv — en inglés, ≤ 250 palabras)
 
-We derive the real Clifford algebra $\mathrm{Cl}_{3,1} \cong M_4(\mathbb{R})$ from four structural
-axioms about any operative dynamical unit (ODU), the fourth of which makes explicit a co-location
-premise otherwise left implicit. A1 (SAIR attribute structure): the unit is described
+We prove that any operative dynamical unit (ODU) is necessarily an element of the real Clifford algebra
+$\mathrm{Cl}_{3,1} \cong M_4(\mathbb{R})$, given four structural axioms, the fourth of which makes explicit
+a co-location premise otherwise left implicit. A1 (SAIR attribute structure): the unit is described
 by a scalar $S$ and three vectors $\mathbf{A}, \mathbf{I}, \mathbf{R}$ in $\mathbb{R}^d$. A2 (geometric
 product): structure is governed by the geometric product of those attributes, whose grade-2 part
 $\mathbf{I}\wedge\mathbf{R}$ is the Field bivector; the SAIR-to-$\Gamma$ embedding is written explicitly,
@@ -101,8 +101,9 @@ unit, $\mathrm{Cl}_{3,1}$ is the forced representation."
 
 **Descripción (resumen en español para Zenodo):**
 
-Derivamos el álgebra de Clifford real $\mathrm{Cl}_{3,1} \cong M_4(\mathbb{R})$ a partir de cuatro axiomas
-estructurales sobre cualquier unidad dinámica operativa (en el GSF: Unidad de Coherencia, UoC). El Axioma
+Probamos que cualquier unidad dinámica operativa (en el GSF: Unidad de Coherencia, UoC) es
+necesariamente un elemento del álgebra de Clifford real $\mathrm{Cl}_{3,1} \cong M_4(\mathbb{R})$,
+dados cuatro axiomas estructurales. El Axioma
 A1 (estructura de atributos SAIR) postula un escalar $S$ y tres vectores $\mathbf{A},\mathbf{I},\mathbf{R}$
 en $\mathbb{R}^d$. El Axioma A2 (producto geométrico) establece que la dinámica se rige por el producto
 geométrico de esos atributos, y se escribe explícitamente el embebido SAIR→$\Gamma$, con una elección

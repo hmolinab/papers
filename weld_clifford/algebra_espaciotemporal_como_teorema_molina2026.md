@@ -13,9 +13,9 @@ https://github.com/hmolinab/papers/tree/main/weld_clifford/code
 
 ## Resumen
 
-Derivamos el álgebra de Clifford real $\mathrm{Cl}_{3,1} \cong M_4(\mathbb{R})$ a partir de cuatro axiomas
-estructurales sobre cualquier unidad dinámica operativa (UDO), el cuarto de los cuales hace explícita una
-premisa de co-localización que de otro modo quedaría implícita. A1 (SAIR): la unidad queda descrita por
+Probamos que cualquier unidad dinámica operativa (UDO) es necesariamente un elemento del álgebra de
+Clifford real $\mathrm{Cl}_{3,1} \cong M_4(\mathbb{R})$, dados cuatro axiomas estructurales, el cuarto de
+los cuales hace explícita una premisa de co-localización que de otro modo quedaría implícita. A1 (SAIR): la unidad queda descrita por
 cuatro atributos intrínsecos: un escalar $S$ y tres vectores $\mathbf{A}, \mathbf{I}, \mathbf{R}$ en
 $\mathbb{R}^d$. A2 (producto geométrico): la estructura está gobernada por el producto geométrico de esos
 atributos, cuya parte de grado 2, $\mathbf{I}\wedge\mathbf{R}$, es el bivector Campo. A3 (evolución

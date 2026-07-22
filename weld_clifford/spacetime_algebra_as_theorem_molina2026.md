@@ -13,9 +13,9 @@ https://github.com/hmolinab/papers/tree/main/weld_clifford/code
 
 ## Abstract
 
-We derive the real Clifford algebra $\mathrm{Cl}_{3,1} \cong M_4(\mathbb{R})$ from four structural axioms
-about any operative dynamical unit (ODU), the fourth of which makes explicit a co-location premise otherwise
-left implicit. A1 (SAIR): the unit is described by four
+We prove that any operative dynamical unit (ODU) is necessarily an element of the real Clifford algebra
+$\mathrm{Cl}_{3,1} \cong M_4(\mathbb{R})$, given four structural axioms, the fourth of which makes explicit
+a co-location premise otherwise left implicit. A1 (SAIR): the unit is described by four
 intrinsic attributes: a scalar $S$ and three vectors $\mathbf{A}, \mathbf{I}, \mathbf{R}$ in $\mathbb{R}^d$.
 A2 (geometric product): structure is governed by the geometric product of those attributes, whose grade-2
 part $\mathbf{I}\wedge\mathbf{R}$ is the Field bivector. A3 (continuous evolution): the ODU evolves
