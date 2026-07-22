@@ -1,9 +1,11 @@
 ---
 title: "Γ: One Equation of Motion, Three Sectors"
-subtitle: "Structural correspondences with classical mechanics, fluids, electromagnetism, and quantum mechanics"
+subtitle: "Structural correspondences with Newton, Navier-Stokes, Maxwell, and Schrödinger"
 author: "Henry Molina · Independent researcher, Bogotá, Colombia · henrymolina@gmail.com"
 date: "July 2026"
 ---
+
+DOI: 10.5281/zenodo.21496578  
 
 *Self-contained manuscript beyond the algebraic theorem of the companion paper (Molina 2026,
 "Spacetime Algebra as a Theorem"), which this article reuses without re-deriving. Numerical

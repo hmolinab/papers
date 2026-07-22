@@ -1,9 +1,11 @@
 ---
 title: "Γ: una ecuación de movimiento, tres sectores"
-subtitle: "Correspondencias estructurales con la mecánica clásica, los fluidos, el electromagnetismo y la mecánica cuántica"
+subtitle: "Correspondencias estructurales con Newton, Navier-Stokes, Maxwell y Schrödinger"
 author: "Henry Molina · Investigador independiente, Bogotá, Colombia · henrymolina@gmail.com"
 date: "Julio 2026"
 ---
+
+DOI: 10.5281/zenodo.21496578  
 
 *Manuscrito autocontenido más allá del teorema algebraico del paper compañero (Molina 2026,
 "Spacetime Algebra as a Theorem"), que este artículo reutiliza sin re-derivar. Las verificaciones

@@ -1,7 +1,7 @@
 # Paper: Γ — una ecuación de movimiento, tres sectores
 
-**"Γ: una ecuación de movimiento, tres sectores — Correspondencias estructurales con la mecánica
-clásica, los fluidos, el electromagnetismo y la mecánica cuántica"**
+**"Γ: una ecuación de movimiento, tres sectores — Correspondencias estructurales con Newton,
+Navier-Stokes, Maxwell y Schrödinger"**
 Henry Molina — Investigador independiente, Bogotá, Colombia
 
 ## Archivos
