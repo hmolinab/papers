@@ -297,7 +297,7 @@ classifier.
 Moreover, $(4,0)$ and $(2,2)$ **are not adjacent**: moving from one to the other requires *two*
 eigenvalues to cross zero, one at a time, so every path first passes through the Lorentzian
 stratum $(3,1)$. The pathological region is separated from the classical one *by* the relativistic
-region — a structure that the $\det$ axis folds and that the figure of the atlas now unfolds over
+region — a structure that the $\det$ axis folds and that `fig_atlas_map.png` now unfolds over
 the $n_-$ axis.
 
 *Verified numerically* (`models/calcs/brainstorming/papers/draft_atlas/completitud_sectores_sylvester_hadamard_prueba.py`):

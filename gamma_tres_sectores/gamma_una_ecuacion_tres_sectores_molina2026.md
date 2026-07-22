@@ -298,7 +298,7 @@ de Paper C), útil como coordenada pero insuficiente como clasificador.
 Más aún, $(4,0)$ y $(2,2)$ **no son adyacentes**: pasar de una a otra exige que *dos* autovalores
 crucen cero, uno a la vez, de modo que todo camino atraviesa primero el estrato Lorentziano $(3,1)$.
 La región patológica está separada de la clásica *por* la región relativista — estructura que el eje
-$\det$ pliega y la Figura del atlas ahora despliega sobre el eje $n_-$.
+$\det$ pliega y `fig_atlas_map.png` ahora despliega sobre el eje $n_-$.
 
 *Verificado numéricamente* (`models/calcs/brainstorming/papers/draft_atlas/completitud_sectores_sylvester_hadamard_prueba.py`):
 enumeración exhaustiva de las 15 clases; 20 000 matrices simétricas aleatorias, ninguna firma fuera
