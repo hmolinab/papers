@@ -36,8 +36,8 @@ Part of the Gamma Space Framework program; see also Molina (2025), working manus
 ### Abstract (para arXiv — en inglés, ≤ 250 palabras)
 
 We derive the real Clifford algebra $\mathrm{Cl}_{3,1} \cong M_4(\mathbb{R})$ from four structural
-axioms about any operative dynamical unit (ODU) — the fourth making explicit a co-location premise used
-implicitly in an earlier draft. A1 (SAIR attribute structure): the unit is described
+axioms about any operative dynamical unit (ODU), the fourth of which makes explicit a co-location
+premise otherwise left implicit. A1 (SAIR attribute structure): the unit is described
 by a scalar $S$ and three vectors $\mathbf{A}, \mathbf{I}, \mathbf{R}$ in $\mathbb{R}^d$. A2 (geometric
 product): structure is governed by the geometric product of those attributes, whose grade-2 part
 $\mathbf{I}\wedge\mathbf{R}$ is the Field bivector; the SAIR-to-$\Gamma$ embedding is written explicitly,
@@ -61,8 +61,8 @@ unique algebraic generator conjugate to $\partial_\tau$ in the Dirac factorizati
 that the Frobenius norm is the canonical Clifford metric forced by A2 (P3). Classical mechanics and free
 electrodynamics appear as structural limits. Isotropy of the spatial Laplacian is anchored to the
 $SO(3)$-invariance of $\Gamma$ under rotations of $\{\mathbf{A},\mathbf{I},\mathbf{R}\}$ (P1). The
-theorem is explicitly conditional — existence of a grade-1 SAIR quadruple for a given domain is not
-established here and fails in most domains tested in companion work.
+theorem is explicitly conditional: existence of a grade-1 SAIR quadruple, with Force and Field genuinely
+inherent to the domain, is not established here for any specific domain.
 
 The result promotes the spacetime Clifford algebra from a geometric postulate to a structural theorem:
 not "given Minkowski space, use $\mathrm{Cl}_{3,1}$", but "from the structure of any evolving dynamical
@@ -120,9 +120,9 @@ Gram $\Gamma_s$ (dependiente del estado) hereda la firma del símbolo (ley de in
 una congruencia invertible).
 
 El resultado eleva el álgebra de Clifford del espacio-tiempo de postulado geométrico a teorema
-estructural. El teorema es explícitamente condicional: la existencia de una cuádrupla SAIR de grado 1
-para un dominio dado no se establece aquí, y falla en la mayoría de los dominios probados en trabajo
-compañero.
+estructural. El teorema es explícitamente condicional: la existencia de una cuádrupla SAIR de grado 1,
+con Fuerza y Campo genuinamente inherentes al dominio, no se establece aquí para ningún dominio
+específico.
 
 **Palabras clave:** álgebra de Clifford, teorema de Hurwitz, firma Lorentziana, marco SAIR, operador de onda
 
