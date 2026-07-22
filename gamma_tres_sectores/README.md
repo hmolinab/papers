@@ -9,6 +9,7 @@ Henry Molina — Investigador independiente, Bogotá, Colombia
 | Archivo | Descripción |
 |---|---|
 | `gamma_una_ecuacion_tres_sectores_molina2026.md` | Paper principal (español) |
+| `gamma_one_equation_three_sectors_molina2026.md` | Paper principal (inglés) |
 | `code/` | 17 scripts de verificación numérica citados a lo largo del paper (ver Anexo B) |
 
 ## Ejecutar las verificaciones
@@ -42,4 +43,3 @@ Cuaderno de proceso y guía de estudio (fuera de este paquete público):
   los tradujo enteramente a prosa antes de publicar. Considerar la misma traducción aquí para el
   envío final a arXiv/Zenodo; la leyenda es un mínimo viable, no el estándar del programa.
 - No tiene DOI propio todavía (el weld sí, `10.5281/zenodo.21184515`, ya reservado).
-- Sin traducción al inglés (el weld se publicó en ambos idiomas).
