@@ -1,9 +1,11 @@
 ---
 title: "Γ: Viscosity as Structural Damping"
 subtitle: "Stokes and Navier-Stokes as limits of one equation, and the subcritical transition in pipe flow"
-author: "Henry Molina · Independent researcher, Bogotá, Colombia · henrymolina@gmail.com"
+author: "Henry Molina · Independent researcher · henrymolina@gmail.com"
 date: "July 2026"
 ---
+
+DOI: 10.5281/zenodo.21502148
 
 *Self-contained manuscript beyond the algebraic theorem and equation of motion of the companion
 papers (Molina 2026, "Spacetime Algebra as a Theorem"; and Molina 2026, "Γ: One Equation of
@@ -26,7 +28,7 @@ limit of the field EOM under three physically named conditions (high friction, s
 short scale), each with a convergence theorem already published in the stochastic differential
 equations and fluid mechanics literature; and full Navier-Stokes, including the advection term,
 is recovered by requiring the same Galilean covariance that any continuum dynamics must respect.
-Second, the identity ν=c²(ρ)/γ reproduces tabulated viscosity ratios across twenty-five orders of
+Second, the identity ν=c²(ρ)/γ reproduces tabulated viscosity ratios across roughly twenty-four orders of
 magnitude (from mercury to Earth's mantle) with a single variable and zero fitting, and the law
 γ∝ρ is confirmed to 0.1% precision over five decades of density for air. Third, and of greatest
 interest for engineering applications, the subcritical transition to turbulence in pipe flow (the
@@ -67,15 +69,27 @@ question this paper answers for fluids.
 
 Each observable occupies the Clifford grade that matches its tensor rank, the same covariance
 criterion used in the companion paper for Navier-Stokes: a rotor preserves grade, so a scalar
-must go to grade 0, a vector to grade 1, and so on. The resulting assignment is unique given that
-criterion:
+must go to grade 0, a vector to grade 1, and so on. That criterion fixes the assignment between
+grades and tensor type, but it is not by itself enough to close the construction of $\Gamma_s$:
+the weld (Molina 2026) builds $\Gamma_s=V^{\mathsf T}qV$ with $V=[S\mathbf e_0\mid\mathbf A\mid
+\mathbf I\mid\mathbf R]$, and proves that $\mathbf e_0$ is $q$-orthogonal to $\{\mathbf A,\mathbf
+I,\mathbf R\}$ (that is what fixes the gauge of $S$, without ambiguity). The diagonal per-slot
+reading $\Gamma_s=\mathrm{diag}(q_S,q_A,q_I,q_R)$ used by the domain tables, including this one,
+additionally requires $\mathbf A$, $\mathbf I$, $\mathbf R$ to be mutually orthogonal, something
+the weld does not prove and that does not follow from the gauge of $\mathbf e_0$. For fluids this
+is not an idle hypothesis: $R=h=\mathbf u\cdot\boldsymbol\omega$ is defined exactly as $q(\mathbf
+A,\mathbf I)$, precisely the cross entry orthogonality would require to vanish. In any flow with
+nonzero helicity, $\mathbf A$ and $\mathbf I$ are not orthogonal, and the table below, read as a
+diagonal $\Gamma_s$, omits that cross entry, which turns out to be $R$ itself. The weld names the
+same tension elsewhere ("closing the cross-coupling block", §6.2, for Maxwell's source equation):
+it is not specific to fluids, it is a shared open frontier of the program (§7 lists it explicitly):
 
 | SAIR role | Variable | Grade in Cl₃,₀ | Physical content |
 |:---:|---|:---:|---|
 | S | density ρ | 0 (scalar) | inertial identity of the parcel; coefficient in ρ·Du/Dt=F, fixed for incompressible flow |
 | A | velocity **u**=(u_x,u_y,u_z) | 1 (vector) | immediate kinematic capacity |
 | I | vorticity **ω**=∇×**u** | 2 (bivector) | rotational act; exactly Γ_a, the antisymmetric part of ∂_j u_i |
-| R | helicity h=**u**·**ω** | 3 (pseudoscalar) | topological context: knottedness of vortex lines, conserved in ideal flow (Moffatt, 1969) |
+| R | helicity h=**u**·**ω** | 3 (pseudoscalar) | topological context: knottedness of vortex lines, conserved in ideal flow (Moffatt, 1969); see above: coincides with the cross entry q(A,I) the diagonal reading omits when h≠0 |
 
 Pressure occupies no SAIR grade: it is the Lagrange multiplier of the incompressibility
 constraint ∇·**u**=0, identified via the Leray-Hodge decomposition, and enters as an effective
@@ -147,9 +161,11 @@ the inviscid/Euler regime. The Reynolds number is the physical proxy of 1/γ:
 
 $$\mathrm{Re}=\frac{vL}{\nu_{\mathrm{kin}}}=\frac{vL\,\gamma}{c^2(\rho)}.$$
 
-The field stiffness c²(ρ) follows the scaling law of the companion paper (a power of ρ that only
-activates near the cosmological reference density); at any terrestrial fluid's density, c² is
-effectively constant, so ratios of γ between fluids become pure ratios of tabulated viscosity.
+The field stiffness c²(ρ) is taken from a scaling law of the broader GSF program (a power of ρ
+that only activates near the cosmological reference density), not established in either companion
+paper cited here; it is used in this work as an input hypothesis, not as an already-published
+result verifiable in those references. At any terrestrial fluid's density, that law predicts c²
+is effectively constant, so ratios of γ between fluids become pure ratios of tabulated viscosity.
 
 ---
 
@@ -159,7 +175,10 @@ effectively constant, so ratios of γ between fluids become pure ratios of tabul
 
 With c² constant at fluid densities, γ_A/γ_B=ν_B/ν_A is a pure ratio of tabulated data, with no
 additional theoretical assumption (beyond both fluids sharing the same structural density ρ, an
-explicit assumption, not a data point).
+explicit assumption, not a data point). The kinematic viscosity values in the table below are
+standard engineering values at ambient temperature and pressure (Cengel and Cimbala, *Fluid
+Mechanics: Fundamentals and Applications*, 2018; CRC Handbook of Chemistry and Physics), cited
+here without independent re-measurement.
 
 | Fluid | ν (×10⁻⁶ m²/s) | γ relative to water |
 |---|---:|---:|
@@ -174,7 +193,7 @@ explicit assumption, not a data point).
 | Glacier ice (creep) | ∼10¹⁸ | ∼10⁻¹⁸ |
 | Earth's upper mantle | ∼3×10²³ | ∼3×10⁻²⁴ |
 
-The full range spans twenty-five orders of magnitude with a single variable, a single equation,
+The full range spans roughly twenty-four orders of magnitude (24.4, script-verified) with a single variable, a single equation,
 and zero fitted parameters. The value of this table does not depend on having derived
 Navier-Stokes from scratch: it functions as a robust phenomenological anchor, in the same sense
 that Kepler's third law functioned as an empirical scaling law before Newton derived the gravity
@@ -287,12 +306,14 @@ geometry, not a different fluid parameter.
 | Frontier | Status | Note |
 |---|:---:|---|
 | Matrix constant C of the convergence bound to Stokes (Theorem §2.1) | open | each link of the chain of limits has a convergence theorem published in its own domain; adapting the explicit bound to Γ's matrix formalism remains pending |
-| SAIR→Γ grade assignment for fluids | closed by covariance, except the general weld | the remaining ambiguity is the same Clifford→M₄(ℝ) weld of the companion paper, not fluid-specific |
-| Viscosity ratios over 25 orders | verified against data, conditional on common ρ | assumption of equal structural density between compared fluids, explicit, not independently verified |
+| Mutual orthogonality of A, I, R in Γ_s (§1.2) | open | the weld fixes the e₀ gauge but does not prove A⊥I⊥R; in fluids, R=h=q(A,I) is exactly the cross entry the diagonal reading omits when h≠0, the same pattern as the weld's "cross-coupling block" for Maxwell's source term |
+| Viscosity ratios over ~24 orders | script-verified against cited data, conditional on common ρ | `code/verificacion_razones_viscosidad.py`: reproduces the table within <1% except Earth's mantle (11%, an order-of-magnitude value, not a precise measurement); assumption of equal structural density between compared fluids remains explicit, not independently verified |
 | Absolute scale of γ for water (γ≈9×10²² s⁻¹) | conditional | depends on the hypothesis c²(ρ_water)≈c²_light, an unverified theoretical claim |
 | Homeodynamic window water/D₂O and its relation to toxicity | open frontier | calibrated from toxicity data, not derived; the causal (vs. correlational) reading is not established |
 | Re_c≈2040 in pipe flow, exact numerical value | verified qualitatively, not first-principle | uses geometric constant and threshold amplitude from Hof et al. (2003); what is structural (Re² scaling, origin in Γ_a) is indeed derived |
 | Absolute scale of ρ (needed for calibration beyond ratios) | open | referred to in the companion paper as pending program work |
+| c²(ρ) scaling law used in §3-4 | input hypothesis, not established in the companion papers cited | comes from broader GSF program material, not yet published in verifiable form |
+| Viscosity table of §4.1 | no verification script yet | values cited from standard engineering sources (Cengel-Cimbala, CRC Handbook), not re-measured or reproduced in `code/` yet |
 
 ---
 
@@ -300,7 +321,7 @@ geometry, not a different fluid parameter.
 
 γ, the one parameter of the equation of motion without a fixed interpretation from the algebraic
 framework alone, operationalizes precisely in fluids: ν=c²/γ reproduces viscosity data across
-twenty-five orders of magnitude without fitting anything, and γ∝ρ is confirmed to 0.1% over five
+roughly twenty-four orders of magnitude without fitting anything, and γ∝ρ is confirmed to 0.1% over five
 decades. The reduction to Stokes and the derivation of full Navier-Stokes rest on convergence
 theorems already published in their own domains, not on qualitative identifications. And the
 result of greatest applied interest, the subcritical transition in pipe flow, reduces to a closed
@@ -317,6 +338,9 @@ that produces it lives.
 
 Bergmann, P. G. (1946). The wave equation in a medium with a variable index of refraction.
 *Journal of the Acoustical Society of America*, 17(4), 329–333.
+
+Cengel, Y. A. and Cimbala, J. M. (2018). *Fluid Mechanics: Fundamentals and Applications* (4th
+ed.). McGraw-Hill.
 
 Freidlin, M. I. and Wentzell, A. D. (2012). *Random Perturbations of Dynamical Systems* (3rd
 ed.). Springer.
@@ -361,14 +385,15 @@ https://github.com/hmolinab/papers/tree/main/gamma_fluids:
 
 ```
 code/
-  pieza2_transient_growth.py   -> G_max=Re²/C scaling (lift-up), Γ_a diagnostic, ∇²P no-go, S=∂_yU (§6)
+  pieza2_transient_growth.py            -> G_max=Re²/C scaling (lift-up), Γ_a diagnostic, ∇²P no-go, S=∂_yU (§6)
+  verificacion_razones_viscosidad.py    -> reproduces the §4.1 table from cited ν values; confirms ~24 orders of magnitude
 ```
 
 Requirements: `numpy`, `scipy`.
 
 Pending implementation as an independent script (currently cited from published tables and fits,
-not reproduced here in code): the viscosity ratio table of §4.1 against tabulated reference
-values, the ν∝1/ρ fit for air of §4.2, and the c² saturation discriminating factor of §4.3.
+not reproduced here in code): the ν∝1/ρ fit for air of §4.2, and the c² saturation discriminating
+factor of §4.3.
 
 ---
 

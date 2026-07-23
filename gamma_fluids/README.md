@@ -1,5 +1,7 @@
 # Paper: Γ — la viscosidad como amortiguación estructural
 
+DOI: [10.5281/zenodo.21502148](https://doi.org/10.5281/zenodo.21502148)
+
 **"Γ: la viscosidad como amortiguación estructural — Stokes y Navier-Stokes como límites de una
 sola ecuación, y la transición subcrítica en tubería"**
 Henry Molina — Investigador independiente, Bogotá, Colombia
@@ -10,13 +12,14 @@ Henry Molina — Investigador independiente, Bogotá, Colombia
 |---|---|
 | `gamma_viscosidad_amortiguacion_estructural_molina2026.md` | Paper principal (español) |
 | `gamma_viscosity_structural_damping_molina2026.md` | Paper principal (inglés) |
-| `code/` | script de verificación numérica citado en el paper (§6) |
+| `code/` | scripts de verificación numérica citados en el paper (§4, §6) |
 
 ## Ejecutar la verificación
 
 ```bash
 cd code
-python pieza2_transient_growth.py
+python pieza2_transient_growth.py            # escalamiento G_max=Re²/C, diagnóstico Γ_a (§6)
+python verificacion_razones_viscosidad.py    # tabla de razones de viscosidad, ~24 órdenes (§4.1)
 ```
 
 Requisitos: `numpy`, `scipy`.
@@ -42,13 +45,18 @@ re-derivarlos.
 ## Fuente de trabajo
 
 Cuaderno de proceso (fuera de este paquete público):
-`brainstorming/unification/release/pieza2_gamma_fluidos.md`.
+`brainstorming/unification/release/pieza2_gamma_fluidos.md` y
+`brainstorming/papers/gamma_fluids/cuaderno_trabajo.md` (exploración de la asignación SAIR en
+fluidos, sin cerrar — no afecta las claims publicadas aquí, ver el propio cuaderno §7.6/7.9 para
+el porqué).
 
-## Pendiente antes de someter a arXiv/Zenodo
+## Zenodo/arXiv
 
-- No tiene DOI propio todavía.
-- El script de verificación numérica (`code/pieza2_transient_growth.py`) requiere `scipy`; no se
-  pudo re-ejecutar en este entorno por incompatibilidad numpy/scipy instalada — confirmar que
-  corre limpio antes de la publicación final.
-- Tres verificaciones citadas de tablas/ajustes publicados (razones de viscosidad, ν∝1/ρ del
-  aire, factor de saturación de c²) no tienen script propio todavía; ver Anexo del paper.
+Paquete de envío (metadata, abstract, descripción en español) en
+`brainstorming/papers/gamma_fluids/arxiv_zenodo_es.md`.
+
+## Pendiente
+
+- Dos verificaciones citadas de tablas/ajustes publicados (ν∝1/ρ del aire, factor de saturación
+  de c²) todavía no tienen script propio; ver Anexo del paper. La tercera (razones de viscosidad,
+  §4.1) ya se cerró con `code/verificacion_razones_viscosidad.py`.
