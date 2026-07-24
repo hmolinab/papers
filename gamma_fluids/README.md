@@ -12,6 +12,7 @@ Henry Molina — Investigador independiente, Bogotá, Colombia
 |---|---|
 | `gamma_viscosidad_amortiguacion_estructural_molina2026.md` | Paper principal (español) |
 | `gamma_viscosity_structural_damping_molina2026.md` | Paper principal (inglés) |
+| `guia_estudio_cuaderno_limpio.md` | Guía de estudio + cuaderno en limpio, nivel pregrado: re-deriva paso a paso el diccionario SAIR (§1), la covarianza galileana (§2.2) y el cálculo cerrado de G_max~Re² (§6.3) que el paper solo cita como verificado numéricamente |
 | `code/` | scripts de verificación numérica citados en el paper (§4, §6) |
 
 ## Ejecutar la verificación
@@ -20,7 +21,18 @@ Henry Molina — Investigador independiente, Bogotá, Colombia
 cd code
 python pieza2_transient_growth.py            # escalamiento G_max=Re²/C, diagnóstico Γ_a (§6)
 python verificacion_razones_viscosidad.py    # tabla de razones de viscosidad, ~24 órdenes (§4.1)
+python caso_iron_bridge_united_pipeline.py   # caso real: oleoducto de lechada Iron Bridge/Tite Liner (§6)
 ```
+
+`caso_iron_bridge_united_pipeline.py` usa la librería `models/sair/` (Gamma, SAIRVectors,
+SAIRCriterion) sobre un caso de ingeniería real y públicamente citado: las tuberías de lechada
+de magnetita de 26"×135 km revestidas con Tite Liner (United Pipeline Systems) del proyecto Iron
+Bridge (Fortescue). Confirma Re² desde la ventana crítica (Re_c≈2040, Avila et al. 2011) hasta el
+Re de diseño real (~10⁶) y da una lectura de ingeniería honesta sobre cuándo el mecanismo de §6 es
+operacionalmente relevante para este tipo de tubería (ver comentarios del script para las cifras
+citadas y sus fuentes, y la advertencia sobre no confundir el Re_c hidrodinámico con el criterio
+empírico de depósito de sólidos de la práctica de diseño de lechadas, que casualmente comparte
+número ~2100).
 
 Requisitos: `numpy`, `scipy`.
 

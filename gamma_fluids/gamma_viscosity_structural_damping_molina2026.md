@@ -67,29 +67,41 @@ question this paper answers for fluids.
 
 ## 1.2 The SAIR dictionary in fluids
 
-Each observable occupies the Clifford grade that matches its tensor rank, the same covariance
-criterion used in the companion paper for Navier-Stokes: a rotor preserves grade, so a scalar
-must go to grade 0, a vector to grade 1, and so on. That criterion fixes the assignment between
-grades and tensor type, but it is not by itself enough to close the construction of $\Gamma_s$:
-the weld (Molina 2026) builds $\Gamma_s=V^{\mathsf T}qV$ with $V=[S\mathbf e_0\mid\mathbf A\mid
-\mathbf I\mid\mathbf R]$, and proves that $\mathbf e_0$ is $q$-orthogonal to $\{\mathbf A,\mathbf
-I,\mathbf R\}$ (that is what fixes the gauge of $S$, without ambiguity). The diagonal per-slot
-reading $\Gamma_s=\mathrm{diag}(q_S,q_A,q_I,q_R)$ used by the domain tables, including this one,
-additionally requires $\mathbf A$, $\mathbf I$, $\mathbf R$ to be mutually orthogonal, something
-the weld does not prove and that does not follow from the gauge of $\mathbf e_0$. For fluids this
-is not an idle hypothesis: $R=h=\mathbf u\cdot\boldsymbol\omega$ is defined exactly as $q(\mathbf
-A,\mathbf I)$, precisely the cross entry orthogonality would require to vanish. In any flow with
-nonzero helicity, $\mathbf A$ and $\mathbf I$ are not orthogonal, and the table below, read as a
-diagonal $\Gamma_s$, omits that cross entry, which turns out to be $R$ itself. The weld names the
-same tension elsewhere ("closing the cross-coupling block", §6.2, for Maxwell's source equation):
-it is not specific to fluids, it is a shared open frontier of the program (§7 lists it explicitly):
+Grade covariance alone does not fix the dictionary: the weld (Molina 2026) requires, beyond grade
+covariance, that S,A,I,R satisfy an explicit selection criterion whenever more than one candidate
+is compatible with the same grade. Here we apply the two mechanisms already verified in the
+program against seven domains (Newton, Schrödinger, Navier-Stokes, Maxwell, Lorentz signature,
+H₂O, Hopf): Gram-force consistency (Γ_s=S·A must reproduce an already-known force law independent
+of the domain) and the work/power criterion (among candidates of equal grade, the one that makes
+P=X·A≠0 generically goes to I; the one that vanishes by a pure geometric identity, not by a
+constraint on the flow, goes to R).
+
+By Gram-force consistency: $S=\rho$ (density) and $A=D\mathbf u/Dt$ (material acceleration, not
+velocity) are the unique pair that make $\Gamma_s=S\cdot A=\rho\,D\mathbf u/Dt$ match exactly the
+inertial side of the Cauchy equation — the same pattern as Newton, where $A$ is acceleration, not
+velocity. By the work criterion: $I=\mathbf u$ passes, because $\mathbf u\cdot(D\mathbf u/Dt)$ is
+exactly $D(|\mathbf u|^2/2)/Dt$, the rate of change of specific kinetic energy, generic and with
+precise physical meaning. The candidate that vanishes by a pure geometric identity is the Lamb
+vector $\mathbf u\times\boldsymbol\omega$ ($\mathbf u\cdot(\mathbf u\times\boldsymbol\omega)=0$
+always, by the triple product with a repeated vector, the exact parallel of why the magnetic
+field does no work in electromagnetism), not the pressure gradient ($\mathbf u\cdot\nabla p$ does
+not vanish by identity, it only reduces to a pure divergence under the global constraint of
+incompressibility, §2.1 below). Since the vorticity $\boldsymbol\omega$ that generates that vector
+is grade 2 and cannot occupy R directly, the grade-1 vector that produces it by wedge with
+$\mathbf u$ is $\nabla$ itself:
 
 | SAIR role | Variable | Grade in Cl₃,₀ | Physical content |
 |:---:|---|:---:|---|
-| S | density ρ | 0 (scalar) | inertial identity of the parcel; coefficient in ρ·Du/Dt=F, fixed for incompressible flow |
-| A | velocity **u**=(u_x,u_y,u_z) | 1 (vector) | immediate kinematic capacity |
-| I | vorticity **ω**=∇×**u** | 2 (bivector) | rotational act; exactly Γ_a, the antisymmetric part of ∂_j u_i |
-| R | helicity h=**u**·**ω** | 3 (pseudoscalar) | topological context: knottedness of vortex lines, conserved in ideal flow (Moffatt, 1969); see above: coincides with the cross entry q(A,I) the diagonal reading omits when h≠0 |
+| S | density ρ | 0 (scalar) | inertial identity of the parcel |
+| A | material acceleration D𝐮/Dt | 1 (vector) | Γ_s=S·A=ρD𝐮/Dt matches the Cauchy force exactly |
+| I | velocity **u** | 1 (vector) | 𝐮·A=D(|𝐮|²/2)/Dt: does work in the precise sense of kinetic energy |
+| R | ∇ (operator, treated as a grade-1 generator) | 1 (formal vector) | generates the field by wedge with I, without doing work, by geometric identity |
+
+The field, $\Gamma_a=I\wedge R=\mathbf u\wedge\nabla=\nabla\times\mathbf u=\boldsymbol\omega$, is
+**derived**, not a fourth grade assigned directly: vorticity is the antisymmetric part of
+$\partial_j u_i$, exactly as in the companion paper for Navier-Stokes. Helicity
+$h=\mathbf u\cdot\boldsymbol\omega$, when it appears, is the pseudoscalar invariant of $\Gamma_a$,
+a derived quantity, not an independent SAIR slot.
 
 Pressure occupies no SAIR grade: it is the Lagrange multiplier of the incompressibility
 constraint ∇·**u**=0, identified via the Leray-Hodge decomposition, and enters as an effective
@@ -306,7 +318,7 @@ geometry, not a different fluid parameter.
 | Frontier | Status | Note |
 |---|:---:|---|
 | Matrix constant C of the convergence bound to Stokes (Theorem §2.1) | open | each link of the chain of limits has a convergence theorem published in its own domain; adapting the explicit bound to Γ's matrix formalism remains pending |
-| Mutual orthogonality of A, I, R in Γ_s (§1.2) | open | the weld fixes the e₀ gauge but does not prove A⊥I⊥R; in fluids, R=h=q(A,I) is exactly the cross entry the diagonal reading omits when h≠0, the same pattern as the weld's "cross-coupling block" for Maxwell's source term |
+| Mutual orthogonality of A, I, R in Γ_s (§1.2) | closed for fluids | with A=D𝐮/Dt, I=𝐮, R=∇ (verified by Gram-force consistency and the work criterion, `models/calcs/brainstorming/papers/draft_atlas/protocolo_sair_completo_fluidos*.py`), the R=q(A,I) self-reference does not appear: R=∇ is independent of A and I by construction |
 | Viscosity ratios over ~24 orders | script-verified against cited data, conditional on common ρ | `code/verificacion_razones_viscosidad.py`: reproduces the table within <1% except Earth's mantle (11%, an order-of-magnitude value, not a precise measurement); assumption of equal structural density between compared fluids remains explicit, not independently verified |
 | Absolute scale of γ for water (γ≈9×10²² s⁻¹) | conditional | depends on the hypothesis c²(ρ_water)≈c²_light, an unverified theoretical claim |
 | Homeodynamic window water/D₂O and its relation to toxicity | open frontier | calibrated from toxicity data, not derived; the causal (vs. correlational) reading is not established |
