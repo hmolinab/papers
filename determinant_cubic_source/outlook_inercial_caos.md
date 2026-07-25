@@ -60,6 +60,8 @@ cofactor es una **interpretación**, no una derivación. Por eso esto vive aquí
 | A | Teorema 3 (BT) reducido | bloque de Jordan; curva de Hopf; ciclo límite | `code/pieza1_bogdanov_takens.py` |
 | B | obstrucción de energía | \(\gamma\ge0\Rightarrow E\) Lyapunov \(\Rightarrow\) relaja; damping activo \(\Rightarrow\) ciclo (2 modos) | `code/pieza1_caos_EOM_2modos.py` |
 | C | homoclínica + caos (juguete) | \(T=0.738(-\ln\Delta)+2.08\), \(R^2=1.0\); \(\lambda\approx0.055\) | `code/pieza1_homoclinica_caos.py` |
+| D | Lema 1 aplicado a un caso concreto: sector gradiente vs. inercial+espacial (campo escalar, condiciones reservorio-válvula) | sector gradiente decae monótono (energía L2 no creciente); sector inercial+espacial oscila, frecuencias FFT coinciden con las raíces clásicas de cuarto de onda a 0.01% | `../../models/calcs/papers/determinant_cubic_source/outlook_inercial_caos/eom_wave_vs_gradient_pipe.py` |
+| E | mismo mecanismo, matriz \(\Gamma\) 4×4 real del potencial \(P(\Gamma;\mu,J)\), con fricción | equilibrio \(\Gamma_*\) estable y anisótropo hallado; amplitud chica: error 0.01% vs. predicción lineal \(\omega_0=\sqrt{\lambda_{\min}(H_*)+c^2k_1^2}\); amplitud grande: corrimiento no lineal +22% (endurecimiento) por el término del determinante | `../../models/calcs/papers/determinant_cubic_source/outlook_inercial_caos/eom_wave_gamma_4x4_friccion.py` |
 
 ## 5. Qué haría falta para que esto suba a teorema
 
