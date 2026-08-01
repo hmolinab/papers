@@ -50,13 +50,31 @@ numérica contra datos, o elecciones de modelado.
   teorema de este programa cerrado íntegramente con ayuda del REPL de Lean para
   inspección interactiva del estado de la prueba.
 
+- `GsfLean/Lema2Clifford.lean` — **Lema 2** (`weld_clifford` §3.3): en `d=3`, `{A,I,R}`
+  generan `Cl(3,0)=G(3)` como subálgebra. **CERRADO COMPLETO** (ago-1 2026, sin
+  `sorry`). La parte de GENERACIÓN es exactamente el teorema general
+  `CliffordAlgebra.adjoin_range_ι`, ya en mathlib para cualquier espacio cuadrático —
+  se instancia para una base cualquiera `{v i}` de un módulo `M`
+  (`lema_2_generadores_base`, caso general) y para `A,I,R` = base estándar de `ℝ³`
+  (`lema_2_AIR_generan_Cl30`, caso concreto del paper). **NO atacado**: el conteo de
+  dimensión (`8=2³`, grado 2 = bivectores de dim 3, grado 3 = pseudoescalar de dim 1) —
+  mathlib no tiene `finrank (CliffordAlgebra Q) = 2^finrank M` listo para usar
+  (revisado `CliffordAlgebra/*.lean` y `ExteriorAlgebra/*.lean`, ninguno lo tiene);
+  construirlo es un desarrollo aparte (isomorfismo con el álgebra exterior graduada).
+
 ## Candidatos no atacados todavía
 
-- **Lema 2** (`weld_clifford`, A,I,R generan Cl(3,0)) — requiere la API de álgebras de
-  Clifford de mathlib (`Mathlib.LinearAlgebra.CliffordAlgebra`), no explorada todavía.
-- Lemas 1, 3, 4 de `weld_clifford` y Teoremas 1-2 de `determinant_cubic_source`:
-  dependen de axiomas físicos (A1-A3) o de teoría de bifurcaciones/variedad central —
-  mucho más pesados de formalizar, no priorizados.
+- Lemas 1, 3, 4 de `weld_clifford` (dimensión forzada por Hurwitz/clausura, tiempo como
+  evolución, firma de Lorentz vía símbolo principal) y Teoremas 1-2 de
+  `determinant_cubic_source` (reducción de variedad central, cúspide $A_3$): dependen
+  de axiomas físicos (A1-A3) sin formalizar, o de teoría de bifurcaciones/variedad
+  central — mucho más pesados, no priorizados. El Lema 1 en particular usa el teorema
+  de Hurwitz/Eckmann (producto cruz solo en dim 1,3,7 ↔ álgebras de división normadas),
+  que no parece estar en mathlib.
+- Teorema de completitud de sectores, parte (i)/(ii) (`brainstorming/papers/
+  draft_atlas`, no público todavía) — puramente combinatorio (15 clases de inercia en
+  Sym(4,ℝ), 5 no degeneradas), el más barato identificado hasta ahora, pero pertenece a
+  un paper que sigue en `brainstorming/` -- no atacar aquí hasta que HM decida moverlo.
 
 ## Convención de honestidad
 
