@@ -21,6 +21,16 @@ numérica contra datos, o elecciones de modelado.
   a `v4.32.2` en `lakefile.toml`.
 - `.lake/` (caché de mathlib, ~7.4GB) en `.gitignore`, no se versiona. Reproducir:
   `lake exe cache get` + `lake build`.
+- **REPL de Lean** (jul-31 2026): `leanprover-community/repl` clonado y compilado
+  contra el mismo toolchain (`v4.32.2`, se sobreescribe su `lean-toolchain` propio antes
+  de `lake build`). No vive en este repo (herramienta de desarrollo local, en `/tmp` en
+  la máquina donde se usó). Da feedback interactivo del estado de la prueba (goal state)
+  vía JSON por stdin/stdout, sin necesitar GUI/VS Code -- resolvió exactamente el
+  problema que bloqueó el cierre de `sesquilinear_real_of_isSymm` en el intento
+  anterior (compilar por lote, sin ver el estado intermedio de la prueba). Uso: modo
+  comando para cargar imports + declarar el teorema con `sorry` (da un `proofState`),
+  modo táctica para probar tácticas una a una contra ese `proofState` y ver el goal
+  actualizado en cada paso.
 
 ## Estado
 
@@ -31,14 +41,13 @@ numérica contra datos, o elecciones de modelado.
   no tiene lista para usar -- la solución NO es construirla, es evitarla del todo
   reformulando como el problema de autovalores generalizado clásico
   (`det(μI-G⁻¹H)=0 ⟺ det(μG-H)=0`, ver docstring del archivo), que se resuelve con un
-  argumento sesquilineal elemental sin ninguna raíz cuadrada. Enunciado principal
-  BIEN TIPADO (compila), prueba PENDIENTE (`sorry`) -- se intentó cerrar el lema clave
-  (`sesquilinear_real_of_isSymm`, forma sesquilineal de matriz real simétrica es real)
-  con varias versiones de manipulación de sumas/conjugados, sin éxito dentro de esta
-  sesión: el paso de cancelar una doble conjugación resultó más delicado de lo esperado
-  sin un editor Lean interactivo (este entorno solo compila por lote, sin feedback en
-  vivo del estado de la prueba) -- siguiente paso concreto para retomar con VS Code +
-  extensión Lean 4.
+  argumento sesquilineal elemental sin ninguna raíz cuadrada.
+  **`sesquilinear_real_of_isSymm`: PROBADO COMPLETO** (sin `sorry`), cerrado con ayuda
+  del REPL de Lean -- el ladrillo que de verdad bloqueaba el argumento ya no bloquea
+  nada. `lema_1_sin_hopf` (el enunciado principal): bien tipado, compila, prueba
+  PENDIENTE (`sorry`) -- lo que falta ahora es solo ensamblaje de API estándar de
+  mathlib (`Matrix.charpoly_map`, `Matrix.mem_spectrum_iff_isRoot_charpoly`,
+  `Matrix.mulVec_injective_iff_isUnit`), no ningún hecho matemático nuevo.
 
 ## Candidatos no atacados todavía
 

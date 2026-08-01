@@ -35,22 +35,22 @@ es real ⟹ `μ` es real.
 
 ## Estado (jul-31 2026, honestidad de alcance)
 
-**Intentado y NO cerrado en esta sesión**: `sesquilinear_real_of_isSymm` (el hecho
-elemental "forma sesquilineal de matriz real simétrica es real", que hace funcionar
-todo el argumento de arriba). Se probaron varias versiones de la manipulación de sumas
-con `starRingEnd`/`star`/`Finset.sum_comm` -- cada intento avanzó pero no cerró
-completamente; el paso de normalizar `starRingEnd ℂ (star (v i))` de vuelta a `v i`
-(dos conjugaciones se cancelan) resultó más delicado de lo esperado sin inspección
-interactiva del estado de la prueba (goal state), que este entorno no tiene disponible
-(solo compilación por lote vía `lake build`, sin editor Lean con feedback en vivo).
-Queda como el siguiente paso concreto para retomar con un editor interactivo (VS Code +
-extensión Lean 4), donde cada paso de `simp`/`rw` se puede verificar contra el estado
-real de la prueba en vez de a ciegas.
+**`sesquilinear_real_of_isSymm`: PROBADO COMPLETO** (sin `sorry`) -- el hecho elemental
+"forma sesquilineal de matriz real simétrica es real", el ladrillo que de verdad
+bloqueaba el argumento. Cerrado usando el REPL de Lean (`leanprover-community/repl`,
+instalado y compilado contra el mismo toolchain de este proyecto, `v4.32.2` -- ver
+README) para inspeccionar el estado de la prueba paso a paso, en vez de compilar a
+ciegas por lote. Prueba: reindexar la doble suma (`Finset.sum_comm`, tras empujar la
+multiplicación adentro con `Finset.mul_sum`) y usar la simetría de `M` para hacer
+coincidir los términos cruzados -- sin ninguna raíz cuadrada de matriz.
 
 - `lema_1_sin_hopf`: enunciado real, bien tipado, compila. Prueba PENDIENTE (`sorry`) --
-  depende de `sesquilinear_real_of_isSymm` (también pendiente) más ensamblaje de API
-  estándar de mathlib (`Matrix.mem_spectrum_iff_isRoot_charpoly`,
-  `Matrix.mulVec_injective_iff_isUnit`).
+  ahora depende SOLO de ensamblaje de API estándar de mathlib
+  (`Matrix.charpoly_map` para conectar la raíz del polinomio mapeado con el charpoly de
+  la matriz compleja, `Matrix.mem_spectrum_iff_isRoot_charpoly`,
+  `Matrix.mulVec_injective_iff_isUnit` para extraer el vector propio no nulo), no de
+  ningún hecho matemático nuevo -- el paso matemáticamente difícil
+  (`sesquilinear_real_of_isSymm`) ya está cerrado.
 -/
 
 open Matrix Polynomial
@@ -59,12 +59,26 @@ variable {n : Type*} [Fintype n] [DecidableEq n]
 
 /-- Pieza clave que resuelve el bloqueo de mathlib (ver docstring del módulo): la forma
 sesquilineal `v̄ᵀMv` de una matriz REAL SIMÉTRICA `M`, complejizada, toma siempre un
-valor real -- es su propio conjugado. Intentado y NO cerrado en esta sesión (ver
-docstring del módulo) -- enunciado correcto, prueba pendiente. -/
+valor real -- es su propio conjugado. PROBADO COMPLETO (jul-31 2026, con ayuda del REPL
+de Lean para inspeccionar el estado de la prueba paso a paso -- ver README): la
+identidad se cierra reindexando la doble suma (`Finset.sum_comm`) y usando la simetría
+de `M` para hacer coincidir los términos cruzados, sin ninguna raíz cuadrada de
+matriz. -/
 theorem sesquilinear_real_of_isSymm {M : Matrix n n ℝ} (hM : M.IsSymm) (v : n → ℂ) :
     starRingEnd ℂ (star v ⬝ᵥ ((M.map (algebraMap ℝ ℂ)) *ᵥ v)) =
       star v ⬝ᵥ ((M.map (algebraMap ℝ ℂ)) *ᵥ v) := by
-  sorry
+  simp only [dotProduct, mulVec, Pi.star_apply, map_sum, map_mul, ← starRingEnd_apply]
+  simp only [Complex.conj_conj]
+  simp only [Matrix.map_apply, Complex.coe_algebraMap, Complex.conj_ofReal]
+  simp only [Finset.mul_sum]
+  rw [Finset.sum_comm]
+  apply Finset.sum_congr rfl
+  intro i _
+  apply Finset.sum_congr rfl
+  intro j _
+  have hij : M j i = M i j := congrFun (congrFun hM.symm j) i
+  rw [hij]
+  ring
 
 /-- Enunciado del Lema 1 (sin Hopf): con `G` simétrica definida positiva y `H`
 simétrica, el Jacobiano `J = -G⁻¹H` tiene espectro real -- toda raíz COMPLEJA del
