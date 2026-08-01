@@ -26,12 +26,19 @@ numérica contra datos, o elecciones de modelado.
 
 - `GsfLean/NoHopf.lean` — **Lema 1 (sin Hopf)**, `determinant_cubic_source` §6: el
   Jacobiano `J=-G⁻¹H` de un flujo métrico-gradiente (`G≻0` simétrica, `H` simétrica)
-  tiene espectro real. Enunciado formalizado y BIEN TIPADO (compila), prueba PENDIENTE
-  (`sorry` explícito) — bloqueado por falta de raíz cuadrada de matriz en mathlib para
-  el camino de prueba del paper (`J=G^{1/2}SG^{-1/2}`, `S` simétrica). Camino
-  alternativo identificado, no intentado todavía: `G` induce un producto interno nuevo
-  donde `G⁻¹H` es autoadjunto — mathlib sí tiene espectro real para operadores
-  autoadjuntos en espacios de producto interno de dimensión finita.
+  tiene espectro real. **Bloqueo de mathlib RESUELTO** (jul-31 2026): el camino de
+  prueba del paper necesita raíz cuadrada de matriz (`J=G^{1/2}SG^{-1/2}`), que mathlib
+  no tiene lista para usar -- la solución NO es construirla, es evitarla del todo
+  reformulando como el problema de autovalores generalizado clásico
+  (`det(μI-G⁻¹H)=0 ⟺ det(μG-H)=0`, ver docstring del archivo), que se resuelve con un
+  argumento sesquilineal elemental sin ninguna raíz cuadrada. Enunciado principal
+  BIEN TIPADO (compila), prueba PENDIENTE (`sorry`) -- se intentó cerrar el lema clave
+  (`sesquilinear_real_of_isSymm`, forma sesquilineal de matriz real simétrica es real)
+  con varias versiones de manipulación de sumas/conjugados, sin éxito dentro de esta
+  sesión: el paso de cancelar una doble conjugación resultó más delicado de lo esperado
+  sin un editor Lean interactivo (este entorno solo compila por lote, sin feedback en
+  vivo del estado de la prueba) -- siguiente paso concreto para retomar con VS Code +
+  extensión Lean 4.
 
 ## Candidatos no atacados todavía
 
