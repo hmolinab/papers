@@ -36,18 +36,19 @@ numérica contra datos, o elecciones de modelado.
 
 - `GsfLean/NoHopf.lean` — **Lema 1 (sin Hopf)**, `determinant_cubic_source` §6: el
   Jacobiano `J=-G⁻¹H` de un flujo métrico-gradiente (`G≻0` simétrica, `H` simétrica)
-  tiene espectro real. **Bloqueo de mathlib RESUELTO** (jul-31 2026): el camino de
-  prueba del paper necesita raíz cuadrada de matriz (`J=G^{1/2}SG^{-1/2}`), que mathlib
-  no tiene lista para usar -- la solución NO es construirla, es evitarla del todo
-  reformulando como el problema de autovalores generalizado clásico
-  (`det(μI-G⁻¹H)=0 ⟺ det(μG-H)=0`, ver docstring del archivo), que se resuelve con un
-  argumento sesquilineal elemental sin ninguna raíz cuadrada.
-  **`sesquilinear_real_of_isSymm`: PROBADO COMPLETO** (sin `sorry`), cerrado con ayuda
-  del REPL de Lean -- el ladrillo que de verdad bloqueaba el argumento ya no bloquea
-  nada. `lema_1_sin_hopf` (el enunciado principal): bien tipado, compila, prueba
-  PENDIENTE (`sorry`) -- lo que falta ahora es solo ensamblaje de API estándar de
-  mathlib (`Matrix.charpoly_map`, `Matrix.mem_spectrum_iff_isRoot_charpoly`,
-  `Matrix.mulVec_injective_iff_isUnit`), no ningún hecho matemático nuevo.
+  tiene espectro real. **CERRADO COMPLETO** (jul-31 2026, sin ningún `sorry`).
+  Bloqueo de mathlib RESUELTO: el camino de prueba del paper necesita raíz cuadrada de
+  matriz (`J=G^{1/2}SG^{-1/2}`), que mathlib no tiene lista para usar -- la solución no
+  fue construirla, fue evitarla del todo reformulando como el problema de autovalores
+  generalizado clásico (`det(μI-G⁻¹H)=0 ⟺ det(μG-H)=0`), resuelto con un argumento
+  sesquilineal elemental (`sesquilinear_real_of_isSymm`, probado completo) más
+  positividad de la forma cuadrática de `G` (descomposición real/imaginaria de `v` +
+  `Matrix.PosDef.dotProduct_mulVec_pos`). `lema_1_sin_hopf` ensambla todo: extrae el
+  vector propio del espectro (`Matrix.charpoly_map`, `Matrix.mem_spectrum_iff_
+  isRoot_charpoly`, `Matrix.mulVec_injective_iff_isUnit`), deriva `Hv=-μGv`, y concluye
+  `μ.im=0` por cancelación (`⟨v,Hv⟩=-μ⟨v,Gv⟩`, ambos lados reales, `⟨v,Gv⟩≠0`). Primer
+  teorema de este programa cerrado íntegramente con ayuda del REPL de Lean para
+  inspección interactiva del estado de la prueba.
 
 ## Candidatos no atacados todavía
 
