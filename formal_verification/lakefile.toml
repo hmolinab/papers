@@ -1,7 +1,7 @@
 name = "gsf_lean"
 version = "0.1.0"
 keywords = ["math"]
-defaultTargets = ["GsfLean"]
+defaultTargets = ["DeterminantCubicSource", "WeldClifford"]
 
 [leanOptions]
 pp.unicode.fun = true # pretty-prints `fun a ↦ b`
@@ -14,5 +14,15 @@ name = "mathlib"
 scope = "leanprover-community"
 rev = "v4.32.2"
 
+# El codigo fuente vive dentro de cada paper (papers/<paper>/lean/), NO en este
+# directorio -- este proyecto es solo el "motor" compartido (mathlib + lakefile),
+# para no pagar el costo de una cache de mathlib (~7.4GB) por cada paper (ago-4 2026,
+# pedido de HM). Ver README.md.
+
 [[lean_lib]]
-name = "GsfLean"
+name = "DeterminantCubicSource"
+srcDir = "../determinant_cubic_source/lean"
+
+[[lean_lib]]
+name = "WeldClifford"
+srcDir = "../weld_clifford/lean"
