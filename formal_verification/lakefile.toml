@@ -1,7 +1,7 @@
 name = "gsf_lean"
 version = "0.1.0"
 keywords = ["math"]
-defaultTargets = ["DeterminantCubicSource", "WeldClifford"]
+defaultTargets = ["DeterminantCubicSource", "WeldClifford", "CompositionalAlgebra"]
 
 [leanOptions]
 pp.unicode.fun = true # pretty-prints `fun a ↦ b`
@@ -26,3 +26,7 @@ srcDir = "../determinant_cubic_source/lean"
 [[lean_lib]]
 name = "WeldClifford"
 srcDir = "../weld_clifford/lean"
+
+[[lean_lib]]
+name = "CompositionalAlgebra"
+srcDir = "../compositional_algebra/lean"
