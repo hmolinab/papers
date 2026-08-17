@@ -4,7 +4,7 @@ DOI: [10.5281/zenodo.21502148](https://doi.org/10.5281/zenodo.21502148)
 
 **"Γ: la viscosidad como amortiguación estructural — Stokes y Navier-Stokes como límites de una
 sola ecuación, y la transición subcrítica en tubería"**
-Henry Molina — Investigador independiente, Bogotá, Colombia
+Henry Molina — Investigador independiente
 
 ## Archivos
 

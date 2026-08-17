@@ -40,9 +40,9 @@ transitorio, que la cizalla responsable no puede provenir del gradiente del pote
 Hessiano es simétrico, luego normal, luego sin amplificación), y que sí proviene exactamente del
 término convectivo de la derivada material. Esta cadena reproduce el escalamiento estándar
 G_max∼Re² con el prefactor geométrico fijado desde el álgebra del operador, consistente en orden
-de magnitud con el Re_c≈2040 observado en tubería. El criterio de éxito de este paper no es una
-nueva ley de la turbulencia: es que una sola identidad algebraica, sin parámetros por dominio,
-organiza correctamente la reducción a Stokes, la escala de la viscosidad real y el mecanismo de
+de magnitud con el Re_c≈2040 observado en tubería. El marco resultante se contrasta contra tres
+objetivos: una sola identidad algebraica, sin parámetros por dominio,
+organiza la reducción a Stokes, la escala de la viscosidad real y el mecanismo de
 la transición subcrítica, con las fronteras nombradas donde el resultado depende de constantes
 tomadas de la literatura.
 
@@ -79,7 +79,7 @@ que se anula por una identidad geométrica pura, no por una restricción del flu
 
 Por consistencia de Gram-fuerza: $S=\rho$ (densidad) y $A=D\mathbf u/Dt$ (aceleración material,
 no la velocidad) son el único par que hace $\Gamma_s=S\cdot A=\rho\,D\mathbf u/Dt$ coincidir
-exactamente con el lado inercial de la ecuación de Cauchy — el mismo patrón que en Newton, donde
+exactamente con el lado inercial de la ecuación de Cauchy; el mismo patrón que en Newton, donde
 $A$ es la aceleración y no la velocidad. Por el criterio de trabajo: $I=\mathbf u$ pasa la prueba,
 porque $\mathbf u\cdot(D\mathbf u/Dt)$ es exactamente $D(|\mathbf u|^2/2)/Dt$, la tasa de cambio
 de la energía cinética específica, genérica y con significado físico preciso. El candidato que se
@@ -101,7 +101,7 @@ directamente, el vector de grado 1 que la produce por cuña con $\mathbf u$ es $
 El campo, $\Gamma_a=I\wedge R=\mathbf u\wedge\nabla=\nabla\times\mathbf u=\boldsymbol\omega$, es
 **derivado**, no un cuarto grado asignado directamente: la vorticidad es la parte antisimétrica de
 $\partial_j u_i$, exactamente como en el paper compañero para Navier-Stokes. La helicidad
-$h=\mathbf u\cdot\boldsymbol\omega$, si aparece, es el invariante pseudoescalar de $\Gamma_a$ — una
+$h=\mathbf u\cdot\boldsymbol\omega$, si aparece, es el invariante pseudoescalar de $\Gamma_a$; una
 cantidad derivada, no un slot SAIR independiente.
 
 La presión no ocupa ningún grado de SAIR: es el multiplicador de Lagrange de la restricción de
@@ -319,7 +319,7 @@ número de Reynolds de cada geometría, no un parámetro distinto del fluido.
 
 ---
 
-# 7. Fronteras honestas
+# 7. Problemas abiertos y limitaciones
 
 | Frontera | Estado | Nota |
 |---|:---:|---|
@@ -396,7 +396,7 @@ stability without eigenvalues. *Science*, 261(5121), 578–584.
 
 \appendix
 
-# Anexo — Scripts de cálculo
+# Anexo. Scripts de cálculo
 
 Scripts de verificación incluidos en `code/` junto a este paper, publicados en
 https://github.com/hmolinab/papers/tree/main/gamma_fluids:

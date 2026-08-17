@@ -14,7 +14,7 @@ generados en este directorio — ver `README.md` para el listado completo de arc
 
 **Autores:** Molina, Henry
 
-**Afiliación:** Independent researcher, Bogotá, Colombia
+**Afiliación:** Independent researcher
 
 **Tipo de upload:** Preprint
 

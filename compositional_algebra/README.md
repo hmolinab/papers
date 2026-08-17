@@ -1,7 +1,7 @@
 # Paper: A compositional algebra for coherence-unit configurations: closure, entropy balance, and inertia additivity
 
 **"Un álgebra composicional para configuraciones de Unidades de Coherencia: clausura, balance de entropía, y aditividad de inercia" / "A compositional algebra for coherence-unit configurations: closure, entropy balance, and inertia additivity"**
-Henry Molina — Independent researcher, Bogotá, Colombia
+Henry Molina — Independent researcher
 
 Twelve compositional operations found under different names across physics, chemistry, biology
 and social systems collapse into five primitives and a single linear-algebra identity — the

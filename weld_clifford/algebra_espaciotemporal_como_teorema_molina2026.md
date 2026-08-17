@@ -103,9 +103,7 @@ calificación al final de la Observación 2.1).
 *Observación 2.1.* A1 es el axioma fundacional del marco; no se deriva de premisas más simples dentro
 de este artículo. Su justificación es el argumento estructural de que $\{S, \mathbf{A}, \mathbf{I},
 \mathbf{R}\}$ son los grados de un álgebra geométrica de dimensión mínima compatible con A2, una
-circularidad resuelta por la consistencia mutua de A1 y A2, no por una prueba independiente de A1. El
-papel de A1 en esta estructura es análogo al de la selección natural en la teoría darwiniana: un postulado
-mínimo que genera el resto.
+circularidad resuelta por la consistencia mutua de A1 y A2, no por una prueba independiente de A1.
 
 *Calificación (qué significa "estructuralmente único" aquí, y qué no).* La cláusula de unicidad de A1
 se prueba en este artículo solo para el **contenedor**: dado que una UDO tiene un atributo de grado 0
@@ -129,15 +127,12 @@ dejar que una palabra fuerte en un axioma implique más de lo que el teorema ent
 dominio. Una pregunta distinta y más básica es la *existencia*: ¿un dominio dado admite siquiera
 $\mathbf A,\mathbf I,\mathbf R$ como vectores de grado 1, con Fuerza y Campo genuinamente inherentes?
 **El teorema de este artículo es condicional a una respuesta afirmativa, y no la provee él mismo.** La
-existencia exige que el propio dominio satisfaga las precondiciones de A1 —un todo coherente con un
-embebido espacial/relacional genuino—, no solo que alguna observable se reetiquete como vector;
+existencia exige que el propio dominio satisfaga las precondiciones de A1 (un todo coherente con un
+embebido espacial/relacional genuino), no solo que alguna observable se reetiquete como vector;
 establecerla para un dominio concreto es una pregunta empírica fuera del alcance de este artículo, que
 prueba solo el teorema del contenedor: que *si* los cuatro atributos existen, su álgebra anfitriona
-queda forzada. **Leído correctamente, el Teorema Principal (§4) dice: "si un dominio tiene $\mathbf A,\mathbf
-I,\mathbf R$ de grado 1, entonces su álgebra anfitriona queda forzada a $\mathrm{Cl}_{3,1}$," no "todo
-dominio tiene tales atributos."** El teorema del contenedor está probado incondicionalmente como una
-pieza de álgebra; su aplicabilidad a un dominio específico no lo está, y nunca debe leerse solo a partir
-de este artículo.
+queda forzada. El teorema del contenedor está probado incondicionalmente como una
+pieza de álgebra; su aplicabilidad a un dominio específico no lo está.
 
 Una UDO no es simplemente un sistema con cuatro casilleros etiquetables. Los atributos son intrínsecos
 en el sentido operacional: son los generadores del producto geométrico de A2, no etiquetas observacionales
@@ -684,7 +679,7 @@ de un sustrato, sino que identifica qué álgebra de Clifford real fuerza la est
 dinámica que se autodescribe. Se ofrece como un compañero estructural de esos programas, no como un
 reemplazo.
 
-### 8.4 Alcance honesto
+### 8.4 Limitaciones
 
 Este artículo establece la estructura algebraica. No:
 - Prueba la unicidad de la estructura de atributos SAIR con independencia de A1 (ese es el contenido

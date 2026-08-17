@@ -11,7 +11,7 @@
 Spacetime Algebra as a Theorem: Deriving Cl(3,1) from the Structure of a Dynamical Unit
 
 **Autores:**
-Henry Molina (Independent researcher, Bogotá, Colombia)
+Henry Molina (Independent researcher)
 
 **Categoría primaria:** math-ph (Mathematical Physics and Mathematics)
 
@@ -95,7 +95,7 @@ unit, $\mathrm{Cl}_{3,1}$ is the forced representation."
 
 **Autores:** Molina, Henry
 
-**Afiliación:** Independent researcher, Bogotá, Colombia
+**Afiliación:** Independent researcher
 
 **Tipo de upload:** Preprint / Journal article
 

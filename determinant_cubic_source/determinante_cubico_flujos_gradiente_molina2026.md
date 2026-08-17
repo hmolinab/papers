@@ -23,8 +23,8 @@ de segundo orden. El potencial sin campo es invariante bajo la acción ortogonal
 $\Gamma\mapsto U\Gamma V^\top$ ($U,V\in O(4)$, $\det U\det V=1$). El anillo de invariantes de esa acción está
 generado por las funciones simétricas de los valores singulares y por el determinante; este último es el único
 generador sensible a la orientación, y el candidato ingenuo a invariante cúbico, $\operatorname{tr}\Gamma^3$, no
-es invariante de esta simetría. Cerca de una degeneración del Hessiano —un modo blando simple, aislado por el
-término lineal $J$ en el sentido de la bifurcación imperfecta— la reducción de variedad central da las formas
+es invariante de esta simetría. Cerca de una degeneración del Hessiano (un modo blando simple, aislado por el
+término lineal $J$ en el sentido de la bifurcación imperfecta), la reducción de variedad central da las formas
 normales locales, y el coeficiente cúbico recibe del determinante, vía su matriz de cofactores, su única
 contribución sensible a la orientación; dentro del potencial considerado, es su única fuente sobre el estrato
 $V\perp\Gamma_*$. Probamos la reducción de codimensión 1 (pliegue y, sobre estratos con isotropía $\mathbb Z_2$,

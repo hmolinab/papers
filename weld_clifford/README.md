@@ -1,7 +1,7 @@
 # Paper: Spacetime Algebra as a Theorem
 
 **"Spacetime Algebra as a Theorem: Deriving Cl(3,1) from the Structure of a Dynamical Unit"**  
-Henry Molina — Independent researcher, Bogotá, Colombia
+Henry Molina — Independent researcher
 
 ## Files
 

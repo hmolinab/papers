@@ -14,8 +14,7 @@ cited in the text are in `code/` (see Appendix), published alongside this paper 
 https://github.com/hmolinab/papers/tree/main/gamma_fluids. Each result is marked by its status: a
 theorem with a complete proof, a structural correspondence (an isomorphism or algebraic
 relabeling with a known physical object, not a new physical theorem), a finding verified
-numerically or against tabulated data without a closed analytic proof, or an open frontier. The
-text says so explicitly in each case.*
+numerically or against tabulated data without a closed analytic proof, or an open frontier.*
 
 # Abstract
 
@@ -28,10 +27,9 @@ limit of the field EOM under three physically named conditions (high friction, s
 short scale), each with a convergence theorem already published in the stochastic differential
 equations and fluid mechanics literature; and full Navier-Stokes, including the advection term,
 is recovered by requiring the same Galilean covariance that any continuum dynamics must respect.
-Second, the identity ν=c²(ρ)/γ reproduces tabulated viscosity ratios across roughly twenty-four orders of
+The identity ν=c²(ρ)/γ also reproduces tabulated viscosity ratios across roughly twenty-four orders of
 magnitude (from mercury to Earth's mantle) with a single variable and zero fitting, and the law
-γ∝ρ is confirmed to 0.1% precision over five decades of density for air. Third, and of greatest
-interest for engineering applications, the subcritical transition to turbulence in pipe flow (the
+γ∝ρ is confirmed to 0.1% precision over five decades of density for air. The subcritical transition to turbulence in pipe flow (the
 non-modal transient growth that precedes turbulence at subcritical Reynolds numbers) is derived
 as a structural property of the antisymmetric sector Γ_a of the same matrix: a purely symmetric
 (diagonal) configuration is shown to forbid transient growth, the shear responsible for it cannot
@@ -39,8 +37,7 @@ come from the potential's gradient (a Hessian is symmetric, hence normal, hence 
 amplification), and it does come exactly from the convective term of the material derivative.
 This chain reproduces the standard G_max∼Re² scaling with the geometric prefactor fixed from the
 operator's algebra, consistent in order of magnitude with the observed Re_c≈2040 in pipe flow.
-This paper's success criterion is not a new law of turbulence: it is that a single algebraic
-identity, with no parameters per domain, correctly organizes the reduction to Stokes, the scale
+The resulting framework is tested against three targets: the reduction to Stokes, the scale
 of real viscosity, and the mechanism of the subcritical transition, with the boundaries named
 where the result depends on constants taken from the literature.
 
@@ -62,15 +59,14 @@ theorem.
 
 γ does not appear in the conservative action: it enters through the Rayleigh dissipation
 extension, and is a coarse-graining parameter, the rate at which the unit of coherence loses
-memory against its environment. Operationalizing it in a concrete domain is the empirical
-question this paper answers for fluids.
+memory against its environment. The fluid application considered here determines γ empirically.
 
 ## 1.2 The SAIR dictionary in fluids
 
 Grade covariance alone does not fix the dictionary: the weld (Molina 2026) requires, beyond grade
 covariance, that S,A,I,R satisfy an explicit selection criterion whenever more than one candidate
-is compatible with the same grade. Here we apply the two mechanisms already verified in the
-program against seven domains (Newton, Schrödinger, Navier-Stokes, Maxwell, Lorentz signature,
+is compatible with the same grade. We use two previously established selection criteria, verified
+against seven domains (Newton, Schrödinger, Navier-Stokes, Maxwell, Lorentz signature,
 H₂O, Hopf): Gram-force consistency (Γ_s=S·A must reproduce an already-known force law independent
 of the domain) and the work/power criterion (among candidates of equal grade, the one that makes
 P=X·A≠0 generically goes to I; the one that vanishes by a pure geometric identity, not by a
@@ -78,13 +74,13 @@ constraint on the flow, goes to R).
 
 By Gram-force consistency: $S=\rho$ (density) and $A=D\mathbf u/Dt$ (material acceleration, not
 velocity) are the unique pair that make $\Gamma_s=S\cdot A=\rho\,D\mathbf u/Dt$ match exactly the
-inertial side of the Cauchy equation — the same pattern as Newton, where $A$ is acceleration, not
+inertial side of the Cauchy equation, the same pattern as Newton, where $A$ is acceleration, not
 velocity. By the work criterion: $I=\mathbf u$ passes, because $\mathbf u\cdot(D\mathbf u/Dt)$ is
-exactly $D(|\mathbf u|^2/2)/Dt$, the rate of change of specific kinetic energy, generic and with
-precise physical meaning. The candidate that vanishes by a pure geometric identity is the Lamb
+exactly $D(|\mathbf u|^2/2)/Dt$, the rate of change of specific kinetic energy, generic and
+nonzero. The candidate that vanishes by a pure geometric identity is the Lamb
 vector $\mathbf u\times\boldsymbol\omega$ ($\mathbf u\cdot(\mathbf u\times\boldsymbol\omega)=0$
-always, by the triple product with a repeated vector, the exact parallel of why the magnetic
-field does no work in electromagnetism), not the pressure gradient ($\mathbf u\cdot\nabla p$ does
+always, by the triple product with a repeated vector; this is analogous to the magnetic
+field, which performs no work in electromagnetism), not the pressure gradient ($\mathbf u\cdot\nabla p$ does
 not vanish by identity, it only reduces to a pure divergence under the global constraint of
 incompressibility, §2.1 below). Since the vorticity $\boldsymbol\omega$ that generates that vector
 is grade 2 and cannot occupy R directly, the grade-1 vector that produces it by wedge with
@@ -168,8 +164,8 @@ Clifford→M₄(ℝ) weld of the companion paper, not something specific to flui
 # 3. The operationalization of γ
 
 The identity ν=c²(ρ)/γ gives the first quantitative operationalization of γ in a concrete
-physical domain: high damping means high viscosity means the Stokes regime; low damping means
-the inviscid/Euler regime. The Reynolds number is the physical proxy of 1/γ:
+physical domain: since ν=c²/γ, increasing γ increases the effective viscosity, driving the flow
+toward the Stokes regime; low damping drives it toward the inviscid/Euler regime. The Reynolds number is the physical proxy of 1/γ:
 
 $$\mathrm{Re}=\frac{vL}{\nu_{\mathrm{kin}}}=\frac{vL\,\gamma}{c^2(\rho)}.$$
 
@@ -206,8 +202,8 @@ here without independent re-measurement.
 | Earth's upper mantle | ∼3×10²³ | ∼3×10⁻²⁴ |
 
 The full range spans roughly twenty-four orders of magnitude (24.4, script-verified) with a single variable, a single equation,
-and zero fitted parameters. The value of this table does not depend on having derived
-Navier-Stokes from scratch: it functions as a robust phenomenological anchor, in the same sense
+and zero fitted parameters. This comparison is independent of whether Navier-Stokes is derived from
+scratch: it functions as a phenomenological reference, in the same sense
 that Kepler's third law functioned as an empirical scaling law before Newton derived the gravity
 that explains it.
 
@@ -215,8 +211,7 @@ that explains it.
 
 The kinematic viscosity of air in the continuum regime obeys ν∝1/ρ to 0.1% precision over
 pressures from 10⁻³ to 10 atm. Combined with the saturation of c² at those densities, this
-implies γ∝ρ linearly over five decades of density, the strongest empirical confirmation to date
-of the structural relation between γ and density.
+implies γ∝ρ linearly over five decades of density, an empirical test of the structural relation between γ and density.
 
 ## 4.3 Absolute calibration (conditional)
 
@@ -233,8 +228,8 @@ a conditional prediction under that hypothesis, not a measurement.
 In the irrotational limit (Γ_a=0, no sources, no vorticity), the EOM reduces to the massless
 wave equation for the velocity potential, □φ=0, the same structural mechanism as the free
 electromagnetic photon in the companion paper. The classical acoustic-electromagnetic analogy
-(Bergmann, 1946), used in acoustic cloaking techniques, has a structural reading here: it is not
-a formal analogy but rather both being instances of the same det=0 sector (γ≈0, wave regime) of
+(Bergmann, 1946), used in acoustic cloaking techniques, is not
+a formal analogy in this framework: both are instances of the same det=0 sector (γ≈0, wave regime) of
 the same algebraic object, differing only in which physical observables occupy the slots.
 
 ---
@@ -261,15 +256,14 @@ log-log slope of 2.000, constant independent of Re). This recovers the standard 
 hydrodynamic stability literature (Reddy-Henningson, 1993; Trefethen et al., 1993) and fixes the
 prefactor from first algebraic principles, not by fitting.
 
-What this framework contributes beyond recovering that scaling is a structural diagnostic
-result, verified in three steps, with an important precision about what exactly each step
-closes.
+The additional result is a structural diagnostic, verified in three steps; what exactly each step
+closes is stated precisely below.
 
 1. A purely diagonal (symmetric) configuration of Γ forbids transient growth: G_max=1 for all
    Re. The shear coupling needed for the lift-up mechanism cannot live on the diagonal.
 2. The shear cannot come from the potential's gradient ∇²P alone: the Hessian of any potential
    is symmetric (mixed derivatives commute), hence normal, hence no transient amplification is
-   possible. This is a proved no-go, not a qualitative observation, and it correctly rules out
+   possible. This is a no-go theorem, and it correctly rules out
    that any generic non-symmetric perturbation of the bare EOM of Γ (without the convective
    term) reaches the Re² scaling: verified that a generic non-normal coupling, hand-built
    without the specific lift-up structure, gives only G_max∼Re¹.
@@ -280,13 +274,13 @@ closes.
    off-diagonal, that is, it lives in the antisymmetric sector Γ_a, and it reproduces the exact
    Re² scaling with the geometric prefactor of the previous step.
 
-The precise statement, so as not to overclaim, is: the Re² scaling does not come from the bare
+The Re² scaling does not come from the bare
 EOM of Γ with any non-symmetric perturbation (that is ruled out, point 2); it comes from the full
 fluid instantiation of this equation, which by Galilean covariance is Navier-Stokes with its
 convective term (§2.2), linearized around a base shear profile. The base profile U(y) remains an
 external input, the same one required by the entire standard theory of hydrodynamic stability
-(Orr-Sommerfeld/Squire), not something specific to this framework. With that precision, Γ
-functions as a structural diagnostic tool: the transient growth that precedes subcritical
+(Orr-Sommerfeld/Squire), not something specific to this framework. Thus, Γ_a identifies the
+transient-growth channel: the transient growth that precedes subcritical
 turbulence is a direct observable of the antisymmetric sector of the configuration matrix, once
 the convective term that covariance requires is included.
 
@@ -313,7 +307,7 @@ geometry, not a different fluid parameter.
 
 ---
 
-# 7. Honest frontiers
+# 7. Open problems and limitations
 
 | Frontier | Status | Note |
 |---|:---:|---|
@@ -335,13 +329,11 @@ geometry, not a different fluid parameter.
 framework alone, operationalizes precisely in fluids: ν=c²/γ reproduces viscosity data across
 roughly twenty-four orders of magnitude without fitting anything, and γ∝ρ is confirmed to 0.1% over five
 decades. The reduction to Stokes and the derivation of full Navier-Stokes rest on convergence
-theorems already published in their own domains, not on qualitative identifications. And the
-result of greatest applied interest, the subcritical transition in pipe flow, reduces to a closed
+theorems already published in their own domains. The subcritical transition in pipe flow reduces to a closed
 algebraic chain: without the antisymmetric sector Γ_a there is no transient growth, that sector
 cannot be substituted by the potential's gradient, and it arises exactly from the convective
 transport term. The exact numerical value of Re_c depends on constants taken from the
-experimental literature; what this framework contributes is not replacing those measurements but
-explaining, from the structure of the operator, why the scaling is Re² and where the mechanism
+experimental literature; the structural result is why the scaling is Re² and where the mechanism
 that produces it lives.
 
 ---
@@ -390,7 +382,7 @@ stability without eigenvalues. *Science*, 261(5121), 578–584.
 
 \appendix
 
-# Appendix — Calculation scripts
+# Appendix. Calculation scripts
 
 Verification scripts included in `code/` alongside this paper, published at
 https://github.com/hmolinab/papers/tree/main/gamma_fluids:

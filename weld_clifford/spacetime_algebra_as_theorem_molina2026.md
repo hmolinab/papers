@@ -5,7 +5,7 @@ Independent researcher
 henrymolina@gmail.com
 DOI: 10.5281/zenodo.21184515
 
-Self-contained manuscript; requires no external framework beyond standard linear algebra and Clifford algebra
+This manuscript requires no external framework beyond standard linear algebra and Clifford algebra
 conventions. Numerical verifications referenced in §7 are at:  
 https://github.com/hmolinab/papers/tree/main/weld_clifford/code
 
@@ -52,8 +52,8 @@ product), A3 (smooth evolution at finite speed), and A3$'$ (co-location of the a
 propagation coordinates). The derivation does not require spacetime as an
 input; the signature emerges from the principal symbol of the equation of motion dictated by A3.
 
-This paper is part of a larger program, the Gamma Space Framework (GSF; Molina 2025), whose central object
-is a real $4\times4$ configuration matrix $\Gamma \in M_4(\mathbb{R})$. The present paper establishes the
+This paper draws its central object, a real $4\times4$ configuration matrix $\Gamma \in M_4(\mathbb{R})$, from the
+Gamma Space Framework (GSF; Molina 2025). The present paper establishes the
 algebraic foundation: that $\Gamma$ is an element of $\mathrm{Cl}_{3,1}$, not by postulate but by necessity.
 The companion paper (Molina 2024a) establishes the dynamical result: that the determinant of $\Gamma$ is the
 source of the cubic term in the soft-mode reduction of the matrix gradient flow. The term **operative
@@ -95,8 +95,7 @@ conflated (see the qualification at the end of Remark 2.1).
 *Remark 2.1.* A1 is the foundational axiom of the framework; it is not derived from simpler premises
 within this paper. Its justification is the structural argument that $\{S, \mathbf{A}, \mathbf{I}, \mathbf{R}\}$
 are the grades of a geometric algebra of minimal dimension consistent with A2, a circularity resolved by
-the mutual consistency of A1 and A2, not by an independent proof of A1. The role of A1 in this structure
-is analogous to that of natural selection in Darwinian theory: a minimal posit that generates the rest.
+the mutual consistency of A1 and A2, not by an independent proof of A1.
 
 *Qualification (what "structurally unique" means here, and what it does not).* A1's uniqueness clause is
 proved in this paper only for the **container**: given that an ODU has one grade-0 and three grade-1
@@ -109,22 +108,14 @@ that assignment (candidates must share the slot's representation under the domai
 the same Schur argument specialized to instances, and a companion line of work develops sufficient
 selection criteria and tests them against seven worked domains, but that work is at an earlier stage of
 rigor than this paper's closed lemmas and is deliberately not imported here (see §8.4). The word "unique"
-in A1 should be read as "unique at the container level, proved; open at the instance level" until that
-companion work matures. This does not weaken A1; it applies the same discipline as §8.4: state exactly
-what is proved, and do not let a strong word in an axiom imply more than the theorem delivers.
+in A1 is unique at the container level, proved; open at the instance level, until that companion work matures.
 
-*A second, prior qualification: existence, not just uniqueness.* Everything above concerns *uniqueness*
-of the slot assignment given that a well-posed SAIR quadruple already exists for a domain. A separate and
-more basic question is *existence*: does a given domain admit $\mathbf A,\mathbf I,\mathbf R$ as grade-1
-vectors at all, with Force and Field genuinely inherent to it? **The theorem of this paper is conditional
-on a positive answer, and does not itself supply one.** Existence requires that the domain itself satisfy
-A1's own preconditions, a coherent whole with a genuine spatial/relational embedding, not merely that some
-observable be relabeled as a vector; establishing it for a specific domain is an empirical question
-outside the scope of this paper, which proves only the container theorem — that *if* the four attributes
-exist, their host algebra is forced. **Read correctly, the Main Theorem (§4) says: "if a domain has grade-1 $\mathbf A,\mathbf I,\mathbf R$, then
-their host algebra is forced to $\mathrm{Cl}_{3,1}$," not "every domain has such attributes."** The
-container theorem is proved unconditionally as a piece of algebra; its applicability to a specific
-domain is not, and should never be read off this paper alone.
+The theorem is conditional on the existence of a SAIR quadruple: given that a well-posed
+$S,\mathbf A,\mathbf I,\mathbf R$ already exists for a domain, Lemmas 2–4 force its host algebra to
+$\mathrm{Cl}_{3,1}$. The paper proves the host algebra of such a quadruple; it does not establish that
+quadruple's existence in any particular physical domain: whether a given domain admits
+$\mathbf A,\mathbf I,\mathbf R$ as grade-1 vectors at all, with Force and Field genuinely inherent to it,
+is an empirical question outside the scope of this paper (§8.4).
 
 An ODU is not merely a system with four labelable slots. The attributes are intrinsic in the operational
 sense: they are the generators of the geometric product of A2, not observational labels assigned from
@@ -144,8 +135,7 @@ grade-0 and $S\mathbf{A}$ is a grade-1 vector, not a scalar; the symmetric struc
 Gram matrix, not through a grade-0 product. The Force/Field split is algebraically forced by A2, not a
 separate postulate.
 
-**Definition (SAIR embedding: the matrix construction named, gauge closed).** The phrase "Gram coupling"
-above names an operation without writing it; we write it once, explicitly. Embed the vector attributes as
+**Definition (SAIR embedding: the matrix construction named, gauge closed).** Embed the vector attributes as
 the columns of $W = [\,\mathbf{A}\mid\mathbf{I}\mid\mathbf{R}\,] \in \mathbb{R}^{4\times3}$ inside the
 ambient $4$-dimensional space carrying a bilinear form $q$, and complete $W$ to a basis with a scalar
 direction $\mathbf{e}_0$ for $S$: $V = [\,S\mathbf{e}_0\mid W\,]$.
@@ -167,7 +157,7 @@ grade-1 attribute cannot pair under a grade-respecting product). Any other choic
 the same signature by Sylvester (Corollary 4.2 below does not depend on which invertible $V$ is used) but
 populates spurious $S$–$\mathbf{A}$, $S$–$\mathbf{I}$, $S$–$\mathbf{R}$ cross-entries with no counterpart
 anywhere they are actually used, so the orthogonal $\mathbf{e}_0$ is not merely *a* valid gauge; it is
-the canonical one, singled out by consistency with every explicit construction in this program.
+the canonical one, singled out by consistency with every explicit construction using this embedding.
 Verification (existence, uniqueness, and the block-diagonal collapse, 5 random trials):
 `models/calcs/brainstorming/papers/weld_clifford/puente_simbolo_gram_sylvester_prueba.py`, part IV.
 
@@ -182,24 +172,21 @@ structural potential in configuration space. This is the lowest-order equation c
 and restoring forces ($\nabla_\Gamma P$); no additional postulate about dynamics is made beyond smoothness
 and finite speed.
 
-*Remark 2.2.* The genuine content of A2 is the claim that *structure is the geometric product*. A3 adds
+*Remark 2.2.* A2 asserts that structure is represented by the geometric product. A3 adds
 the claim that *evolution is smooth and second-order*: position and velocity are independent degrees of
 freedom, so a first-order equation would conflate them. The symmetric/antisymmetric split of the
 geometric product is a theorem of geometric algebra, not an additional hypothesis.
 
-*Remark 2.3 (the EOM does not retire $\Gamma_s,\Gamma_a$).* A3's equation is written for the undivided
-$\Gamma$, and from here on the paper works mostly with $\Gamma$ as a single matrix, which makes it easy to
-read this as A2's Force/Field split being used once, in §2, and then abandoned. It is not: every term of the
-EOM acts on both sectors simultaneously, because $\ddot\Gamma=\ddot\Gamma_s+\ddot\Gamma_a$,
+*Remark 2.3 (the EOM acts on both sectors).* A3's equation is written for the undivided
+$\Gamma$. Every term of the EOM acts on both sectors simultaneously, because $\ddot\Gamma=\ddot\Gamma_s+\ddot\Gamma_a$,
 $\nabla^2_{\mathbf x}\Gamma=\nabla^2_{\mathbf x}\Gamma_s+\nabla^2_{\mathbf x}\Gamma_a$, and likewise for
 $\gamma\dot\Gamma$, by linearity of $\Gamma\mapsto\Gamma_s,\Gamma_a$. The one term that is *not*
 sector-blind is the potential: $P(\Gamma)$ in this paper's scope (§6, and Definition 2.1 of the
 companion atlas work) is a functional of $\Gamma_s$ alone. The Force sector supplies the restoring
 force, and $\Gamma_a$ is source-free and dissipation-free at this order, evolving only by inertia and
-propagation. So the decomposition is not lost; it reappears as a statement about which terms of the EOM
-each sector feels. This is used below without further comment (§6.1–6.2 recover Newton and Maxwell as,
-respectively, the $\Gamma_s$-only and $\Gamma_a$-only limits of the same equation) and is made fully
-explicit, with the spectral consequence at $\det\Gamma_s=0$, in the companion atlas work.
+propagation. §6.1–6.2 recover Newton and Maxwell as, respectively, the $\Gamma_s$-only and
+$\Gamma_a$-only limits of the same equation; the spectral consequence at $\det\Gamma_s=0$ is made
+fully explicit in the companion atlas work.
 
 ---
 
@@ -231,8 +218,8 @@ condition $\binom{d}{2}=d$ (since $\binom{7}{2}=21\neq7$). It is not the Hodge d
 it is a structurally different object. This branch is not pursued further in this paper.
 The remainder of this paper works $d=3$. $\square$
 
-*Corollary 1.1.* "Why exactly three vector attributes" is not a free parametric choice; it is the
-answer to "what dimension allows the Field to couple back to the Agents without rank escalation."
+*Corollary 1.1.* The closure condition fixes the vector dimension to three: it is not a free parametric
+choice, but the unique dimension allowing the Field to couple back to the Agents without rank escalation.
 
 ### Lemma 2 (Algebra closure)
 
@@ -408,8 +395,8 @@ conjugate to $\partial_\tau$ in the factorization of $\Box$. Verified numericall
 representation satisfying $\{\gamma_\mu, \gamma_\nu\}/2 = \eta_{\mu\nu} = \mathrm{diag}(-1,+1,+1,+1)$
 exists with $\gamma_0^2 = -I$, $\gamma_i^2 = +I$ (residual $< 10^{-14}$; see `code/verify_cl31.py`). $\square$
 
-*Note.* P2 does not conflate categories: $\gamma_0$ is an element of $\mathrm{Cl}_{3,1}$; $\partial_\tau$
-is a differential operator acting on functions $\Gamma(\tau,\mathbf{x})$. What P2 establishes is a
+$\gamma_0$ is an element of $\mathrm{Cl}_{3,1}$; $\partial_\tau$
+is a differential operator acting on functions $\Gamma(\tau,\mathbf{x})$. P2 establishes a
 canonical pairing between the two, mediated by the Dirac factorization of the wave operator given by A3.
 
 ### Proposition P3 (Frobenius is the canonical Clifford metric)
@@ -445,7 +432,7 @@ $\|\Gamma\|^2 = \mathrm{Tr}(\Gamma^\dagger\Gamma)$, real and non-negative. P3 ho
 ## 6. Two Physical Limits
 
 The main theorem and propositions establish the algebraic structure. Two physical theories appear as
-limiting cases, showing the algebra has concrete content.
+limiting cases.
 
 ### 6.1 Newton's second law (Force sector, det > 0)
 
@@ -510,8 +497,8 @@ The following steps in the derivation are numerically confirmed; scripts are in 
 
 The spacetime algebra program (Hestenes 1966; Doran and Lasenby 2003) takes $\mathrm{Cl}_{3,0}$ or
 $\mathrm{Cl}_{1,3}$ as the algebra of physical space or spacetime, motivated by the known geometry.
-The present work reverses this logic: $\mathrm{Cl}_{3,1}$ is derived as the forced algebraic structure
-of any self-describing dynamical unit, without assuming a spacetime background. The key steps are:
+Here the derivation proceeds without assuming a spacetime background: $\mathrm{Cl}_{3,1}$ is derived as the forced algebraic structure
+of any self-describing dynamical unit. The key steps are:
 (i) the closure condition $\binom{d}{2}=d$ forces the dimension of the vector attribute space (Hurwitz confirms consistency); (ii) the wave operator fixes the signature; (iii) the reality of $\Gamma$ selects
 $\mathrm{Cl}_{3,1}\cong M_4(\mathbb{R})$ over the vector-space-isomorphic but algebra-distinct
 $\mathrm{Cl}_{1,3}\cong M_2(\mathbb{H})$. Step (iii) is a selection between signature conventions that a
@@ -527,8 +514,7 @@ unit.
 ### 8.2 Corollary: the signature result exhausts the alternatives
 
 Lemma 4 selects $(3,1)$. The same argument, run over the full space of candidate symbols rather than
-only the one A3 produces, *classifies* the alternatives rather than merely excluding them, which
-strengthens the theorem at no additional cost.
+only the one A3 produces, *classifies* the alternatives rather than merely excluding them.
 
 **Corollary 4.1 (completeness of the regimes).** *Let $q$ be the principal symbol of a second-order
 EOM on $V^4$, i.e. a real quadratic form on a $4$-dimensional space. Then:*
@@ -551,9 +537,9 @@ problem is ill-posed. $\square$
 
 Two consequences follow for the reading of Lemma 4. First, the uniqueness of $(3,1)$ is not a statement
 about a short list of physically motivated candidates: the list of *all* real signatures on $V^4$ is
-finite, is exhausted above, and $(3,1)$ is the only survivor. Second, the excluded cases acquire
-meaning rather than merely being ruled out: the elliptic class is the static/equilibrium regime, and
-the ultrahyperbolic class is the genuine pathology. This matters because $\det$-based classifications
+finite, is exhausted above, and $(3,1)$ is the only survivor. Second, the excluded cases are classified,
+not merely ruled out: the elliptic class is the static/equilibrium regime, and
+the ultrahyperbolic class is the pathological one. This matters because $\det$-based classifications
 cannot see the distinction: $\det q>0$ holds for both $(4,0)$ and $(2,2)$, so the determinant sign
 merges a physical regime with a pathological one, and only the full inertia separates them. A
 companion paper uses precisely this stratification to organise the dynamical regimes of $\Gamma$.
@@ -585,9 +571,9 @@ state, where the attribute $\mathbf{A}$ genuinely *is* a Minkowski four-velocity
 hypothesis. Verification:
 `models/calcs/brainstorming/papers/weld_clifford/puente_simbolo_gram_sylvester_prueba.py`.
 
-**Remark (no residual mystery).** The apparent tension, "the symbol forces $(3,1)$" versus "the Gram
-ranges over five sectors," dissolves once the two constructions of §2 are told apart. There is no
-hidden inconsistency: the symbol's $(3,1)$ is a fixed background fact about the operator (governs
+**Remark.** "The symbol forces $(3,1)$" and "the Gram
+ranges over five sectors" refer to different objects, once the two constructions of §2 are told apart.
+The symbol's $(3,1)$ is a fixed background fact about the operator (governs
 whether *evolution of the field* $\Gamma(\tau,\mathbf{x})$ is well-posed); the Gram's signature is a
 state-dependent fact about the *value* $\Gamma_s$ takes at an instant (classifies the *regime of that
 state*). They coincide, by theorem, exactly on the congruence reading with $V$ invertible; they are
@@ -598,8 +584,7 @@ domain, not a gap in the algebra.
 ### 8.3 Relation to emergent-signature approaches
 
 The idea that the Lorentzian signature should be *derived* rather than *postulated* is not new, and this
-paper does not claim priority for that program; it contributes a specific route. Two comparisons fix the
-position of the present derivation.
+paper does not claim priority for that program; it contributes a specific route.
 
 Singh (2025) obtains a Lorentzian signature within an octonionic pre-spacetime theory by adopting *split*
 division algebras: the split-complex unit $\omega$ with $\omega^2=+1$ gives a magnitude $x^2-y^2$
@@ -614,18 +599,17 @@ $\mathrm{Cl}_{3,1}\cong M_4(\mathbb{R})$ *specifically*, not the isomorphic-as-v
 distinct-as-algebra $\mathrm{Cl}_{1,3}\cong M_2(\mathbb{H})$, by the reality of $\Gamma$ (dissipative and
 gradient dynamics are real processes; §8.1, §4). Singh's construction lives in higher dimension $(3,3)$
 with embedded Lorentzian slices and does not make this reality-of-configuration selection between the two
-signature conventions. The two derivations are therefore complementary: both answer "yes" to the
-theorem-vs-postulate question, by independent mechanisms, and the present one rests on the more
+signature conventions. Both derivations answer "yes" to the
+theorem-vs-postulate question, by independent mechanisms; the present one rests on a more
 economical premise: well-posedness of a real evolution, rather than a chosen split algebra.
 
 More broadly, the view of an emergent Lorentzian signature has a long tradition in analogue and induced
 gravity (Sakharov 1967; Barceló, Liberati and Visser 2011; Volovik 2003), where the effective Lorentzian
 metric arises from the low-energy behaviour of a non-relativistic substrate. The present result is narrower
 and purely algebraic: it does not construct an effective metric from a substrate, but identifies which real
-Clifford algebra the structure of a self-describing dynamical unit forces. It is offered as a structural
-companion to those programs, not a replacement.
+Clifford algebra the structure of a self-describing dynamical unit forces.
 
-### 8.4 Honest scope
+### 8.4 Limitations
 
 This paper establishes the algebraic structure. It does not:
 - Prove uniqueness of the SAIR attribute structure independent of A1 (that is the content of A1 itself,
@@ -647,8 +631,7 @@ This paper establishes the algebraic structure. It does not:
   This is logically prior to, and independent of, the uniqueness question above; the container theorem is
   conditional on existence and proves nothing about it
 
-Two structural gaps in the axiom set are addressed directly below, each with a precise resolution
-rather than a bare admission.
+Two structural gaps in the axiom set are addressed directly below.
 
 **(a) The attribute space and the coordinate space, identified without argument: Postulate A3′.**
 A1 and Lemma 1 give an *internal* attribute space $\mathbb{R}^3$ spanned by
@@ -658,9 +641,8 @@ Laplacian. The step identifying the two spaces is named explicitly, immediately 
 **Postulate A3′**. The identification is not derivable from A1–A3 as stated (an ODU could in
 principle carry internal attributes that do not coincide with its propagation coordinates), so it is
 stated as a fourth, independent premise, on the same footing as A1's own irreducibility (Remark 2.1).
-The theorem's reach was always conditional on this identification; naming it as A3′ lets the reader
-see the condition and evaluate it, rather than find it absorbed silently inside "the spatial attribute
-directions of A1" in Lemma 3.
+The theorem's reach is conditional on this identification, named explicitly as A3′ rather than
+absorbed silently inside "the spatial attribute directions of A1" in Lemma 3.
 
 **(b) Two distinct objects, both called "the signature": Corollary 4.2.** Lemma 4 and Corollary 4.1
 concern the inertia of the *principal symbol* on $V^4=\mathrm{span}\{\mathbf{A},\mathbf{I},\mathbf{R},
@@ -672,8 +654,7 @@ symbol's $(3,1)$ signature, by Sylvester's law of inertia, precisely when it is 
 $V^{\mathsf T}\eta V$ with $V$ invertible. Under the alternative per-slot construction, also licensed
 by A2, and the one used whenever an attribute carries no Minkowski structure of its own, no such
 inheritance holds, and the signature ranges over all admissible classes, matching what a companion
-paper observes when it reads dynamical regimes off the Gram. The two readings of the Definition in §2
-were simply not told apart before.
+paper observes when it reads dynamical regimes off the Gram.
 
 The residues that remain open after P1/P2/P3 are the three original axioms A1, A2, A3, together with
 the newly named Postulate A3′. Gap (a) is resolved by declaring A3′ as a premise, whose truth for a

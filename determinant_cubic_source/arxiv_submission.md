@@ -10,7 +10,7 @@ The determinant as an orientation invariant and the source of the cubic term in 
 gradient flows
 
 **Authors:**
-Henry Molina (Independent researcher, Bogotá, Colombia)
+Henry Molina (Independent researcher)
 
 **Primary category:** math.DS (Dynamical Systems)
 
